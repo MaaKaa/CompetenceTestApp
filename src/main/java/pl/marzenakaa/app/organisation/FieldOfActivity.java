@@ -1,6 +1,4 @@
-package pl.marzenakaa.app;
-
-import pl.marzenakaa.app.organisation.Organisation;
+package pl.marzenakaa.app.organisation;
 
 import javax.persistence.*;
 import java.util.List;
