@@ -28,11 +28,15 @@
         <form:textarea path="description"/><br>
         <form:errors path="description" cssClass="text-danger" /><br>
 
-        Field of activity:
+        Fields of activity:
+        <form:checkboxes path="fieldsOfActivity" items="${fieldsOfActivity}" itemLabel="name" itemValue="id"/><br>
+        <form:errors path="fieldsOfActivity" cssClass="text-danger" /><br>
 
         City:
+        <form:input path="city"/><br>
+        <form:errors path="city" cssClass="text-danger" /><br>
 
-        Country:
+        Country:<br>
 
         Website:
         <form:input path="website"/><br>

@@ -22,6 +22,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+import pl.marzenakaa.app.competenceTest.CompetenceTestConverter;
+import pl.marzenakaa.app.organisation.FieldOfActivity;
+import pl.marzenakaa.app.organisation.FieldOfActivityConverter;
+import pl.marzenakaa.app.organisation.OrganisationConverter;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -105,19 +109,25 @@ public class WebConfig implements WebMvcConfigurer {
         return new BCryptPasswordEncoder();
     }
 
-    /*@Override
+    @Override
     public void addFormatters(FormatterRegistry registry) {
-        registry.addConverter(getTweetConverter());
-        registry.addConverter(getUserConverter());
+        registry.addConverter(getCompetenceTestConverter());
+        registry.addConverter(getFieldOfActivityConverter());
+        registry.addConverter(getOrganisationConverter());
     }
 
     @Bean
-    public TweetConverter getTweetConverter() {
-        return new TweetConverter();
+    public CompetenceTestConverter getCompetenceTestConverter() {
+        return new CompetenceTestConverter();
     }
 
     @Bean
-    public UserConverter getUserConverter(){
-        return new UserConverter();
-    }*/
+    public FieldOfActivityConverter getFieldOfActivityConverter(){
+        return new FieldOfActivityConverter();
+    }
+
+    @Bean
+    public OrganisationConverter getOrganisationConverter(){
+        return new OrganisationConverter();
+    }
 }

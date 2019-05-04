@@ -19,6 +19,11 @@ public class CompetenceTest {
 
     private LocalDateTime created;
 
+    @PrePersist
+    public void prePersist(){
+        created = LocalDateTime.now();
+    }
+
     @ManyToOne
     @JoinColumn(name = "organisation_id")
     private Organisation organisation;
