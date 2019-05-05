@@ -30,6 +30,7 @@ public class CompetenceTestController {
             return "competence-test-form";
         }
         solution.setResultRoleAndAutonomy(calculateResultRoleAndAutonomy(solution));
+        solution.setCommunicationResult(calculateComminicationResult(solution));
         solutionRepository.save(solution);
         return "home";
     }
@@ -42,6 +43,19 @@ public class CompetenceTestController {
             return "Accomplished";
         }else{
             return "Expert";
+        }
+    }
+
+    public String calculateComminicationResult(Solution solution){
+        int sum = solution.getCommunicationQ1()+solution.getCommunicationQ2()+solution.getCommunicationQ3()+solution.getCommunicationQ4()+solution.getCommunicationQ5()+solution.getCommunicationQ6();
+        if (sum <= 6){
+            return "Unable to generate result";
+        } else if (sum >= 6 && sum <= 11){
+            return "Partial";
+        } else if (sum >= 12 && sum <= 15){
+            return "Plain";
+        } else {
+            return "Excelent";
         }
     }
 }

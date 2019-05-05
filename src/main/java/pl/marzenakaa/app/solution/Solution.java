@@ -37,12 +37,14 @@ public class Solution {
 
     private String task;
 
-    private String communicationQ1;
-    private String communicationQ2;
-    private String communicationQ3;
-    private String communicationQ4;
-    private String communicationQ5;
-    private String communicationQ6;
+    private int communicationQ1;
+    private int communicationQ2;
+    private int communicationQ3;
+    private int communicationQ4;
+    private int communicationQ5;
+    private int communicationQ6;
+
+    private String communicationResult;
 
     //Uzupełnić gettery i settery dla nowych pól oraz zaktualizować DB
 
@@ -113,52 +115,60 @@ public class Solution {
         this.task = task;
     }
 
-    public String getCommunicationQ1() {
+    public int getCommunicationQ1() {
         return communicationQ1;
     }
 
-    public void setCommunicationQ1(String communicationQ1) {
+    public void setCommunicationQ1(int communicationQ1) {
         this.communicationQ1 = communicationQ1;
     }
 
-    public String getCommunicationQ2() {
+    public int getCommunicationQ2() {
         return communicationQ2;
     }
 
-    public void setCommunicationQ2(String communicationQ2) {
+    public void setCommunicationQ2(int communicationQ2) {
         this.communicationQ2 = communicationQ2;
     }
 
-    public String getCommunicationQ3() {
+    public int getCommunicationQ3() {
         return communicationQ3;
     }
 
-    public void setCommunicationQ3(String communicationQ3) {
+    public void setCommunicationQ3(int communicationQ3) {
         this.communicationQ3 = communicationQ3;
     }
 
-    public String getCommunicationQ4() {
+    public int getCommunicationQ4() {
         return communicationQ4;
     }
 
-    public void setCommunicationQ4(String communicationQ4) {
+    public void setCommunicationQ4(int communicationQ4) {
         this.communicationQ4 = communicationQ4;
     }
 
-    public String getCommunicationQ5() {
+    public int getCommunicationQ5() {
         return communicationQ5;
     }
 
-    public void setCommunicationQ5(String communicationQ5) {
+    public void setCommunicationQ5(int communicationQ5) {
         this.communicationQ5 = communicationQ5;
     }
 
-    public String getCommunicationQ6() {
+    public int getCommunicationQ6() {
         return communicationQ6;
     }
 
-    public void setCommunicationQ6(String communicationQ6) {
+    public void setCommunicationQ6(int communicationQ6) {
         this.communicationQ6 = communicationQ6;
+    }
+
+    public String getCommunicationResult() {
+        return communicationResult;
+    }
+
+    public void setCommunicationResult(String communicationResult) {
+        this.communicationResult = communicationResult;
     }
 
     @Override
