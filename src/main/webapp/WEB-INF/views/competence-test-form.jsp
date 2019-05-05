@@ -25,6 +25,10 @@
         <form:radiobutton path="autonomy" value="3"/>specialised; sometimes unexpected that required creative solutions.<br>
         <form:radiobutton path="autonomy" value="4"/>complex and unpredicatble, not necessarily specialised that integrated knowledge from different fields.<br>
 
+        <b>What was your task within this project?</b><br>
+        <form:input path="task"/>
+        <form:errors path="task" cssClass="text-danger"/><br>
+
         <input type="submit" value="Save"><br>
     </form:form>
 

@@ -29,11 +29,13 @@ public class Solution {
     private Volunteer volunteer;
 
     //zmienne przechowujące odpowiedzi do pytań
-    private String role;
+    private String role; //do zastanowienia, czy zmienić typ na int
 
-    private String autonomy;
+    private String autonomy; //do zastanowienia, czy zmienić typ na int
 
     private String resultRoleAndAutonomy;
+
+    private String task;
 
     //Uzupełnić gettery i settery dla nowych pól oraz zaktualizować DB
 
@@ -94,6 +96,14 @@ public class Solution {
 
     public void setResultRoleAndAutonomy(String resultRoleAndAutonomy) {
         this.resultRoleAndAutonomy = resultRoleAndAutonomy;
+    }
+
+    public String getTask() {
+        return task;
+    }
+
+    public void setTask(String task) {
+        this.task = task;
     }
 
     @Override
