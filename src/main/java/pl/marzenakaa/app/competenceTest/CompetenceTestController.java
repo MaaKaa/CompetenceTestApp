@@ -1,5 +1,6 @@
 package pl.marzenakaa.app.competenceTest;
 
+import com.sun.org.apache.bcel.internal.generic.RET;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,27 +31,19 @@ public class CompetenceTestController {
         if (result.hasErrors()) {
             return "competence-test-form";
         }
+        solution.setResultRoleAndAutonomy(calculateResultRoleAndAutonomy(solution));
         solutionRepository.save(solution);
         return "home";
     }
 
-    @ModelAttribute("roles")
-    public List<String> showRoles(){
-        List<String> roles = new ArrayList<>();
-        roles.add(0, "I carried out operational or simple tasks under the supervision or the direct guidance of others.");
-        roles.add(1, "I completed easy tasks in autonomy.");
-        roles.add(2, "I carried out complex tasks under given instructions; supervise and support the work and the performance of others.");
-        roles.add(3, "I managed the professional development of people and teams; I managed and transformed the context; I developed new ideas and I fostered innovation.");
-        return roles;
-    }
-
-    @ModelAttribute("autonomy")
-    public List<String> showAutonomy(){
-        List<String> autonomy = new ArrayList<>();
-        autonomy.add(0, "simple; recurrent that required easy tools and simple rules.");
-        autonomy.add(1, "recurrent that required the choice of proper resources and tools as well as to adapt the  behaviour accordingly.");
-        autonomy.add(2, "specialised; sometimes unexpected that required creative solutions.");
-        autonomy.add(3, "complex and unpredicatble, not necessarily specialised that integrated knowledge from different fields.");
-        return autonomy;
+    public String calculateResultRoleAndAutonomy(Solution solution){
+        int sum = Integer.parseInt(solution.getRole()) + Integer.parseInt(solution.getAutonomy());
+        if (sum <= 3){
+            return "General";
+        }else if(sum >= 4 && sum <= 7){
+            return "Accomplished";
+        }else{
+            return "Expert";
+        }
     }
 }

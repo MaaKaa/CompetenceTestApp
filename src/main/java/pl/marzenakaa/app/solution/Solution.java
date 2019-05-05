@@ -35,7 +35,7 @@ public class Solution {
 
     private String resultRoleAndAutonomy;
 
-    //Uzupełnić gettery i settery dla nowych pól
+    //Uzupełnić gettery i settery dla nowych pól oraz zaktualizować DB
 
     public Solution() {
     }
