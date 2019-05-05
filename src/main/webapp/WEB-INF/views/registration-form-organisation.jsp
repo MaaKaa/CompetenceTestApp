@@ -29,7 +29,7 @@
         <form:errors path="description" cssClass="text-danger" /><br>
 
         Fields of activity:
-        <form:checkboxes path="fieldsOfActivity" items="${fieldsOfActivity}" itemLabel="name" itemValue="id"/><br>
+        <form:checkboxes path="fieldsOfActivity" items="${fieldsOfActivity}"/><br>
         <form:errors path="fieldsOfActivity" cssClass="text-danger" /><br>
 
         City:

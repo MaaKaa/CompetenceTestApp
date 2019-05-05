@@ -40,4 +40,75 @@ public class CompetenceTest {
 
     public CompetenceTest() {
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public LocalDateTime getCreated() {
+        return created;
+    }
+
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
+    }
+
+    public Organisation getOrganisation() {
+        return organisation;
+    }
+
+    public void setOrganisation(Organisation organisation) {
+        this.organisation = organisation;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public List<Volunteer> getInvitedVolunteers() {
+        return invitedVolunteers;
+    }
+
+    public void setInvitedVolunteers(List<Volunteer> invitedVolunteers) {
+        this.invitedVolunteers = invitedVolunteers;
+    }
+
+    public List<Solution> getSolutions() {
+        return solutions;
+    }
+
+    public void setSolutions(List<Solution> solutions) {
+        this.solutions = solutions;
+    }
+
+    @Override
+    public String toString() {
+        return "CompetenceTest{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

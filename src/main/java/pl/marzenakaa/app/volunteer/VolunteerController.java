@@ -13,7 +13,7 @@ import pl.marzenakaa.repository.VolunteerRepository;
 import java.util.List;
 
 @Controller
-@RequestMapping("/volunteers")
+@RequestMapping("/vol")
 public class VolunteerController {
     @Autowired
     VolunteerRepository volunteerRepository;

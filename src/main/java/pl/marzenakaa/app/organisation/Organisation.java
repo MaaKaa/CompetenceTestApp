@@ -20,7 +20,7 @@ public class Organisation {
 
     private String description;
 
-    @ManyToMany(cascade = {CascadeType.MERGE})
+    @ManyToMany(cascade = {CascadeType.MERGE})//dodanie fetchType=EAGER powoduje błąd 500: cannot simultaneously fetch multiple bags: [pl.marzenakaa.app.competenceTest.CompetenceTest.invitedVolunteers, pl.marzenakaa.app.organisation.Organisation.fieldsOfActivity]. Bez tego nie wyświetlają się checkboxy.
     private List<FieldOfActivity> fieldsOfActivity;
 
     private String city;
