@@ -49,7 +49,7 @@
                 <td>${competenceTestByOrg.name}</td>
                 <td>${competenceTestByOrg.description}</td>
                 <td>${competenceTestByOrg.organisation}</td>
-                <td><a href="#">View</a>
+                <td><a href="/org/logged/${organisation.id}/competence-test/${competenceTestByOrg.id}">View</a>
             </tr>
         </c:forEach>
     </table>

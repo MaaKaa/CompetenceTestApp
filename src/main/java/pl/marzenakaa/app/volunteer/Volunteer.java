@@ -116,6 +116,16 @@ public class Volunteer {
         this.solutions = solutions;
     }
 
+    public void addCompetenceTestInvitation(CompetenceTest competenceTest){
+        competenceTestInvitations.add(competenceTest);
+        competenceTest.getInvitedVolunteers().add(this);
+    }
+
+    public void removeCompetenceTestInvitation(CompetenceTest competenceTest){
+        competenceTestInvitations.remove(competenceTest);
+        competenceTest.getInvitedVolunteers().remove(this);
+    }
+
     @Override
     public String toString() {
         return name;
