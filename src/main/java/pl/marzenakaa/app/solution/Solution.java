@@ -46,6 +46,21 @@ public class Solution {
 
     private String communicationResult;
 
+    private int teamWorkQ1;
+    private int teamWorkQ2;
+    private int teamWorkQ3;
+    private int teamWorkQ4;
+    private int teamWorkQ5;
+
+    private String teamWorkResult;
+
+    private int flexibilityQ1;
+    private int flexibilityQ2;
+    private int flexibilityQ3;
+
+    private String flexibilityResult;
+
+
     //Uzupełnić gettery i settery dla nowych pól oraz zaktualizować DB
 
     public Solution() {
@@ -169,6 +184,86 @@ public class Solution {
 
     public void setCommunicationResult(String communicationResult) {
         this.communicationResult = communicationResult;
+    }
+
+    public int getTeamWorkQ1() {
+        return teamWorkQ1;
+    }
+
+    public void setTeamWorkQ1(int teamWorkQ1) {
+        this.teamWorkQ1 = teamWorkQ1;
+    }
+
+    public int getTeamWorkQ2() {
+        return teamWorkQ2;
+    }
+
+    public void setTeamWorkQ2(int teamWorkQ2) {
+        this.teamWorkQ2 = teamWorkQ2;
+    }
+
+    public int getTeamWorkQ3() {
+        return teamWorkQ3;
+    }
+
+    public void setTeamWorkQ3(int teamWorkQ3) {
+        this.teamWorkQ3 = teamWorkQ3;
+    }
+
+    public int getTeamWorkQ4() {
+        return teamWorkQ4;
+    }
+
+    public void setTeamWorkQ4(int teamWorkQ4) {
+        this.teamWorkQ4 = teamWorkQ4;
+    }
+
+    public int getTeamWorkQ5() {
+        return teamWorkQ5;
+    }
+
+    public void setTeamWorkQ5(int teamWorkQ5) {
+        this.teamWorkQ5 = teamWorkQ5;
+    }
+
+    public String getTeamWorkResult() {
+        return teamWorkResult;
+    }
+
+    public void setTeamWorkResult(String teamWorkResult) {
+        this.teamWorkResult = teamWorkResult;
+    }
+
+    public int getFlexibilityQ1() {
+        return flexibilityQ1;
+    }
+
+    public void setFlexibilityQ1(int flexibilityQ1) {
+        this.flexibilityQ1 = flexibilityQ1;
+    }
+
+    public int getFlexibilityQ2() {
+        return flexibilityQ2;
+    }
+
+    public void setFlexibilityQ2(int flexibilityQ2) {
+        this.flexibilityQ2 = flexibilityQ2;
+    }
+
+    public int getFlexibilityQ3() {
+        return flexibilityQ3;
+    }
+
+    public void setFlexibilityQ3(int flexibilityQ3) {
+        this.flexibilityQ3 = flexibilityQ3;
+    }
+
+    public String getFlexibilityResult() {
+        return flexibilityResult;
+    }
+
+    public void setFlexibilityResult(String flexibilityResult) {
+        this.flexibilityResult = flexibilityResult;
     }
 
     @Override

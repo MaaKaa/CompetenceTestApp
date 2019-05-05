@@ -88,6 +88,46 @@
                 <td><form:radiobutton path="communicationQ6" value="3"/></td>
                 <td><form:radiobutton path="communicationQ6" value="0"/></td>
             </tr>
+            <tr>
+                <td>I acted in a responsible way regarding the tasks I was in charge.</td>
+                <td><form:radiobutton path="teamWorkQ1" value="0"/></td>
+                <td><form:radiobutton path="teamWorkQ1" value="1"/></td>
+                <td><form:radiobutton path="teamWorkQ1" value="2"/></td>
+                <td><form:radiobutton path="teamWorkQ1" value="3"/></td>
+                <td><form:radiobutton path="teamWorkQ1" value="0"/></td>
+            </tr>
+            <tr>
+                <td>When I presented my ideas to the team, I also listened to others’ ideas and took into consideration their points of view.</td>
+                <td><form:radiobutton path="teamWorkQ2" value="0"/></td>
+                <td><form:radiobutton path="teamWorkQ2" value="1"/></td>
+                <td><form:radiobutton path="teamWorkQ2" value="2"/></td>
+                <td><form:radiobutton path="teamWorkQ2" value="3"/></td>
+                <td><form:radiobutton path="teamWorkQ2" value="0"/></td>
+            </tr>
+            <tr>
+                <td>When I was making decisions Iconcerning the team I always listened to other peoples’ opinion. </td>
+                <td><form:radiobutton path="teamWorkQ3" value="0"/></td>
+                <td><form:radiobutton path="teamWorkQ3" value="1"/></td>
+                <td><form:radiobutton path="teamWorkQ3" value="2"/></td>
+                <td><form:radiobutton path="teamWorkQ3" value="3"/></td>
+                <td><form:radiobutton path="teamWorkQ3" value="0"/></td>
+            </tr>
+            <tr>
+                <td>I respected other team members’ roles and the tasks assigned. </td>
+                <td><form:radiobutton path="teamWorkQ4" value="0"/></td>
+                <td><form:radiobutton path="teamWorkQ4" value="1"/></td>
+                <td><form:radiobutton path="teamWorkQ4" value="2"/></td>
+                <td><form:radiobutton path="teamWorkQ4" value="3"/></td>
+                <td><form:radiobutton path="teamWorkQ4" value="0"/></td>
+            </tr>
+            <tr>
+                <td>When the team members asked me for support I was there for them. </td>
+                <td><form:radiobutton path="teamWorkQ5" value="0"/></td>
+                <td><form:radiobutton path="teamWorkQ5" value="1"/></td>
+                <td><form:radiobutton path="teamWorkQ5" value="2"/></td>
+                <td><form:radiobutton path="teamWorkQ5" value="3"/></td>
+                <td><form:radiobutton path="teamWorkQ5" value="0"/></td>
+            </tr>
         </table>
         <input type="submit" value="Save"><br>
     </form:form>
