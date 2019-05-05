@@ -29,6 +29,66 @@
         <form:input path="task"/>
         <form:errors path="task" cssClass="text-danger"/><br>
 
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Never</th>
+                <th scope="col">Sometimes</th>
+                <th scope="col">Often</th>
+                <th scope="col">Always</th>
+                <th scope="col">Not applicable</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>When I talked to other people they always understood my message - I delivered it in a complete and correct way (there were no misunderstandings).</td>
+                <td><form:radiobutton path="communicationQ1" value="0"/></td>
+                <td><form:radiobutton path="communicationQ1" value="1"/></td>
+                <td><form:radiobutton path="communicationQ1" value="2"/></td>
+                <td><form:radiobutton path="communicationQ1" value="3"/></td>
+                <td><form:radiobutton path="communicationQ1" value="0"/></td>
+            </tr>
+            <tr>
+                <td>When I talked to other people I used both verbal and non-verbal (body language) communication.</td>
+                <td><form:radiobutton path="communicationQ2" value="0"/></td>
+                <td><form:radiobutton path="communicationQ2" value="1"/></td>
+                <td><form:radiobutton path="communicationQ2" value="2"/></td>
+                <td><form:radiobutton path="communicationQ2" value="3"/></td>
+                <td><form:radiobutton path="communicationQ2" value="0"/></td>
+            </tr>
+            <tr>
+                <td>When I talked to people of different age groups and different backgrounds I adjusted my communication style to their needs, so everyone could understand my message.</td>
+                <td><form:radiobutton path="communicationQ3" value="0"/></td>
+                <td><form:radiobutton path="communicationQ3" value="1"/></td>
+                <td><form:radiobutton path="communicationQ3" value="2"/></td>
+                <td><form:radiobutton path="communicationQ3" value="3"/></td>
+                <td><form:radiobutton path="communicationQ3" value="0"/></td>
+            </tr>
+            <tr>
+                <td>When people had questions, I always answered in a coherent and comprehensive way and they and they found if satisfying. </td>
+                <td><form:radiobutton path="communicationQ4" value="0"/></td>
+                <td><form:radiobutton path="communicationQ4" value="1"/></td>
+                <td><form:radiobutton path="communicationQ4" value="2"/></td>
+                <td><form:radiobutton path="communicationQ4" value="3"/></td>
+                <td><form:radiobutton path="communicationQ4" value="0"/></td>
+            </tr>
+            <tr>
+                <td>Poeple said that my communication style encourages them to share their thoughts  which mutually stimulate ideas and interactions.</td>
+                <td><form:radiobutton path="communicationQ5" value="0"/></td>
+                <td><form:radiobutton path="communicationQ5" value="1"/></td>
+                <td><form:radiobutton path="communicationQ5" value="2"/></td>
+                <td><form:radiobutton path="communicationQ5" value="3"/></td>
+                <td><form:radiobutton path="communicationQ5" value="0"/></td>
+            </tr>
+            <tr>
+                <td>I always chose the best way of communication for the given context: face to face, telephone, mail or digital (e.g. e-mail).</td>
+                <td><form:radiobutton path="communicationQ6" value="0"/></td>
+                <td><form:radiobutton path="communicationQ6" value="1"/></td>
+                <td><form:radiobutton path="communicationQ6" value="2"/></td>
+                <td><form:radiobutton path="communicationQ6" value="3"/></td>
+                <td><form:radiobutton path="communicationQ6" value="0"/></td>
+            </tr>
+        </table>
         <input type="submit" value="Save"><br>
     </form:form>
 

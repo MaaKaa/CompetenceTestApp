@@ -12,8 +12,6 @@ import pl.marzenakaa.app.solution.Solution;
 import pl.marzenakaa.repository.SolutionRepository;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class CompetenceTestController {
