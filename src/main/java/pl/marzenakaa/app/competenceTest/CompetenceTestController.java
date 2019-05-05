@@ -32,6 +32,7 @@ public class CompetenceTestController {
         solution.setResultRoleAndAutonomy(calculateResultRoleAndAutonomy(solution));
         solution.setCommunicationResult(calculateComminicationResult(solution));
         solution.setTeamWorkResult(calculateTeamWorkResult(solution));
+        solution.setFlexibilityResult(calculateFlexibilityResult(solution));
         solutionRepository.save(solution);
         return "home";
     }
@@ -67,6 +68,19 @@ public class CompetenceTestController {
         } else if (sum >= 5 && sum <= 9){
             return "Partial";
         } else if (sum >= 10 && sum <= 12){
+            return "Plain";
+        } else {
+            return "Excelent";
+        }
+    }
+
+    public String calculateFlexibilityResult(Solution solution){
+        int sum = solution.getFlexibilityQ1()+solution.getFlexibilityQ2()+solution.getFlexibilityQ3();
+        if (sum < 3){
+            return "Unable to generate result";
+        } else if (sum >= 3 && sum <= 5){
+            return "Partial";
+        } else if (sum >= 6 && sum <= 7){
             return "Plain";
         } else {
             return "Excelent";
