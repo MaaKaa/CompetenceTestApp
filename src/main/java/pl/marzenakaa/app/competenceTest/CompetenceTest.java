@@ -32,7 +32,7 @@ public class CompetenceTest {
 
     private String link;
 
-    @OneToMany(mappedBy = "competenceTestInvitation")
+    @ManyToMany(mappedBy = "competenceTestInvitations", fetch=FetchType.EAGER)
     private List<Volunteer> invitedVolunteers;
 
     @OneToMany(mappedBy = "competenceTest", cascade = CascadeType.ALL)

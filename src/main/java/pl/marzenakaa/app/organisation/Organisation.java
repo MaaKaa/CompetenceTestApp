@@ -20,7 +20,7 @@ public class Organisation {
 
     private String description;
 
-    @ManyToMany(cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.MERGE})
     private List<FieldOfActivity> fieldsOfActivity;
 
     private String city;

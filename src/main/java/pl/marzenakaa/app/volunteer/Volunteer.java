@@ -27,9 +27,8 @@ public class Volunteer {
 
     private String country;
 
-    @ManyToOne
-    @JoinColumn(name="competenceTestInvitation_id")
-    private CompetenceTest competenceTestInvitation;
+    @ManyToMany(cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
+    private List<CompetenceTest> competenceTestInvitations;
 
     @OneToMany(mappedBy = "volunteer", cascade = CascadeType.ALL)
     private List<Solution> solutions;
@@ -101,12 +100,12 @@ public class Volunteer {
         this.country = country;
     }
 
-    public CompetenceTest getCompetenceTestInvitation() {
-        return competenceTestInvitation;
+    public List<CompetenceTest> getCompetenceTestInvitations() {
+        return competenceTestInvitations;
     }
 
-    public void setCompetenceTestInvitation(CompetenceTest competenceTestInvitation) {
-        this.competenceTestInvitation = competenceTestInvitation;
+    public void setCompetenceTestInvitations(List<CompetenceTest> competenceTestInvitations) {
+        this.competenceTestInvitations = competenceTestInvitations;
     }
 
     public List<Solution> getSolutions() {

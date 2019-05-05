@@ -34,7 +34,7 @@ public class CompetenceTestController {
         solution.setTeamWorkResult(calculateTeamWorkResult(solution));
         solution.setFlexibilityResult(calculateFlexibilityResult(solution));
         solutionRepository.save(solution);
-        return "home";
+        return "competence-test-results";
     }
 
     public String calculateResultRoleAndAutonomy(Solution solution){
