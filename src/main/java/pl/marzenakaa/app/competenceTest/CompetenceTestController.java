@@ -38,7 +38,7 @@ public class CompetenceTestController {
     }
 
     public String calculateResultRoleAndAutonomy(Solution solution){
-        int sum = Integer.parseInt(solution.getRole()) + Integer.parseInt(solution.getAutonomy());
+        int sum = solution.getRole() + solution.getAutonomy();
         if (sum <= 3){
             return "General";
         }else if(sum >= 4 && sum <= 7){

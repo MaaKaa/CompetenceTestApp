@@ -171,6 +171,23 @@
                 <td><form:radiobutton path="flexibilityQ3" value="0"/></td>
             </tr>
         </table>
+
+        <br>
+        <b>What challenged you at most? What were the most critical moments you had to tackle? How did you face them?What kind of resources did you use? </b><br>
+        <form:textarea path="challenge"/>
+        <form:errors path="challenge" cssClass="text-danger"/><br>
+
+        <br>
+        <b>What was the most important thing you have learnt thanks to this project? What would you do in the same way in a next, similar situation and what differently? Why? </b><br>
+        <form:textarea path="lessonLearned"/>
+        <form:errors path="lessonLearned" cssClass="text-danger"/><br>
+
+        <br>
+        <b>Additional comments:</b><br>
+        <form:textarea path="comments"/>
+        <form:errors path="comments" cssClass="text-danger"/><br>
+
+        <br>
         <input type="submit" value="Save"><br>
     </form:form>
 

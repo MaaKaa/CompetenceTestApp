@@ -28,10 +28,10 @@ public class Solution {
     @JoinColumn(name = "volunteer_id")
     private Volunteer volunteer;
 
-    //zmienne przechowujące odpowiedzi do pytań
-    private String role; //do zastanowienia, czy zmienić typ na int
+    //zmienne przechowujące odpowiedzi do pytań (do zastanowienia, czy zmienić typ int na String)
+    private int role;
 
-    private String autonomy; //do zastanowienia, czy zmienić typ na int
+    private int autonomy;
 
     private String resultRoleAndAutonomy;
 
@@ -60,8 +60,11 @@ public class Solution {
 
     private String flexibilityResult;
 
+    private String challenge;
 
-    //Uzupełnić gettery i settery dla nowych pól oraz zaktualizować DB
+    private String lessonLearned;
+
+    private String comments;
 
     public Solution() {
     }
@@ -98,19 +101,19 @@ public class Solution {
         this.volunteer = volunteer;
     }
 
-    public String getRole() {
+    public int getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(int role) {
         this.role = role;
     }
 
-    public String getAutonomy() {
+    public int getAutonomy() {
         return autonomy;
     }
 
-    public void setAutonomy(String autonomy) {
+    public void setAutonomy(int autonomy) {
         this.autonomy = autonomy;
     }
 
@@ -264,6 +267,30 @@ public class Solution {
 
     public void setFlexibilityResult(String flexibilityResult) {
         this.flexibilityResult = flexibilityResult;
+    }
+
+    public String getChallenge() {
+        return challenge;
+    }
+
+    public void setChallenge(String challenge) {
+        this.challenge = challenge;
+    }
+
+    public String getLessonLearned() {
+        return lessonLearned;
+    }
+
+    public void setLessonLearned(String lessonLearned) {
+        this.lessonLearned = lessonLearned;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
     }
 
     @Override
