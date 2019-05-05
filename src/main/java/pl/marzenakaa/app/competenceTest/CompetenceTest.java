@@ -17,6 +17,8 @@ public class CompetenceTest {
 
     private String name;
 
+    private String description;
+
     private LocalDateTime created;
 
     @PrePersist

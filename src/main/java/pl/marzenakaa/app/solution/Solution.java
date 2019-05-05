@@ -29,6 +29,12 @@ public class Solution {
     private Volunteer volunteer;
 
     //zmienne przechowujące odpowiedzi do pytań
+    private String role;
+
+    private String autonomy;
+
+    private String resultRoleAndAutonomy;
+
     //Uzupełnić gettery i settery dla nowych pól
 
     public Solution() {
@@ -64,6 +70,30 @@ public class Solution {
 
     public void setVolunteer(Volunteer volunteer) {
         this.volunteer = volunteer;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getAutonomy() {
+        return autonomy;
+    }
+
+    public void setAutonomy(String autonomy) {
+        this.autonomy = autonomy;
+    }
+
+    public String getResultRoleAndAutonomy() {
+        return resultRoleAndAutonomy;
+    }
+
+    public void setResultRoleAndAutonomy(String resultRoleAndAutonomy) {
+        this.resultRoleAndAutonomy = resultRoleAndAutonomy;
     }
 
     @Override
