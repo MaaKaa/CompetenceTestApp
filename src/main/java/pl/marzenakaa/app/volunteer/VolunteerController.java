@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/vol")
 public class VolunteerController {
     @Autowired
-    VolunteerRepository volunteerRepository;
+    VolunteerService volunteerService;
 
     @GetMapping("/logged/{id}")
     public String showVolunteerHomePage(@PathVariable Long id, Model model){
-        Volunteer volunteer = volunteerRepository.findOne(id);
+        Volunteer volunteer = volunteerService.read(id);
         model.addAttribute(volunteer);
         //List<CompetenceTest> competenceTestInvitations = volunteerRepository.findAllInvitationsByVolunteerId(id);
         //model.addAttribute("competenceTestInvitations", competenceTestInvitations);
