@@ -6,11 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pl.marzenakaa.app.competenceTest.CompetenceTest;
-import pl.marzenakaa.app.solution.Solution;
-import pl.marzenakaa.repository.VolunteerRepository;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("/vol")

@@ -1,10 +1,9 @@
-package pl.marzenakaa.repository;
+package pl.marzenakaa.app.volunteer;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import pl.marzenakaa.app.competenceTest.CompetenceTest;
 import pl.marzenakaa.app.solution.Solution;
-import pl.marzenakaa.app.volunteer.Volunteer;
 
 import java.util.List;
 

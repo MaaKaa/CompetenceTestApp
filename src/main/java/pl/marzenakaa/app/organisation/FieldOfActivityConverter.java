@@ -2,7 +2,6 @@ package pl.marzenakaa.app.organisation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
-import pl.marzenakaa.repository.FieldOfActivityRepository;
 
 public class FieldOfActivityConverter implements Converter<String, FieldOfActivity> {
     @Autowired

@@ -1,6 +1,5 @@
 package pl.marzenakaa.app.organisation;
 
-import org.omg.CORBA.COMM_FAILURE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,9 +7,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.marzenakaa.app.competenceTest.CompetenceTest;
 import pl.marzenakaa.app.volunteer.Volunteer;
-import pl.marzenakaa.repository.CompetenceTestRepository;
-import pl.marzenakaa.repository.OrganisationRepository;
-import pl.marzenakaa.repository.VolunteerRepository;
+import pl.marzenakaa.app.competenceTest.CompetenceTestRepository;
+import pl.marzenakaa.app.volunteer.VolunteerRepository;
 
 import javax.validation.Valid;
 import java.util.List;

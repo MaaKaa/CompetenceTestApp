@@ -7,14 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import pl.marzenakaa.app.competenceTest.CompetenceTest;
-import pl.marzenakaa.repository.FieldOfActivityRepository;
-import pl.marzenakaa.repository.OrganisationRepository;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller

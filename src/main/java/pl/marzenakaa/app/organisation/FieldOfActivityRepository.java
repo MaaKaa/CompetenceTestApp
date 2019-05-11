@@ -1,4 +1,4 @@
-package pl.marzenakaa.repository;
+package pl.marzenakaa.app.organisation;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import pl.marzenakaa.app.organisation.FieldOfActivity;
