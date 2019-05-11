@@ -15,7 +15,7 @@ import java.util.List;
 @Controller
 public class OrganisationController {
     @Autowired
-    OrganisationRepository organisationRepository;
+    OrganisationService organisationService;
 
     @Autowired
     FieldOfActivityRepository fieldOfActivityRepository;
@@ -32,7 +32,7 @@ public class OrganisationController {
         if (result.hasErrors()) {
             return "registration-form-organisation";
         }
-        organisationRepository.save(organisation);
+        organisationService.create(organisation);
         return "login-form-organisation";
     }
 

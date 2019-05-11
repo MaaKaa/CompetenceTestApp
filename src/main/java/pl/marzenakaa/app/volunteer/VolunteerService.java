@@ -2,8 +2,6 @@ package pl.marzenakaa.app.volunteer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.marzenakaa.app.solution.Solution;
-
 import javax.transaction.Transactional;
 import java.util.List;
 

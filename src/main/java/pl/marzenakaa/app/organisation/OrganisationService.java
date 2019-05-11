@@ -1,13 +1,35 @@
 package pl.marzenakaa.app.organisation;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @Transactional
 public class OrganisationService {
-    //Wszelka logika biznesowa - nie powinniśmy jej implementować w contollerze.
-    //Do contollerów powinniśmy tylko wstrzykiwać Service - nie powinniśmy w nich bezpośrednio korzystać z repository.
-    //Controller może korzystać z kilku serwisów.
+
+
+    @Autowired
+    OrganisationRepository organisationRepository;
+
+    public void create(Organisation organisation) {
+        organisationRepository.save(organisation);
+    }
+
+    public Organisation read(Long id) {
+        return organisationRepository.findOne(id); //opcjonalnie: findById(id).orElse(null);
+    }
+
+    public void update(Organisation organisation) {
+        organisationRepository.save(organisation);
+    }
+
+    public void delete(Long id) {
+        organisationRepository.delete(id); //opcjonalnie: deleteById(id);
+    }
+
+    public List<Organisation> findAll() {
+        return organisationRepository.findAll();
+    }
 }
