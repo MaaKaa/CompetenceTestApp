@@ -3,7 +3,6 @@ package pl.marzenakaa.app.competenceTest;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -25,6 +24,24 @@ public class CompetenceTestService {
         CompetenceTest competenceTest = read(id);
         Hibernate.initialize(competenceTest.getInvitedVolunteers());
         return competenceTest;
+    }
+
+    public CompetenceTest readWithSolutions(Long id){
+        CompetenceTest competenceTest = read(id);
+        Hibernate.initialize(competenceTest.getSolutions());
+        return competenceTest;
+    }
+
+    public List<CompetenceTest> readByOrganisationId(Long id){
+        return competenceTestRepository.findByOrganisationId(id);
+    }
+
+    public CompetenceTest readByInvitedVolunteerId(Long id){
+        return competenceTestRepository.findByInvitedVolunteerId(id);
+    }
+
+    public CompetenceTest readByVolunteerId(Long id){
+        return competenceTestRepository.findByVolunteerId(id);
     }
 
     public void update(CompetenceTest competenceTest) {

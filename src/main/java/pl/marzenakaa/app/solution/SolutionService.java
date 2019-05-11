@@ -1,9 +1,7 @@
 package pl.marzenakaa.app.solution;
 
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.marzenakaa.app.competenceTest.CompetenceTest;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -25,13 +23,6 @@ public class SolutionService {
     public Solution read(Long id) {
         return solutionRepository.findOne(id); //opcjonalnie: findById(id).orElse(null);
     }
-
-    /*
-    public Solution readWithInvitedVolunteers(Long id){
-        CompetenceTest competenceTest = read(id);
-        Hibernate.initialize(competenceTest.getInvitedVolunteers());
-        return competenceTest;
-    }*/
 
     public void update(Solution solution) {
         solutionRepository.save(solution);
