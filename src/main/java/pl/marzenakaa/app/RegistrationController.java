@@ -1,4 +1,4 @@
-package pl.marzenakaa.app.organisation;
+package pl.marzenakaa.app;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.marzenakaa.app.fieldsOfActivity.FIeldOfActivityService;
 import pl.marzenakaa.app.fieldsOfActivity.FieldOfActivity;
+import pl.marzenakaa.app.organisation.Organisation;
+import pl.marzenakaa.app.organisation.OrganisationService;
 
 import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-public class OrganisationController {
+public class RegistrationController {
     @Autowired
     OrganisationService organisationService;
 

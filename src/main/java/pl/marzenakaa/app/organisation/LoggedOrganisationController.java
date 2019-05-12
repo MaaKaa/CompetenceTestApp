@@ -38,16 +38,15 @@ public class LoggedOrganisationController {
     @PostMapping("/{id}")
     public String processCreateCompetenceTestForm(@PathVariable Long id, @ModelAttribute("competenceTest") @Valid CompetenceTest competenceTest, BindingResult result) {
         if (result.hasErrors()) {
-            return "/{id}";
+            return "logged-organisation";
         }
         competenceTestService.create(competenceTest);
         return "redirect: ";
     }
 
-
     //widok strony zarządzania testem kompetencji z możliwością zapraszania wolontariuszy:
     @GetMapping("/{id}/competence-test/{ctId}")
-    public String showCompetenceTestPage(@PathVariable Long id, @PathVariable Long ctId, Model model){
+    public String showCompetenceTestManagementPage(@PathVariable Long id, @PathVariable Long ctId, Model model){
         model.addAttribute("organisation", organisationService.read(id));
         model.addAttribute("competenceTest", competenceTestService.read(ctId));
         model.addAttribute("volunteer", new Volunteer());

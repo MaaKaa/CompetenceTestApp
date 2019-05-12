@@ -1,9 +1,12 @@
 package pl.marzenakaa.app.volunteer;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 import pl.marzenakaa.app.competenceTest.CompetenceTest;
 import pl.marzenakaa.app.solution.Solution;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -13,8 +16,13 @@ public class Volunteer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
+    @Size(min = 3, max = 150)
     private String name;
 
+    @NotBlank
+    @Column(name = "email", unique = true)
+    @Email
     private String email;
 
     private String password;

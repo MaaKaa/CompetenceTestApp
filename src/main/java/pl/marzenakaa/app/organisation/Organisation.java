@@ -1,6 +1,8 @@
 package pl.marzenakaa.app.organisation;
 
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.URL;
 import pl.marzenakaa.app.competenceTest.CompetenceTest;
 import pl.marzenakaa.app.fieldsOfActivity.FieldOfActivity;
 
@@ -15,25 +17,32 @@ public class Organisation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Size(min = 5)
+    @NotBlank
+    @Size(min = 5, max = 150)
     private String name;
 
+    @Column(name="email", unique = true)
     @Email
     private String email;
 
+    @NotBlank
     private String password;
 
-    @Size(min = 5)
+    @NotBlank
+    @Size(min = 3, max = 500)
     private String description;
 
     @ManyToMany(cascade = {CascadeType.MERGE})
     private List<FieldOfActivity> fieldsOfActivity;
 
-    @Size(min = 3)
+    @NotBlank
+    @Size(min = 3, max = 100)
     private String city;
 
     private String country;
 
+    @NotBlank
+    @URL
     private String website;
 
     @OneToMany(mappedBy = "organisation", cascade = CascadeType.ALL)

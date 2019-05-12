@@ -15,7 +15,6 @@ public class CompetenceTestService {
     CompetenceTestRepository competenceTestRepository;
 
     public void create(CompetenceTest competenceTest) {
-
         competenceTestRepository.save(competenceTest);
     }
 

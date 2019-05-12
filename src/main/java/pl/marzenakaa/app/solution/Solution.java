@@ -1,9 +1,12 @@
 package pl.marzenakaa.app.solution;
 
+import org.hibernate.validator.constraints.NotBlank;
 import pl.marzenakaa.app.competenceTest.CompetenceTest;
 import pl.marzenakaa.app.volunteer.Volunteer;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @Entity
@@ -29,41 +32,65 @@ public class Solution {
     private Volunteer volunteer;
 
     //zmienne przechowujące odpowiedzi do pytań (do zastanowienia, czy zmienić typ int na String)
+    @NotNull
     private int role;
 
+    @NotNull
     private int autonomy;
 
     private String resultRoleAndAutonomy;
 
+    @NotBlank
+    @Size(min = 3, max = 500)
     private String task;
 
+    @NotNull
     private int communicationQ1;
+    @NotNull
     private int communicationQ2;
+    @NotNull
     private int communicationQ3;
+    @NotNull
     private int communicationQ4;
+    @NotNull
     private int communicationQ5;
+    @NotNull
     private int communicationQ6;
 
     private String communicationResult;
 
+    @NotNull
     private int teamWorkQ1;
+    @NotNull
     private int teamWorkQ2;
+    @NotNull
     private int teamWorkQ3;
+    @NotNull
     private int teamWorkQ4;
+    @NotNull
     private int teamWorkQ5;
 
     private String teamWorkResult;
 
+    @NotNull
     private int flexibilityQ1;
+    @NotNull
     private int flexibilityQ2;
+    @NotNull
     private int flexibilityQ3;
 
     private String flexibilityResult;
 
+    @NotBlank
+    @Size(min = 3, max = 500)
     private String challenge;
 
+    @NotBlank
+    @Size(min = 3, max = 500)
     private String lessonLearned;
 
+    @NotBlank
+    @Size(min = 3, max = 500)
     private String comments;
 
     public Solution() {

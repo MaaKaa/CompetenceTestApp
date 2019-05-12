@@ -1,10 +1,12 @@
 package pl.marzenakaa.app.competenceTest;
 
+import org.hibernate.validator.constraints.NotBlank;
 import pl.marzenakaa.app.organisation.Organisation;
 import pl.marzenakaa.app.solution.Solution;
 import pl.marzenakaa.app.volunteer.Volunteer;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -15,8 +17,12 @@ public class CompetenceTest {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
+    @Size(min = 3, max = 150)
     private String name;
 
+    @NotBlank
+    @Size(min = 3, max = 500)
     private String description;
 
     private LocalDateTime created;
@@ -107,8 +113,6 @@ public class CompetenceTest {
 
     @Override
     public String toString() {
-        return "CompetenceTest{" +
-                "name='" + name + '\'' +
-                '}';
+        return name;
     }
 }
