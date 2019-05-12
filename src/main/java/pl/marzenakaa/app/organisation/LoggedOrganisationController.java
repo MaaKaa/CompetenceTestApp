@@ -53,7 +53,7 @@ public class LoggedOrganisationController {
         model.addAttribute("organisation", organisationService.read(id));
         model.addAttribute("competenceTest", competenceTestService.read(ctId));
         model.addAttribute("volunteer", new Volunteer());
-        //model.addAttribute("invitedVolunteers", competenceTestService.readWithInvitedVolunteers(ctId));
+        //model.addAttribute("invitedVolunteers", competenceTestService.showInvitedVolunteers(c));
         return "competence-test";
     }
 

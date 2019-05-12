@@ -3,6 +3,8 @@ package pl.marzenakaa.app.competenceTest;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.marzenakaa.app.volunteer.Volunteer;
+
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -32,8 +34,16 @@ public class CompetenceTestService {
         return competenceTest;
     }
 
+    public List<Volunteer> showInvitedVolunteers(CompetenceTest competenceTest){
+        return competenceTest.getInvitedVolunteers();
+    }
+
     public List<CompetenceTest> readByOrganisationId(Long id){
         return competenceTestRepository.findByOrganisationId(id);
+    }
+
+    public List<Volunteer> readByInvitedVolunteers(Long id){
+        return competenceTestRepository.findInvitedVolunteers(id);
     }
 
     public CompetenceTest readByInvitedVolunteerId(Long id){

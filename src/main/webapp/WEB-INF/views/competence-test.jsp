@@ -55,6 +55,13 @@
         </tr>
         </thead>
 
+        <c:forEach items="${competenceTest.invitedVolunteers}" var="invitedVolunteer">
+            <tr>
+                <td>${invitedVolunteer.id}</td>
+                <td>${invitedVolunteer.name}</td>
+                <td>${invitedVolunteer.email}</td>
+            </tr>
+        </c:forEach>
     </table>
 
 
