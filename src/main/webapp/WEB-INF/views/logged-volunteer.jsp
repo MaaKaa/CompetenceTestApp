@@ -35,7 +35,7 @@
                 <td>${competenceTestInvitation.name}</td>
                 <td>${competenceTestInvitation.description}</td>
                 <td>${competenceTestInvitation.organisation}</td>
-                <td><a href="#">Take</a>
+                <td><a href="${volunteer.id}/competenceTest/${competenceTestInvitation.id}">Take</a>
             </tr>
         </c:forEach>
     </table>
@@ -53,11 +53,11 @@
         </thead>
         <c:forEach items="${volunteer.solutions}" var="solutionByVolunteer">
             <tr>
-                <td>${solutionByVolunteer.id}</td>
-                <td>${solutionByVolunteer.name}</td>
+                <td>${solutionByVolunteer.competenceTest.id}</td>
+                <td>${solutionByVolunteer.competenceTest.name}</td>
                 <td>${solutionByVolunteer.competenceTest.description}</td>
                 <td>${solutionByVolunteer.competenceTest.organisation}</td>
-                <td><a href="#">Take</a>
+                <td><a href="${volunteer.id}/competenceTest/${solutionByVolunteer.competenceTest.id}/results">View results</a>
             </tr>
         </c:forEach>
     </table>

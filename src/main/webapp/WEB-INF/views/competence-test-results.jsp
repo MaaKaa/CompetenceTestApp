@@ -17,8 +17,39 @@
 <br>
 
 <div class="container">
-    <h2>Competence Test Results</h2>
 
+    <a href="<c:url value="/vol/logged/${volunteer.id}"/>">Back to Volunteer's Dashboard</a><br>
+
+    <h2>Competence Test: "${solutionByCompetenceTestIdAndVolunteerId.competenceTest.name}" Results</h2>
+
+    Volunteer's name: ${volunteer.name} <br>
+
+    <h3>General result: ${solutionByCompetenceTestIdAndVolunteerId.resultRoleAndAutonomy}</h3><br>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Result</th>
+            <th scope="col">Description</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>Communication</td>
+            <td>${solutionByCompetenceTestIdAndVolunteerId.communicationResult}</td>
+            <td>Lorem ipsum dolor sit amet.</td>
+        </tr>
+        <tr>
+            <td>Flexibility</td>
+            <td>${solutionByCompetenceTestIdAndVolunteerId.flexibilityResult}</td>
+            <td>Lorem ipsum dolor sit amet.</td>
+        </tr>
+        <tr>
+            <td>Teamwork</td>
+            <td>${solutionByCompetenceTestIdAndVolunteerId.teamWorkResult}</td>
+            <td>Lorem ipsum dolor sit amet.</td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>

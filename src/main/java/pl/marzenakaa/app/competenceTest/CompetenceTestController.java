@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.marzenakaa.app.solution.Solution;
 import pl.marzenakaa.app.solution.SolutionService;
+import pl.marzenakaa.app.volunteer.VolunteerService;
 
 import javax.validation.Valid;
 
@@ -17,6 +18,9 @@ public class CompetenceTestController {
 
     @Autowired
     SolutionService solutionService;
+
+    @Autowired
+    VolunteerService volunteerService;
 
     @GetMapping("/competenceTest")
     public String showCompetenceTest(Model model){

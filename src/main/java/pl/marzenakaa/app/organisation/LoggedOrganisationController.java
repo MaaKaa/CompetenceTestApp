@@ -51,13 +51,13 @@ public class LoggedOrganisationController {
         model.addAttribute("organisation", organisationService.read(id));
         model.addAttribute("competenceTest", competenceTestService.read(ctId));
         model.addAttribute("volunteer", new Volunteer());
-        return "competence-test";
+        return "competence-test-management";
     }
 
     @PostMapping("/{id}/competence-test/{ctId}")
     public String processInviteVolunteersForm(@PathVariable Long id, @ModelAttribute("volunteer") @Valid Volunteer volunteer, BindingResult result){
         if (result.hasErrors()) {
-            return "competence-test";
+            return "competence-test-management";
         }
         volunteerService.create(volunteer);
         return "redirect: ";

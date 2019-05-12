@@ -24,6 +24,10 @@ public class SolutionService {
         return solutionRepository.findOne(id); //opcjonalnie: findById(id).orElse(null);
     }
 
+    public Solution readByCompetenceTestIdAndVolunteerId(Long ctId, Long vId){
+        return solutionRepository.findByCompetenceTestIdAndVolunteerId(ctId, vId);
+    }
+
     public void update(Solution solution) {
         solutionRepository.save(solution);
     }

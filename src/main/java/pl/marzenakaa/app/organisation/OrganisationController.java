@@ -34,7 +34,7 @@ public class OrganisationController {
             return "registration-form-organisation";
         }
         organisationService.create(organisation);
-        return "login-form-organisation";
+        return "login";
     }
 
     @ModelAttribute("fieldsOfActivity")

@@ -13,7 +13,15 @@
 <%@ include file="header.jspf" %>
 <div class="container">
     <h2>Competence Test</h2>
+    <br>
+    <br>
+    <br>
+
     <form:form method="post" modelAttribute="solution">
+
+        <form:input type="hidden" path="id"/>
+        <form:input type="hidden" path="competenceTest" name="ctId" value="${competenceTest.id}"/>
+        <form:input type="hidden" path="volunteer.id" name="id" value="${volunteer.id}"/>
 
         <b>What was your role in this project?</b><br>
         <form:radiobutton path="role" value="1"/>I carried out operational or simple tasks under the supervision or the direct guidance of others. <br>
