@@ -13,6 +13,8 @@
 <%@ include file="header.jspf" %>
 <div class="container">
     <br>
+    <br>
+    <br>
     <h2>Hi ${volunteer.name}!</h2><br>
 
     <h2>Your competence tests:</h2>
@@ -27,7 +29,7 @@
             <th scope="col">Actions</th>
         </tr>
         </thead>
-        <c:forEach items="${competenceTestInvitations}" var="competenceTestInvitation">
+        <c:forEach items="${volunteer.competenceTestInvitations}" var="competenceTestInvitation">
             <tr>
                 <td>${competenceTestInvitation.id}</td>
                 <td>${competenceTestInvitation.name}</td>
@@ -49,12 +51,12 @@
             <th scope="col">Actions</th>
         </tr>
         </thead>
-        <c:forEach items="${solutionsByVolunteer}" var="solutionByVolunteer">
+        <c:forEach items="${volunteer.solutions}" var="solutionByVolunteer">
             <tr>
-                <td>${solutionsByVolunteer.competenceTest.id}</td>
-                <td>${solutionsByVolunteer.competenceTest.name}</td>
-                <td>${solutionsByVolunteer.competenceTest.description}</td>
-                <td>${solutionsByVolunteer.competenceTest.organisation}</td>
+                <td>${solutionByVolunteer.id}</td>
+                <td>${solutionByVolunteer.name}</td>
+                <td>${solutionByVolunteer.competenceTest.description}</td>
+                <td>${solutionByVolunteer.competenceTest.organisation}</td>
                 <td><a href="#">Take</a>
             </tr>
         </c:forEach>

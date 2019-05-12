@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pl.marzenakaa.app.competenceTest.CompetenceTestService;
 
 @Controller
 @RequestMapping("/vol")
@@ -13,14 +14,13 @@ public class VolunteerController {
     @Autowired
     VolunteerService volunteerService;
 
+    @Autowired
+    CompetenceTestService competenceTestService;
+
     @GetMapping("/logged/{id}")
     public String showVolunteerHomePage(@PathVariable Long id, Model model){
-        Volunteer volunteer = volunteerService.read(id);
-        model.addAttribute(volunteer);
-        //List<CompetenceTest> competenceTestInvitations = volunteerRepository.findAllInvitationsByVolunteerId(id);
-        //model.addAttribute("competenceTestInvitations", competenceTestInvitations);
-        //List<Solution> solutionsByVolunteer = volunteerRepository.finaAllSolutionsByVolunteerId(id);
-        //model.addAttribute("solutionsByVolunteer", solutionsByVolunteer);
+        model.addAttribute("volunteer", volunteerService.readWithInvitationsAndSolutions(id));
+        model.addAttribute("competenceTestInvitationsByVolunteerId", competenceTestService.readByInvitedVolunteerId(id));
         return "logged-volunteer";
     }
 }

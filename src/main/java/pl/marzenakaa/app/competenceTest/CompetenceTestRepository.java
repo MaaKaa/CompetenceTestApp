@@ -18,7 +18,7 @@ public interface CompetenceTestRepository extends JpaRepository<CompetenceTest, 
     @Query(value = "select * from competenceTests JOIN solutions ON competenceTests.id=solutions.competenceTest_id WHERE volunteer_id=?1", nativeQuery = true)
     CompetenceTest findByVolunteerId(Long id);
 
-    @Query(value = "select * from volunteers JOIN volunteers_competenceTests ON volunteers.id=volunteers_competenceTests.competenceTestInvitations_id WHERE competenceTestInvitations_id=?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM volunteers JOIN volunteers_competenceTests ON volunteers.id=volunteers_competenceTests.invitedVolunteers_id WHERE volunteers.id=?1", nativeQuery = true)
     List<Volunteer> findInvitedVolunteers(Long id);
 
 }

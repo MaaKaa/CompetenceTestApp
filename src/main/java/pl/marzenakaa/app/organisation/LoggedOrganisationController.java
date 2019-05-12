@@ -11,7 +11,6 @@ import pl.marzenakaa.app.volunteer.Volunteer;
 import pl.marzenakaa.app.volunteer.VolunteerService;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @Controller
 @RequestMapping("/org/logged")
@@ -28,12 +27,11 @@ public class LoggedOrganisationController {
     @GetMapping("/{id}")
     public String showOrganisationHomePage(@PathVariable Long id, Model model){
         Organisation organisation = organisationService.read(id);
-        model.addAttribute("organisation", organisation);
+        model.addAttribute("organisation", organisationService.read(id));
+        model.addAttribute("competenceTestsByOrg", competenceTestService.readByOrganisationId(id));
         CompetenceTest competenceTest = new CompetenceTest();
         competenceTest.setOrganisation(organisation);
         model.addAttribute("competenceTest", competenceTest);
-        List<CompetenceTest> competenceTestsByOrg = competenceTestService.readByOrganisationId(id);
-        model.addAttribute("competenceTestsByOrg", competenceTestsByOrg);
         return "logged-organisation";
     }
 
@@ -53,7 +51,6 @@ public class LoggedOrganisationController {
         model.addAttribute("organisation", organisationService.read(id));
         model.addAttribute("competenceTest", competenceTestService.read(ctId));
         model.addAttribute("volunteer", new Volunteer());
-        //model.addAttribute("invitedVolunteers", competenceTestService.showInvitedVolunteers(c));
         return "competence-test";
     }
 

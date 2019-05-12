@@ -15,6 +15,7 @@ public class CompetenceTestService {
     CompetenceTestRepository competenceTestRepository;
 
     public void create(CompetenceTest competenceTest) {
+
         competenceTestRepository.save(competenceTest);
     }
 
@@ -32,10 +33,6 @@ public class CompetenceTestService {
         CompetenceTest competenceTest = read(id);
         Hibernate.initialize(competenceTest.getSolutions());
         return competenceTest;
-    }
-
-    public List<Volunteer> showInvitedVolunteers(CompetenceTest competenceTest){
-        return competenceTest.getInvitedVolunteers();
     }
 
     public List<CompetenceTest> readByOrganisationId(Long id){

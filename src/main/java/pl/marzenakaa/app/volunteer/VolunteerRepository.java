@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface VolunteerRepository extends JpaRepository<Volunteer, Long> {
 
-    @Query(value = "select * from competenceTests where invitedVolunteers_id=?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM volunteers JOIN volunteers_competenceTests ON volunteers.id=volunteers_competenceTests.invitedVolunteers_id WHERE volunteers.id=?1", nativeQuery = true)
     List<CompetenceTest> findAllInvitationsByVolunteerId(Long id);
 
     @Query(value = "select * from solutions where volunteer_id=?1", nativeQuery = true)
