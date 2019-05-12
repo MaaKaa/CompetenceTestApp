@@ -1,4 +1,6 @@
-package pl.marzenakaa.app.organisation;
+package pl.marzenakaa.app.fieldsOfActivity;
+
+import pl.marzenakaa.app.organisation.Organisation;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,7 +14,7 @@ public class FieldOfActivity {
 
     private String name;
 
-    @ManyToMany(mappedBy = "fieldsOfActivity", fetch=FetchType.EAGER)
+    @ManyToMany(mappedBy = "fieldsOfActivity")
     private List<Organisation> organisations;
 
     public FieldOfActivity() {

@@ -10,44 +10,71 @@
     <link href="<c:url value="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>" rel="stylesheet">
 </head>
 <body>
+<%@ include file="header.jspf" %>
 <div class="container">
-    <h2>Register</h2>
-    <form:form method="post" modelAttribute="organisation">
+    <br>
+    <br>
+    <br>
 
-        Name:
-        <form:input path="name"/><br>
-        <form:errors path="name" cssClass="text-danger" /><br>
+    <div class="card mt-4">
 
-        Email:
-        <form:input path="email"/><br>
-        <form:errors path="email" cssClass="text-danger" /><br>
+        <div class="card-header">
+            Register
+        </div>
 
-        Password:
-        <form:password path="password"/><br>
-        <form:errors path="password" cssClass="text-danger" /><br>
+        <div class="card-body">
+        <form:form method="post" modelAttribute="organisation">
 
-        Description:
-        <form:textarea path="description"/><br>
-        <form:errors path="description" cssClass="text-danger" /><br>
+            <div class="form-group col-md-4">
+            <label>Name:</label>
+            <form:input path="name" class="form-control"/><br>
+            <form:errors path="name" cssClass="text-danger" /><br>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Email:</label>
+            <form:input path="email" class="form-control"/><br>
+            <form:errors path="email" cssClass="text-danger" /><br>
+            </div>
 
-        Fields of activity:
-        <form:checkboxes path="fieldsOfActivity" items="${fieldsOfActivity}"/><br>
-        <form:errors path="fieldsOfActivity" cssClass="text-danger" /><br>
+            <div class="form-group col-md-4">
+                <label>Pasword:</label>
+            <form:password path="password" class="form-control"/><br>
+            <form:errors path="password" cssClass="text-danger" /><br>
+            </div>
 
-        City:
-        <form:input path="city"/><br>
-        <form:errors path="city" cssClass="text-danger" /><br>
+            <div class="form-group col-md-4">
+                <label>Description:</label>
+            <form:textarea path="description" cols="60" rows="3" class="form-control" /><br>
+            <form:errors path="description" cssClass="text-danger" /><br>
+            </div>
 
-        Country:<br>
+                <div class="form-group col-md-4">
+                    <label>Fields of activity:</label><br>
+            <form:checkboxes path="fieldsOfActivity" items="${fieldsOfActivity}" itemLabel="name" itemValue="id"/><br>
+            <form:errors path="fieldsOfActivity" cssClass="text-danger" /><br>
+                </div>
 
-        Website:
-        <form:input path="website"/><br>
-        <form:errors path="website" cssClass="text-danger" /><br>
+            <div class="form-group col-md-4">
+            <label>City:</label>
+            <form:input path="city" class="form-control"/><br>
+            <form:errors path="city" cssClass="text-danger" /><br>
+            </div>
 
-        <input type="submit" value="Register"><br>
-    </form:form>
+            <div class="form-group col-md-4">
+            <label>Country:</label>
+            </div>
 
-    <a href="<c:url value="login"/>">Already have an account? Login!</a><br>
+            <div class="form-group col-md-4">
+            <label>Website:</label>
+            <form:input path="website" class="form-control"/><br>
+            <form:errors path="website" cssClass="text-danger" /><br>
+            </div>
+
+            <input type="submit" value="Register"><br>
+        </form:form>
+
+        <a href="<c:url value="login"/>">Already have an account? Login!</a><br>
+        </div>
 </div>
 </body>
 </html>

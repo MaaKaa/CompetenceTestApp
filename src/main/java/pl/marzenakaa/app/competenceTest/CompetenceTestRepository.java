@@ -2,6 +2,7 @@ package pl.marzenakaa.app.competenceTest;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import pl.marzenakaa.app.volunteer.Volunteer;
 
 import java.util.List;
 
@@ -16,4 +17,5 @@ public interface CompetenceTestRepository extends JpaRepository<CompetenceTest, 
 
     @Query(value = "select * from competenceTests JOIN solutions ON competenceTests.id=solutions.competenceTest_id WHERE volunteer_id=?1", nativeQuery = true)
     CompetenceTest findByVolunteerId(Long id);
+
 }

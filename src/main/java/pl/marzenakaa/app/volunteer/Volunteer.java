@@ -27,7 +27,7 @@ public class Volunteer {
 
     private String country;
 
-    @ManyToMany(cascade = {CascadeType.MERGE}, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = {CascadeType.MERGE})
     private List<CompetenceTest> competenceTestInvitations;
 
     @OneToMany(mappedBy = "volunteer", cascade = CascadeType.ALL)

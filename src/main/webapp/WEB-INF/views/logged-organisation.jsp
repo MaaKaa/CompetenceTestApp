@@ -10,9 +10,12 @@
     <link href="<c:url value="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>" rel="stylesheet">
 </head>
 <body>
+<%@ include file="header.jspf" %>
 <div class="container">
     <br>
-    <h2>Hi ${organisation.name}!</h2><br>
+    <br>
+    <br>
+    <header>Hi ${organisation.name}!</header><br>
 
     <h2>Create Competence Test</h2><br>
     <p>Find out what did volunteers learn thanks to your project!</p><br>
@@ -21,13 +24,18 @@
         <form:input type="hidden" name="id" path="id"/>
         <form:input type="hidden" name="${organisation.id}" path="organisation.id"/>
 
-        <b>Name:</b>
-        <form:input path="name"/>
-        <form:errors path="name" cssClass="text-danger"/><br>
 
-        <b>Description:</b>
-        <form:textarea path="description"/>
+    <div class="form-group col-md-4">
+        <label>Name:</label>
+        <form:input path="name" class="form-control"/>
+        <form:errors path="name" cssClass="text-danger" /><br>
+    </div>
+
+    <div class="form-group col-md-4">
+        <label>Description:</label>
+        <form:textarea path="description" class="form-control"/>
         <form:errors path="description" cssClass="text-danger"/><br>
+    </div>
 
         <br>
         <input type="submit" value="Save"><br>

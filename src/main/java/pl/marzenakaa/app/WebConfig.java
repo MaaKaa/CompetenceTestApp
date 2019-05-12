@@ -24,8 +24,7 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 import pl.marzenakaa.app.competenceTest.CompetenceTestConverter;
-import pl.marzenakaa.app.organisation.FieldOfActivity;
-import pl.marzenakaa.app.organisation.FieldOfActivityConverter;
+import pl.marzenakaa.app.fieldsOfActivity.FieldOfActivityConverter;
 import pl.marzenakaa.app.organisation.OrganisationConverter;
 
 import javax.persistence.EntityManagerFactory;

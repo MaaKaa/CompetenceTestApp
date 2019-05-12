@@ -10,6 +10,7 @@
     <link href="<c:url value="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>" rel="stylesheet">
 </head>
 <body>
+<%@ include file="header.jspf" %>
 <div class="container">
     <h2>Competence Test</h2>
     <form:form method="post" modelAttribute="solution">

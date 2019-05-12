@@ -9,7 +9,6 @@ import java.util.List;
 @Transactional
 public class OrganisationService {
 
-
     @Autowired
     OrganisationRepository organisationRepository;
 

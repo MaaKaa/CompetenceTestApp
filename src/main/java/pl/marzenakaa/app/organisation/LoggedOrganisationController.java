@@ -6,9 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.marzenakaa.app.competenceTest.CompetenceTest;
+import pl.marzenakaa.app.competenceTest.CompetenceTestService;
 import pl.marzenakaa.app.volunteer.Volunteer;
-import pl.marzenakaa.app.competenceTest.CompetenceTestRepository;
-import pl.marzenakaa.app.volunteer.VolunteerRepository;
+import pl.marzenakaa.app.volunteer.VolunteerService;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -17,22 +17,22 @@ import java.util.List;
 @RequestMapping("/org/logged")
 public class LoggedOrganisationController {
     @Autowired
-    OrganisationRepository organisationRepository;
+    OrganisationService organisationService;
 
     @Autowired
-    CompetenceTestRepository competenceTestRepository;
+    CompetenceTestService competenceTestService;
 
     @Autowired
-    VolunteerRepository volunteerRepository;
+    VolunteerService volunteerService;
 
     @GetMapping("/{id}")
     public String showOrganisationHomePage(@PathVariable Long id, Model model){
-        Organisation organisation = organisationRepository.findOne(id);
+        Organisation organisation = organisationService.read(id);
         model.addAttribute("organisation", organisation);
         CompetenceTest competenceTest = new CompetenceTest();
         competenceTest.setOrganisation(organisation);
         model.addAttribute("competenceTest", competenceTest);
-        List<CompetenceTest> competenceTestsByOrg = competenceTestRepository.findByOrganisationId(id);
+        List<CompetenceTest> competenceTestsByOrg = competenceTestService.readByOrganisationId(id);
         model.addAttribute("competenceTestsByOrg", competenceTestsByOrg);
         return "logged-organisation";
     }
@@ -42,30 +42,27 @@ public class LoggedOrganisationController {
         if (result.hasErrors()) {
             return "/{id}";
         }
-        competenceTestRepository.save(competenceTest);
+        competenceTestService.create(competenceTest);
         return "redirect: ";
     }
 
 
-    //widok strony testu kompetencji z możliwością zapraszania wolontariuszy
+    //widok strony zarządzania testem kompetencji z możliwością zapraszania wolontariuszy:
     @GetMapping("/{id}/competence-test/{ctId}")
     public String showCompetenceTestPage(@PathVariable Long id, @PathVariable Long ctId, Model model){
-        Organisation organisation = organisationRepository.findOne(id);
-        model.addAttribute("organisation", organisation);
-        CompetenceTest competenceTest = competenceTestRepository.findOne(ctId);
-        model.addAttribute(competenceTest);
-        //nie działa dodawanie do wolontariusza competenceTestInvitation
-        Volunteer volunteer = new Volunteer();
-        model.addAttribute(volunteer);
+        model.addAttribute("organisation", organisationService.read(id));
+        model.addAttribute("competenceTest", competenceTestService.read(ctId));
+        model.addAttribute("volunteer", new Volunteer());
+        //model.addAttribute("invitedVolunteers", competenceTestService.readWithInvitedVolunteers(ctId));
         return "competence-test";
     }
 
     @PostMapping("/{id}/competence-test/{ctId}")
     public String processInviteVolunteersForm(@PathVariable Long id, @ModelAttribute("volunteer") @Valid Volunteer volunteer, BindingResult result){
         if (result.hasErrors()) {
-            return "/{id}";
+            return "competence-test";
         }
-        volunteerRepository.save(volunteer);
+        volunteerService.create(volunteer);
         return "redirect: ";
     }
 }

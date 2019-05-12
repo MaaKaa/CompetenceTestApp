@@ -1,8 +1,11 @@
 package pl.marzenakaa.app.organisation;
 
+import org.hibernate.validator.constraints.Email;
 import pl.marzenakaa.app.competenceTest.CompetenceTest;
+import pl.marzenakaa.app.fieldsOfActivity.FieldOfActivity;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -12,17 +15,21 @@ public class Organisation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Size(min = 5)
     private String name;
 
+    @Email
     private String email;
 
     private String password;
 
+    @Size(min = 5)
     private String description;
 
-    @ManyToMany(cascade = {CascadeType.MERGE})//dodanie fetchType=EAGER powoduje błąd 500: cannot simultaneously fetch multiple bags: [pl.marzenakaa.app.competenceTest.CompetenceTest.invitedVolunteers, pl.marzenakaa.app.organisation.Organisation.fieldsOfActivity]. Bez tego nie wyświetlają się checkboxy.
+    @ManyToMany(cascade = {CascadeType.MERGE})
     private List<FieldOfActivity> fieldsOfActivity;
 
+    @Size(min = 3)
     private String city;
 
     private String country;

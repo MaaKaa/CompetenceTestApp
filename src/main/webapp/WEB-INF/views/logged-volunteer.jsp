@@ -10,6 +10,7 @@
     <link href="<c:url value="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>" rel="stylesheet">
 </head>
 <body>
+<%@ include file="header.jspf" %>
 <div class="container">
     <br>
     <h2>Hi ${volunteer.name}!</h2><br>

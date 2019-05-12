@@ -1,6 +1,5 @@
 package pl.marzenakaa.app.organisation;
 
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +7,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import pl.marzenakaa.app.fieldsOfActivity.FIeldOfActivityService;
+import pl.marzenakaa.app.fieldsOfActivity.FieldOfActivity;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -18,7 +19,7 @@ public class OrganisationController {
     OrganisationService organisationService;
 
     @Autowired
-    FieldOfActivityRepository fieldOfActivityRepository;
+    FIeldOfActivityService fieldOfActivityService;
 
     //REGISTRATION: TO BE FINISHED, WHEN THE LOG-IN WILL BE READY (now it only saves the user's details in the DB)
     @GetMapping("/register")
@@ -38,9 +39,7 @@ public class OrganisationController {
 
     @ModelAttribute("fieldsOfActivity")
     public List<FieldOfActivity> showFieldsOfActivity(){
-        List<FieldOfActivity> fieldsOfActivity = fieldOfActivityRepository.findAll();
-        Hibernate.initialize(fieldsOfActivity);
-        return fieldsOfActivity;
+        return fieldOfActivityService.findAll();
     }
 
 
