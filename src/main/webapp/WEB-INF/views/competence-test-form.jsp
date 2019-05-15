@@ -13,13 +13,17 @@
 <body>
     <%@ include file="header.jspf" %>
     <div class="container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <h2>Competence Test</h2>
-        <br>
-        <br>
-        <br>
+        <p style="color:#1bb1dc;">Project Name: ${competenceTest.name}</p>
 
         <h3>Instructions</h3>
-        Filling in the questionnaire will take few minutes. Try to do it in one go without interruptions. Please ensure that you are not disturbed.
+        Filling in the questionnaire will take only few minutes. Try to do it in one go without interruptions.<br>
         All questions need to be answered.
 
         <hr>
@@ -48,7 +52,7 @@
 
             <div class="form-group">
                 <label><b>Describe briefly your tasks within this project:</b></label><br>
-                <form:textarea path="task" />
+                <form:textarea path="task" class="form-control"/>
                 <form:errors path="task" cssClass="text-danger"/><br>
             </div>
 
@@ -201,20 +205,20 @@
             </div>
 
             <div class="form-group">
-                <label><b>What challenged you at most? What were the most critical moments you had to tackle? How did you face them?What kind of resources did you use? </b></label><br>
-                <form:textarea path="challenge"/>
+                <label><b>What challenged you at most? What were the most critical moments you had to tackle? How did you face them? What kind of resources did you use? </b></label><br>
+                <form:textarea path="challenge" class="form-control"/>
                 <form:errors path="challenge" cssClass="text-danger"/><br>
             </div>
 
             <div class="form-group">
                 <label><b>What was the most important thing you have learnt thanks to this project? What would you do in the same way in a next, similar situation and what differently? Why? </b></label><br>
-                <form:textarea path="lessonLearned"/>
+                <form:textarea path="lessonLearned" class="form-control"/>
                 <form:errors path="lessonLearned" cssClass="text-danger"/><br>
             </div>
 
             <div class="form-group">
                 <label><b>Additional comments:</b></label><br>
-                <form:textarea path="comments"/>
+                <form:textarea path="comments" class="form-control"/>
                 <form:errors path="comments" cssClass="text-danger"/><br>
             </div>
             <br>

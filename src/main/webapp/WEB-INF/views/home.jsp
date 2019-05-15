@@ -281,7 +281,7 @@
                 <div class="col-xs-12 col-lg-4">
                     <div class="card">
                         <div class="card-header">
-                            <h3><span class="currency">$</span>19<span class="period">/month</span></h3>
+                            <h3><span class="currency">$</span>0<span class="period">/month</span></h3>
                         </div>
                         <div class="card-block">
                             <h4 class="card-title">
@@ -302,7 +302,7 @@
                 <div class="col-xs-12 col-lg-4">
                     <div class="card">
                         <div class="card-header">
-                            <h3><span class="currency">$</span>29<span class="period">/month</span></h3>
+                            <h3><span class="currency">$</span>19<span class="period">/month</span></h3>
                         </div>
                         <div class="card-block">
                             <h4 class="card-title">
@@ -323,7 +323,7 @@
                 <div class="col-xs-12 col-lg-4">
                     <div class="card">
                         <div class="card-header">
-                            <h3><span class="currency">$</span>39<span class="period">/month</span></h3>
+                            <h3><span class="currency">$</span>29<span class="period">/month</span></h3>
                         </div>
                         <div class="card-block">
                             <h4 class="card-title">
@@ -429,10 +429,12 @@
 
                         <div class="row">
 
-                            <div class="col-sm-6">
+                            <div class="col-sm-8">
                                 <div class="footer-info">
-                                    <h3>Rapid</h3>
-                                    <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+                                    <h3>Competence Test</h3>
+                                    <p> ompetence Test is a free online app, allowing you to ask your volunteers what did they learn when supporting your organisation.
+                                        Communication, flexibility, teamwork - these are just few competencies that can be developed through volunteering.
+                                        Find out, which of them can be developed in your organisation!
                                 </div>
 
                                 <div class="social-links">
@@ -443,7 +445,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="footer-links">
                                     <h4>Useful Links</h4>
                                     <ul>
