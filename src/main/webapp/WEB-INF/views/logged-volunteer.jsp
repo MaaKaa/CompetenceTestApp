@@ -11,57 +11,75 @@
     <link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">
 </head>
 <body>
-<%@ include file="header.jspf" %>
-<div class="container">
-    <br>
-    <br>
-    <br>
-    <h2>Hi ${volunteer.name}!</h2><br>
+    <%@ include file="header.jspf" %>
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <header style="color:#1bb1dc;">Hi ${volunteer.name}!</header><br>
+            <h2>Your competence tests:</h2>
+        </div>
 
-    <h2>Your competence tests:</h2>
-    <h3>Invitations:</h3>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Description</th>
-            <th scope="col">Organisation</th>
-            <th scope="col">Actions</th>
-        </tr>
-        </thead>
-        <c:forEach items="${volunteer.competenceTestInvitations}" var="competenceTestInvitation">
-            <tr>
-                <td>${competenceTestInvitation.id}</td>
-                <td>${competenceTestInvitation.name}</td>
-                <td>${competenceTestInvitation.description}</td>
-                <td>${competenceTestInvitation.organisation}</td>
-                <td><a href="${volunteer.id}/competenceTest/${competenceTestInvitation.id}">Take</a>
-            </tr>
-        </c:forEach>
-    </table>
-    <br>
-    <h3>Solved:</h3>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">Description</th>
-            <th scope="col">Organisation</th>
-            <th scope="col">Actions</th>
-        </tr>
-        </thead>
-        <c:forEach items="${volunteer.solutions}" var="solutionByVolunteer">
-            <tr>
-                <td>${solutionByVolunteer.competenceTest.id}</td>
-                <td>${solutionByVolunteer.competenceTest.name}</td>
-                <td>${solutionByVolunteer.competenceTest.description}</td>
-                <td>${solutionByVolunteer.competenceTest.organisation}</td>
-                <td><a href="${volunteer.id}/competenceTest/${solutionByVolunteer.competenceTest.id}/results">View results</a>
-            </tr>
-        </c:forEach>
-    </table>
-</div>
+        <section id="your-invitations" class="section-bg" >
+            <div class="container">
+
+                <h3>Invitations:</h3>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Organisation</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${volunteer.competenceTestInvitations}" var="competenceTestInvitation">
+                        <tr>
+                            <td>${competenceTestInvitation.id}</td>
+                            <td>${competenceTestInvitation.name}</td>
+                            <td>${competenceTestInvitation.description}</td>
+                            <td>${competenceTestInvitation.organisation}</td>
+                            <td><a href="${volunteer.id}/competenceTest/${competenceTestInvitation.id}">Take</a>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </section>
+
+        <section id="your-solved-tests" class="section-bg">
+            <div class="container">
+                <h3>Solved:</h3>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Organisation</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${volunteer.solutions}" var="solutionByVolunteer">
+                        <tr>
+                            <td>${solutionByVolunteer.competenceTest.id}</td>
+                            <td>${solutionByVolunteer.competenceTest.name}</td>
+                            <td>${solutionByVolunteer.competenceTest.description}</td>
+                            <td>${solutionByVolunteer.competenceTest.organisation}</td>
+                            <td><a href="${volunteer.id}/competenceTest/${solutionByVolunteer.competenceTest.id}/results">View results</a>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
 </body>
 </html>

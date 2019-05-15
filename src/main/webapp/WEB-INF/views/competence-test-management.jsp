@@ -42,12 +42,12 @@
     </div>
 
         <br>
-        <input type="submit" value="Save"><br>
+        <input type="submit" value="Save" class="btn btn-save"><br>
     </form:form>
 
     <h2>Invited Volunteers:</h2><br>
 
-    <table class="table">
+    <table class="table table-hover">
         <thead>
         <tr>
             <th scope="col">ID</th>
@@ -56,6 +56,7 @@
         </tr>
         </thead>
 
+        <tbody>
         <c:forEach items="${competenceTest.invitedVolunteers}" var="invitedVolunteer">
             <tr>
                 <td>${invitedVolunteer.id}</td>
@@ -63,6 +64,7 @@
                 <td>${invitedVolunteer.email}</td>
             </tr>
         </c:forEach>
+        </tbody>
     </table>
 
 

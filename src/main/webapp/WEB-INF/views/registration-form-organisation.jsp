@@ -88,7 +88,7 @@
                     <form:errors path="country" cssClass="text-danger" />
                 </div>
 
-                <input type="submit" value="Register" class="btn btn-primary"><br>
+                <input type="submit" value="Register" class="btn btn-save"><br>
             </form:form>
 
             <a href="<c:url value="login"/>">Already have an account? Login!</a><br>

@@ -23,7 +23,7 @@
         <form:password path="password"/><br>
         <form:errors path="password" cssClass="text-danger"/><br>
 
-        <input type="submit" value="Log in"><br>
+        <input type="submit" value="Log in" class="btn btn-save"><br>
     </form:form>
 
     <a href="<c:url value="register"/>">Don't have an account yet? Register here!</a><br>
