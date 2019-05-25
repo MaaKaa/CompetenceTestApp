@@ -73,21 +73,19 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${competenceTestsByOrg}" var="competenceTestByOrg">
+                    <c:forEach items="${organisation.competenceTests}" var="competenceTest">
                         <tr>
-                            <td>${competenceTestByOrg.id}</td>
-                            <td>${competenceTestByOrg.name}</td>
-                            <td>${competenceTestByOrg.description}</td>
-                            <td>${competenceTestByOrg.organisation}</td>
-                            <td><a href="/org/logged/${organisation.id}/competence-test/${competenceTestByOrg.id}">View</a>
+                            <td>${competenceTest.id}</td>
+                            <td>${competenceTest.name}</td>
+                            <td>${competenceTest.description}</td>
+                            <td>${competenceTest.organisation}</td>
+                            <td><a href="/org/logged/${organisation.id}/competence-test/${competenceTest.id}">View</a>
                         </tr>
                     </c:forEach>
                     </tbody>
                 </table>
             </div>
         </section>
-
-        <br>
 
         <section id="overall-stats" class="section-bg">
             <div class="container">

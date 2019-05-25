@@ -24,11 +24,11 @@ public class LoggedOrganisationController {
     @Autowired
     VolunteerService volunteerService;
 
+
     @GetMapping("/{id}")
     public String showOrganisationHomePage(@PathVariable Long id, Model model){
-        Organisation organisation = organisationService.read(id);
-        model.addAttribute("organisation", organisationService.read(id));
-        model.addAttribute("competenceTestsByOrg", competenceTestService.readByOrganisationId(id));
+        Organisation organisation = organisationService.readWithCompetenceTests(id);
+        model.addAttribute("organisation", organisation);
         CompetenceTest competenceTest = new CompetenceTest();
         competenceTest.setOrganisation(organisation);
         model.addAttribute("competenceTest", competenceTest);
@@ -44,7 +44,6 @@ public class LoggedOrganisationController {
         return "redirect: ";
     }
 
-    //widok strony zarządzania testem kompetencji z możliwością zapraszania wolontariuszy:
     @GetMapping("/{id}/competence-test/{ctId}")
     public String showCompetenceTestManagementPage(@PathVariable Long id, @PathVariable Long ctId, Model model){
         model.addAttribute("organisation", organisationService.read(id));

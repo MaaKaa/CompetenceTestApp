@@ -1,5 +1,6 @@
 package pl.marzenakaa.app.organisation;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
@@ -17,7 +18,13 @@ public class OrganisationService {
     }
 
     public Organisation read(Long id) {
-        return organisationRepository.findOne(id); //opcjonalnie: findById(id).orElse(null);
+        return organisationRepository.findOne(id);
+    }
+
+    public Organisation readWithCompetenceTests(Long id){
+        Organisation organisation = read(id);
+        Hibernate.initialize(organisation.getCompetenceTests());
+        return organisation;
     }
 
     public void update(Organisation organisation) {
@@ -25,7 +32,7 @@ public class OrganisationService {
     }
 
     public void delete(Long id) {
-        organisationRepository.delete(id); //opcjonalnie: deleteById(id);
+        organisationRepository.delete(id);
     }
 
     public List<Organisation> findAll() {
