@@ -32,13 +32,13 @@ public class LoggedOrganisationController {
         CompetenceTest competenceTest = new CompetenceTest();
         competenceTest.setOrganisation(organisation);
         model.addAttribute("competenceTest", competenceTest);
-        return "logged-organisation";
+        return "dashboard-organisation";
     }
 
     @PostMapping("/{id}")
     public String processCreateCompetenceTestForm(@PathVariable Long id, @ModelAttribute("competenceTest") @Valid CompetenceTest competenceTest, BindingResult result) {
         if (result.hasErrors()) {
-            return "logged-organisation";
+            return "dashboard-organisation";
         }
         competenceTestService.create(competenceTest);
         return "redirect: ";

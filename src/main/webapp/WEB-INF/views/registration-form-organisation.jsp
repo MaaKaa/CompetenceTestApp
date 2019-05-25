@@ -11,7 +11,7 @@
     <link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">
 </head>
 <body>
-<%@ include file="header.jspf" %>
+    <%@ include file="header.jspf" %>
 
     <div class="container section-bg">
         <br>
@@ -97,5 +97,10 @@
             <a href="<c:url value="login"/>">Already have an account? Login!</a><br>
             </div>
     </div>
+
+        <br>
+        <br>
+        <%@ include file="footer.jspf" %>
+
 </body>
 </html>

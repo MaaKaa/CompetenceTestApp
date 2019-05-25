@@ -95,7 +95,9 @@
             </div>
         </section>
 
-
+    <br>
+    <br>
+    <%@ include file="footer.jspf" %>
 
 </body>
 </html>

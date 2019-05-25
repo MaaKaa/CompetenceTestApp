@@ -11,49 +11,54 @@
     <link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">
 </head>
 <body>
-<%@ include file="header.jspf" %>
+    <%@ include file="header.jspf" %>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-<div class="container">
+    <div class="container">
 
-    <a href="<c:url value="/vol/logged/${volunteer.id}"/>">Back to Volunteer's Dashboard</a><br>
+        <a href="<c:url value="/vol/logged/${volunteer.id}"/>">Back to Volunteer's Dashboard</a><br>
 
-    <h3><p style="color:#1bb1dc;">Competence Test: "${solutionByCompetenceTestIdAndVolunteerId.competenceTest.name}" Results</p></h3>
+        <h3><p style="color:#1bb1dc;">Competence Test: "${solutionByCompetenceTestIdAndVolunteerId.competenceTest.name}" Results</p></h3>
 
-    Volunteer's name: ${volunteer.name} <br>
+        Volunteer's name: ${volunteer.name} <br>
 
-    <h3>General result: ${solutionByCompetenceTestIdAndVolunteerId.resultRoleAndAutonomy}</h3><br>
+        <h3>General result: ${solutionByCompetenceTestIdAndVolunteerId.resultRoleAndAutonomy}</h3><br>
 
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Result</th>
-            <th scope="col">Description</th>
-        </tr>
-        </thead>
-        <tr>
-            <td>Communication</td>
-            <td>${solutionByCompetenceTestIdAndVolunteerId.communicationResult}</td>
-            <td>Lorem ipsum dolor sit amet.</td>
-        </tr>
-        <tr>
-            <td>Flexibility</td>
-            <td>${solutionByCompetenceTestIdAndVolunteerId.flexibilityResult}</td>
-            <td>Lorem ipsum dolor sit amet.</td>
-        </tr>
-        <tr>
-            <td>Teamwork</td>
-            <td>${solutionByCompetenceTestIdAndVolunteerId.teamWorkResult}</td>
-            <td>Lorem ipsum dolor sit amet.</td>
-        </tr>
-    </table>
-</div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Result</th>
+                <th scope="col">Description</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>Communication</td>
+                <td>${solutionByCompetenceTestIdAndVolunteerId.communicationResult}</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+            </tr>
+            <tr>
+                <td>Flexibility</td>
+                <td>${solutionByCompetenceTestIdAndVolunteerId.flexibilityResult}</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+            </tr>
+            <tr>
+                <td>Teamwork</td>
+                <td>${solutionByCompetenceTestIdAndVolunteerId.teamWorkResult}</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+            </tr>
+        </table>
+    </div>
+
+    <br>
+    <br>
+    <%@ include file="footer.jspf" %>
+
 </body>
 </html>

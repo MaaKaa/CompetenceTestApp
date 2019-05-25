@@ -230,5 +230,8 @@
         </form:form>
     </div>
 
+    <br>
+    <br>
+    <%@ include file="footer.jspf" %>
 </body>
 </html>

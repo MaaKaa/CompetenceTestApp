@@ -10,23 +10,29 @@
     <link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">
 </head>
 <body>
-<%@ include file="header.jspf" %>
-<div class="container">
-    <h2>Login</h2>
-    <form:form method="post" modelAttribute="organisation">
+    <%@ include file="header.jspf" %>
 
-        Email:
-        <form:input path="email"/><br>
-        <form:errors path="email" cssClass="text-danger"/><br>
+    <div class="container">
+        <h2>Login</h2>
+        <form:form method="post" modelAttribute="organisation">
 
-        Password:
-        <form:password path="password"/><br>
-        <form:errors path="password" cssClass="text-danger"/><br>
+            Email:
+            <form:input path="email"/><br>
+            <form:errors path="email" cssClass="text-danger"/><br>
 
-        <input type="submit" value="Log in" class="btn btn-save"><br>
-    </form:form>
+            Password:
+            <form:password path="password"/><br>
+            <form:errors path="password" cssClass="text-danger"/><br>
 
-    <a href="<c:url value="register"/>">Don't have an account yet? Register here!</a><br>
-</div>
+            <input type="submit" value="Log in" class="btn btn-save"><br>
+        </form:form>
+
+        <a href="<c:url value="register"/>">Don't have an account yet? Register here!</a><br>
+    </div>
+
+    <br>
+    <br>
+    <%@ include file="footer.jspf" %>
+
 </body>
 </html>

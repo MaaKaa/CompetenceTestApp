@@ -28,7 +28,7 @@ public class VolunteerController {
         Volunteer volunteer = volunteerService.readWithInvitationsAndSolutions(id);
         model.addAttribute("volunteer", volunteer);
         model.addAttribute("competenceTestsWithoutSolutions", competenceTestService.readTestsWithoutSolutionsByVolunteerId(id));
-        return "logged-volunteer";
+        return "dashboard-volunteer";
     }
 
     @GetMapping("/logged/{id}/competenceTest/{ctId}")

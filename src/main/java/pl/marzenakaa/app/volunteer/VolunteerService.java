@@ -21,6 +21,10 @@ public class VolunteerService {
         return volunteerRepository.findOne(id);
     }
 
+    public Volunteer readByEmail(String email){
+        return volunteerRepository.findByEmail(email);
+    }
+
     public Volunteer readWithInvitations(Long id){
         Volunteer volunteer = read(id);
         Hibernate.initialize(volunteer.getCompetenceTests());

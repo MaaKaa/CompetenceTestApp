@@ -73,7 +73,7 @@
                             <td>${solutionByVolunteer.competenceTest.name}</td>
                             <td>${solutionByVolunteer.competenceTest.description}</td>
                             <td>${solutionByVolunteer.competenceTest.organisation}</td>
-                            <td><a href="${volunteer.id}/competenceTest/${solutionByVolunteer.competenceTest.id}/results">View results</a>
+                            <td><a href="competenceTest/${solutionByVolunteer.competenceTest.id}/results">View results</a>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -81,5 +81,10 @@
             </div>
         </section>
     </div>
+
+    <br>
+    <br>
+    <%@ include file="footer.jspf" %>
+
 </body>
 </html>

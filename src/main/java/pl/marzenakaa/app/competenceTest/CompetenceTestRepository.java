@@ -2,8 +2,6 @@ package pl.marzenakaa.app.competenceTest;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import pl.marzenakaa.app.volunteer.Volunteer;
-
 import java.util.List;
 
 public interface CompetenceTestRepository extends JpaRepository<CompetenceTest, Long> {

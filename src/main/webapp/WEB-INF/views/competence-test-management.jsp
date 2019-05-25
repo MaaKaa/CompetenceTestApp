@@ -78,6 +78,10 @@
         <br>
         <h2>Test's statistics:</h2><br>
     </div>
+
+    <br>
+    <br>
+    <%@ include file="footer.jspf" %>
 </body>
 </html>
 
