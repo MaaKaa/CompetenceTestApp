@@ -1,5 +1,6 @@
 package pl.marzenakaa.app.competenceTest;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,8 @@ import pl.marzenakaa.app.solution.SolutionRepository;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.apache.commons.lang3.StringUtils.deleteWhitespace;
 
 @Service
 @Transactional
@@ -20,6 +23,9 @@ public class CompetenceTestService {
     SolutionRepository solutionRepository;
 
     public void create(CompetenceTest competenceTest) {
+        String link = competenceTest.getName();
+        String linkModified = deleteWhitespace(link);
+        competenceTest.setLink(linkModified + RandomStringUtils.randomAlphanumeric(10));
         competenceTestRepository.save(competenceTest);
     }
 

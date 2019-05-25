@@ -68,6 +68,7 @@
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Description</th>
+                        <th scope="col">Link</th>
                         <th scope="col">Organisation</th>
                         <th scope="col">Actions</th>
                     </tr>
@@ -78,6 +79,7 @@
                             <td>${competenceTest.id}</td>
                             <td>${competenceTest.name}</td>
                             <td>${competenceTest.description}</td>
+                            <td>${competenceTest.link}</td>
                             <td>${competenceTest.organisation}</td>
                             <td><a href="/org/logged/${organisation.id}/competence-test/${competenceTest.id}">View</a>
                         </tr>
