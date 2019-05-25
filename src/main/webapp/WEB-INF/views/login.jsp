@@ -12,20 +12,26 @@
 <body>
     <%@ include file="header.jspf" %>
 
+    <br>
+    <br>
+    <br>
     <div class="container">
         <h2>Login</h2>
-        <form:form method="post" modelAttribute="organisation">
+        <form method="post" >
 
             Email:
-            <form:input path="email"/><br>
-            <form:errors path="email" cssClass="text-danger"/><br>
+            <input type="text" name="email" id="email"/><br>
 
             Password:
-            <form:password path="password"/><br>
-            <form:errors path="password" cssClass="text-danger"/><br>
+            <input type="password" name="password" id="password"/><br>
 
-            <input type="submit" value="Log in" class="btn btn-save"><br>
-        </form:form>
+            <c:if test="${isLogged == false}">
+                <div class="error">Login failed</div><br><br>
+            </c:if>
+
+            <input type="submit" value="Login" class="btn btn-save"><br>
+
+        </form>
 
         <a href="<c:url value="register"/>">Don't have an account yet? Register here!</a><br>
     </div>

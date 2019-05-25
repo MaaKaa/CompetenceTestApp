@@ -1,6 +1,7 @@
 package pl.marzenakaa.app;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -35,6 +36,7 @@ public class RegistrationController {
         if (result.hasErrors()) {
             return "registration-form-organisation";
         }
+        organisation.setPassword(BCrypt.hashpw(organisation.getPassword(), BCrypt.gensalt()));
         organisationService.create(organisation);
         return "login";
     }

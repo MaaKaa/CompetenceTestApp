@@ -7,4 +7,6 @@ import java.util.List;
 public interface OrganisationRepository extends JpaRepository <Organisation, Long> {
 
     List<Organisation> findAll();
+
+    Organisation findByEmail(String email);
 }

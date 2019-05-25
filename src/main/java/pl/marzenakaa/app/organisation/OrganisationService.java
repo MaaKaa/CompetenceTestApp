@@ -21,6 +21,10 @@ public class OrganisationService {
         return organisationRepository.findOne(id);
     }
 
+    public Organisation readByEmail(String email){
+        return organisationRepository.findByEmail(email);
+    }
+
     public List<Organisation> readAllWithFieldsOfActivity(){
         List<Organisation> organisations = readAll();
         for (Organisation organisation : organisations){
