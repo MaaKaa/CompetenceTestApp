@@ -321,11 +321,6 @@ public class Solution {
 
     @Override
     public String toString() {
-        return "Solution{" +
-                "id=" + id +
-                ", created=" + created +
-                ", competenceTest=" + competenceTest +
-                ", volunteer=" + volunteer +
-                '}';
+        return "ID:" + id;
     }
 }

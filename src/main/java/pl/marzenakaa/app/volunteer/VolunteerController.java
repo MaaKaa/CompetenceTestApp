@@ -27,7 +27,7 @@ public class VolunteerController {
     public String showVolunteerHomePage(@PathVariable Long id, Model model){
         Volunteer volunteer = volunteerService.readWithInvitationsAndSolutions(id);
         model.addAttribute("volunteer", volunteer);
-        model.addAttribute("competenceTestsWithoutSolutions", competenceTestService.readTestsWithoutSolutionsByVolunteerId(id));
+        model.addAttribute("competenceTestsWithoutSolutions", competenceTestService.readAllWithoutSolutionsByVolunteerId(id));
         return "dashboard-volunteer";
     }
 

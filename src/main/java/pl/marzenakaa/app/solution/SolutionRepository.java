@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface SolutionRepository extends JpaRepository<Solution, Long> {
 
+    List<Solution> findAll();
+
     Solution findByCompetenceTestIdAndVolunteerId(Long id, Long vId);
 
     List<Solution> findAllByCompetenceTestId(Long id);

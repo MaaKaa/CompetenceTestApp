@@ -14,7 +14,7 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/org/logged")
-public class LoggedOrganisationController {
+public class OrganisationController {
     @Autowired
     OrganisationService organisationService;
 

@@ -44,6 +44,19 @@ public class VolunteerService {
         return volunteer;
     }
 
+    public List<Volunteer> readAll(){
+        return volunteerRepository.findAll();
+    }
+
+    public List<Volunteer> readAllWithCompetenceTestsAndSolutions(){
+        List<Volunteer> volunteers = readAll();
+        for(Volunteer volunteer : volunteers){
+            Hibernate.initialize(volunteer.getCompetenceTests());
+            Hibernate.initialize(volunteer.getSolutions());
+        }
+        return volunteers;
+    }
+
     public void update(Volunteer volunteer) {
         volunteerRepository.save(volunteer);
     }

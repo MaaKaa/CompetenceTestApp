@@ -21,7 +21,11 @@ public class SolutionService {
     }
 
     public Solution read(Long id) {
-        return solutionRepository.findOne(id); //opcjonalnie: findById(id).orElse(null);
+        return solutionRepository.findOne(id);
+    }
+
+    public List<Solution> readAll(){
+        return solutionRepository.findAll();
     }
 
     //zwraca wiele wyników, bo WOL może dodać kilka Solutions do jednego testu - trzeba to poprawić.
@@ -34,7 +38,7 @@ public class SolutionService {
     }
 
     public void delete(Long id) {
-        solutionRepository.delete(id); //opcjonalnie: deleteById(id);
+        solutionRepository.delete(id);
     }
 
     public List<Solution> findAll() {

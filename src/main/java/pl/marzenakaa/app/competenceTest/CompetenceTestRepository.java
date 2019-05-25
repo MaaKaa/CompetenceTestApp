@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface CompetenceTestRepository extends JpaRepository<CompetenceTest, Long> {
 
+    List<CompetenceTest> findAll();
+
     @Query(value = "select * from competenceTests JOIN volunteers_competenceTests ON competenceTests.id=volunteers_competenceTests.competenceTests_id WHERE volunteers_competenceTests.volunteers_id =?1", nativeQuery = true)
     List<CompetenceTest> findByVolunteerId(Long id);
 

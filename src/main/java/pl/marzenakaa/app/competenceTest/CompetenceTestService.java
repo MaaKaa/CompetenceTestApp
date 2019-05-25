@@ -45,15 +45,19 @@ public class CompetenceTestService {
         return competenceTest;
     }
 
+    public List<CompetenceTest> readAll(){
+        return competenceTestRepository.findAll();
+    }
+
     public List<CompetenceTest> readAllByOrganisationId(Long id){
         return competenceTestRepository.findAllByOrganisationId(id);
     }
 
-    public List<CompetenceTest> readByInvitedVolunteerId(Long id){
+    public List<CompetenceTest> readAllByInvitedVolunteerId(Long id){
         return competenceTestRepository.findByVolunteerId(id);
     }
 
-    public List<CompetenceTest> readTestsWithoutSolutionsByVolunteerId(Long id){
+    public List<CompetenceTest> readAllWithoutSolutionsByVolunteerId(Long id){
         List<CompetenceTest> competenceTestsWithoutSolutions = new ArrayList<>();
         List<CompetenceTest> competenceTests = competenceTestRepository.findByVolunteerId(id);
         for(CompetenceTest competenceTest : competenceTests){

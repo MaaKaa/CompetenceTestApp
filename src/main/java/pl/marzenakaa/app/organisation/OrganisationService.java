@@ -21,10 +21,22 @@ public class OrganisationService {
         return organisationRepository.findOne(id);
     }
 
+    public List<Organisation> readAllWithFieldsOfActivity(){
+        List<Organisation> organisations = readAll();
+        for (Organisation organisation : organisations){
+            Hibernate.initialize(organisation.getFieldsOfActivity());
+        }
+        return organisations;
+    }
+
     public Organisation readWithCompetenceTests(Long id){
         Organisation organisation = read(id);
         Hibernate.initialize(organisation.getCompetenceTests());
         return organisation;
+    }
+
+    public List<Organisation> readAll(){
+        return organisationRepository.findAll();
     }
 
     public void update(Organisation organisation) {
