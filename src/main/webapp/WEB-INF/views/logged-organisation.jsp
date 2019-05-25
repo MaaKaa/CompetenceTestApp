@@ -12,7 +12,7 @@
 </head>
 <body>
 <%@ include file="header.jspf" %>
-    <div class="container">
+
         <br>
         <br>
         <br>
@@ -37,15 +37,15 @@
                             <form:input type="hidden" name="${organisation.id}" path="organisation.id"/>
 
 
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-12">
                                 <label>Project Name:</label>
-                                <form:input path="name" class="form-control"/>
+                                <form:input path="name" class="form-control" placeholder="e.g. Charity Run, Cooking workshops, Office works"/>
                                 <form:errors path="name" cssClass="text-danger" />
                             </div>
 
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-12">
                                 <label>Project Description:</label>
-                                <form:textarea path="description" class="form-control"/>
+                                <form:textarea path="description" class="form-control" placeholder="Short description that will remind volunteers what this project was about."/>
                                 <form:errors path="description" cssClass="text-danger"/>
                             </div>
                             <input type="submit" value="Save" class="btn btn-save">
@@ -97,7 +97,7 @@
             </div>
         </section>
 
-    </div>
+
 
 </body>
 </html>

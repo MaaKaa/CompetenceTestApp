@@ -44,39 +44,38 @@ public class Solution {
     @Size(min = 3, max = 500)
     private String task;
 
-    @NotNull
+
     private int communicationQ1;
-    @NotNull
+
     private int communicationQ2;
-    @NotNull
+
     private int communicationQ3;
-    @NotNull
+
     private int communicationQ4;
-    @NotNull
+
     private int communicationQ5;
-    @NotNull
+
     private int communicationQ6;
 
     private String communicationResult;
 
-    @NotNull
+
     private int teamWorkQ1;
-    @NotNull
+
     private int teamWorkQ2;
-    @NotNull
+
     private int teamWorkQ3;
-    @NotNull
+
     private int teamWorkQ4;
-    @NotNull
+
     private int teamWorkQ5;
 
     private String teamWorkResult;
 
-    @NotNull
     private int flexibilityQ1;
-    @NotNull
+
     private int flexibilityQ2;
-    @NotNull
+
     private int flexibilityQ3;
 
     private String flexibilityResult;

@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface SolutionRepository extends JpaRepository<Solution, Long> {
 
+    Solution findByCompetenceTestIdAndVolunteerId(Long id, Long vId);
+
     List<Solution> findAllByCompetenceTestId(Long id);
 
     List<Solution> findAllByVolunteerId(Long id);
-
-    Solution findByCompetenceTestIdAndVolunteerId(Long ctId, Long vId);
 
     @Query(value = "select * from solutions WHERE resultRoleAndAutonomy=?1", nativeQuery = true)
     List<Solution> findAllByResultRoleAndAutonomy(String resultRoleAndAutonomy);

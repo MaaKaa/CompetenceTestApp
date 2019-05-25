@@ -29,7 +29,8 @@
 
             <form:form method="post" modelAttribute="organisation">
 
-                <h3>Account information</h3>
+                <h5>Account information</h5>
+
                 <div class="form-group col-md-4">
                     <label>Email:</label>
                 <form:input path="email" class="form-control" placeholder="example@example.com" />
@@ -47,18 +48,12 @@
 
                 </div>
 
-                <h3>About your organisation</h3>
-                <div class="form-group col-md-4">
-                    <label>Organisation's Name:</label>
-                    <form:input path="name" class="form-control"/>
-                    <form:errors path="name" cssClass="text-danger" />
-                </div>
+                <h5>About your organisation</h5>
 
                 <div class="form-group col-md-4">
-                    <label>Website:</label>
-                    <form:input path="website" class="form-control" placeholder="https://example.com" aria-describedby="websiteHelp"/>
-                    <small id="websiteHelp" class="form-text text-muted">Must start with "http://" or "https://".</small>
-                    <form:errors path="website" cssClass="text-danger" />
+                    <label>Name:</label>
+                    <form:input path="name" class="form-control"/>
+                    <form:errors path="name" cssClass="text-danger" />
                 </div>
 
                 <div class="form-group col-md-4">
@@ -75,7 +70,15 @@
                     </div>
                 </div>
 
-                <h3>Contact information</h3>
+                <h5>Contact info</h5>
+
+                <div class="form-group col-md-4">
+                    <label>Website:</label>
+                    <form:input path="website" class="form-control" placeholder="https://example.com" aria-describedby="websiteHelp"/>
+                    <!-- <small id="websiteHelp" class="form-text text-muted">Must start with "http://" or "https://".</small> -->
+                    <form:errors path="website" cssClass="text-danger" />
+                </div>
+
                 <div class="form-group col-md-4">
                 <label>City:</label>
                 <form:input path="city" class="form-control"/>

@@ -432,7 +432,7 @@
                             <div class="col-sm-8">
                                 <div class="footer-info">
                                     <h3>Competence Test</h3>
-                                    <p> ompetence Test is a free online app, allowing you to ask your volunteers what did they learn when supporting your organisation.
+                                    <p> Competence Test is a free online app, allowing you to ask your volunteers what did they learn when supporting your organisation.
                                         Communication, flexibility, teamwork - these are just few competencies that can be developed through volunteering.
                                         Find out, which of them can be developed in your organisation!
                                 </div>

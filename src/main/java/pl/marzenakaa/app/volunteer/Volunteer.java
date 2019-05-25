@@ -36,7 +36,7 @@ public class Volunteer {
     private String country;
 
     @ManyToMany(cascade = {CascadeType.MERGE})
-    private List<CompetenceTest> competenceTestInvitations;
+    private List<CompetenceTest> competenceTests;
 
     @OneToMany(mappedBy = "volunteer", cascade = CascadeType.ALL)
     private List<Solution> solutions;
@@ -108,12 +108,12 @@ public class Volunteer {
         this.country = country;
     }
 
-    public List<CompetenceTest> getCompetenceTestInvitations() {
-        return competenceTestInvitations;
+    public List<CompetenceTest> getCompetenceTests() {
+        return competenceTests;
     }
 
-    public void setCompetenceTestInvitations(List<CompetenceTest> competenceTestInvitations) {
-        this.competenceTestInvitations = competenceTestInvitations;
+    public void setCompetenceTests(List<CompetenceTest> competenceTests) {
+        this.competenceTests = competenceTests;
     }
 
     public List<Solution> getSolutions() {
@@ -125,13 +125,13 @@ public class Volunteer {
     }
 
     public void addCompetenceTestInvitation(CompetenceTest competenceTest){
-        competenceTestInvitations.add(competenceTest);
-        competenceTest.getInvitedVolunteers().add(this);
+        competenceTests.add(competenceTest);
+        competenceTest.getVolunteers().add(this);
     }
 
     public void removeCompetenceTestInvitation(CompetenceTest competenceTest){
-        competenceTestInvitations.remove(competenceTest);
-        competenceTest.getInvitedVolunteers().remove(this);
+        competenceTests.remove(competenceTest);
+        competenceTest.getVolunteers().remove(this);
     }
 
     @Override

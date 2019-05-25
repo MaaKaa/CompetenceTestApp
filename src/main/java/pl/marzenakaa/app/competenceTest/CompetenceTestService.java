@@ -1,12 +1,14 @@
 package pl.marzenakaa.app.competenceTest;
 
-import antlr.StringUtils;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.marzenakaa.app.solution.Solution;
+import pl.marzenakaa.app.solution.SolutionRepository;
 import pl.marzenakaa.app.volunteer.Volunteer;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -15,17 +17,20 @@ public class CompetenceTestService {
     @Autowired
     CompetenceTestRepository competenceTestRepository;
 
+    @Autowired
+    SolutionRepository solutionRepository;
+
     public void create(CompetenceTest competenceTest) {
         competenceTestRepository.save(competenceTest);
     }
 
     public CompetenceTest read(Long id) {
-        return competenceTestRepository.findOne(id); //opcjonalnie: findById(id).orElse(null);
+        return competenceTestRepository.findOne(id);
     }
 
     public CompetenceTest readWithInvitedVolunteers(Long id){
         CompetenceTest competenceTest = read(id);
-        Hibernate.initialize(competenceTest.getInvitedVolunteers());
+        Hibernate.initialize(competenceTest.getVolunteers());
         return competenceTest;
     }
 
@@ -43,12 +48,20 @@ public class CompetenceTestService {
         return competenceTestRepository.findInvitedVolunteers(id);
     }
 
-    public CompetenceTest readByInvitedVolunteerId(Long id){
+    public List<CompetenceTest> readByInvitedVolunteerId(Long id){
         return competenceTestRepository.findByInvitedVolunteerId(id);
     }
 
-    public CompetenceTest readByVolunteerId(Long id){
-        return competenceTestRepository.findByVolunteerId(id);
+    public List<CompetenceTest> readTestsWithoutSolutions(Long id){
+        List<CompetenceTest> competenceTestsWithoutSolutions = new ArrayList<>();
+        List<CompetenceTest> competenceTests = competenceTestRepository.findByInvitedVolunteerId(id);
+        for(CompetenceTest competenceTest : competenceTests){
+            Solution solution = solutionRepository.findByCompetenceTestIdAndVolunteerId(competenceTest.getId(), id);
+            if(solution == null){
+                competenceTestsWithoutSolutions.add(competenceTest);
+            }
+        }
+        return competenceTestsWithoutSolutions;
     }
 
     public void update(CompetenceTest competenceTest) {
@@ -56,7 +69,7 @@ public class CompetenceTestService {
     }
 
     public void delete(Long id) {
-        competenceTestRepository.delete(id); //opcjonalnie: deleteById(id);
+        competenceTestRepository.delete(id);
     }
 
     public List<CompetenceTest> findAll() {

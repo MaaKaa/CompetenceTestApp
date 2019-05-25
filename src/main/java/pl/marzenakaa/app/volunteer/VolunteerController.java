@@ -25,8 +25,9 @@ public class VolunteerController {
 
     @GetMapping("/logged/{id}")
     public String showVolunteerHomePage(@PathVariable Long id, Model model){
-        model.addAttribute("volunteer", volunteerService.readWithInvitationsAndSolutions(id));
-        model.addAttribute("competenceTestInvitationsByVolunteerId", competenceTestService.readByInvitedVolunteerId(id));
+        Volunteer volunteer = volunteerService.readWithInvitationsAndSolutions(id);
+        model.addAttribute("volunteer", volunteer);
+        model.addAttribute("competenceTestsWithoutSolutions", competenceTestService.readTestsWithoutSolutions(id));
         return "logged-volunteer";
     }
 
@@ -44,7 +45,7 @@ public class VolunteerController {
             return "competence-test-form";
         }
         solutionService.create(solution);
-        return "competence-test-results";
+        return "redirect:/vol/logged/{id}/competenceTest/{ctId}/results";
     }
 
     @GetMapping("/logged/{id}/competenceTest/{ctId}/results")

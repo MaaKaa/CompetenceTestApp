@@ -16,12 +16,15 @@
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
 
 <div class="container">
 
     <a href="<c:url value="/vol/logged/${volunteer.id}"/>">Back to Volunteer's Dashboard</a><br>
 
-    <h2>Competence Test: "${solutionByCompetenceTestIdAndVolunteerId.competenceTest.name}" Results</h2>
+    <h3><p style="color:#1bb1dc;">Competence Test: "${solutionByCompetenceTestIdAndVolunteerId.competenceTest.name}" Results</p></h3>
 
     Volunteer's name: ${volunteer.name} <br>
 

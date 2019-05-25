@@ -34,7 +34,7 @@ public class CompetenceTestController {
             return "competence-test-form";
         }
         solutionService.create(solution);
-        return "competence-test-results";
+        return "redirect:competence-test-results";
     }
 
 }

@@ -24,8 +24,9 @@ public class SolutionService {
         return solutionRepository.findOne(id); //opcjonalnie: findById(id).orElse(null);
     }
 
-    public Solution readByCompetenceTestIdAndVolunteerId(Long ctId, Long vId){
-        return solutionRepository.findByCompetenceTestIdAndVolunteerId(ctId, vId);
+    //zwraca wiele wyników, bo WOL może dodać kilka Solutions do jednego testu - trzeba to poprawić.
+    public Solution readByCompetenceTestIdAndVolunteerId(Long id, Long vId){
+        return solutionRepository.findByCompetenceTestIdAndVolunteerId(id, vId);
     }
 
     public void update(Solution solution) {

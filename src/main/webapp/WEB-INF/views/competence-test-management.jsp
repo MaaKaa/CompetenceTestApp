@@ -28,26 +28,30 @@
 
         <h2>Invite volunteers!</h2><br>
 
+
         <form:form method="post" modelAttribute="volunteer">
             <form:input type="hidden" path="id" name="id"/>
-            <form:input type="hidden" path="competenceTestInvitations" name="competenceTestInvitations" value="${competenceTest.id}"/>
+            <form:input type="hidden" path="competenceTests" name="competenceTests" value="${competenceTest.id}"/>
 
-            <div class="form-group col-md-4">
-                <label>Name:</label>
-                <form:input path="name" class="form-control"/>
+            <div class="row">
+                <div class="col">
+                <form:input path="name" class="form-control" placeholder="Name"/>
                 <form:errors path="name" cssClass="text-danger"/>
-            </div>
+                </div>
 
-            <div class="form-group col-md-4">
-                <label>E-mail:</label>
-                <form:input path="email" class="form-control"/>
+                <div class="col">
+                <form:input path="email" class="form-control" placeholder="Email"/>
                 <form:errors path="email" cssClass="text-danger"/>
+                </div>
+
+                <div class="col">
+                    <input type="submit" value="Save" class="btn btn-save">
+                </div>
             </div>
 
-            <div class="form-group col-md-4">
-                <input type="submit" value="Save" class="btn btn-save">
-            </div>
-        </form:form>
+        </form:form> <br>
+
+
 
         <h2>Invited Volunteers:</h2><br>
 
@@ -61,7 +65,7 @@
             </thead>
 
             <tbody>
-            <c:forEach items="${competenceTest.invitedVolunteers}" var="invitedVolunteer">
+            <c:forEach items="${competenceTest.volunteers}" var="invitedVolunteer">
                 <tr>
                     <td>${invitedVolunteer.id}</td>
                     <td>${invitedVolunteer.name}</td>
@@ -71,7 +75,7 @@
             </tbody>
         </table>
 
-
+        <br>
         <h2>Test's statistics:</h2><br>
     </div>
 </body>

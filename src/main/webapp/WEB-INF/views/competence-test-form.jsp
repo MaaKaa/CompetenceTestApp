@@ -19,15 +19,19 @@
         <br>
         <br>
         <br>
-        <h2>Competence Test</h2>
-        <p style="color:#1bb1dc;">Project Name: ${competenceTest.name}</p>
+        <a href="<c:url value="/vol/logged/${volunteer.id}"/>">Back to Volunteer's Dashboard</a>
+        <br>
+        <br>
+        <h3><p style="color:#1bb1dc;">Project Name: ${competenceTest.name}</p></h3>
+
 
         <h3>Instructions</h3>
-        Filling in the questionnaire will take only few minutes. Try to do it in one go without interruptions.<br>
-        All questions need to be answered.
-
+        <b>Filling in the questionnaire will take only few minutes. Try to do it in one go without interruptions.
+        All questions need to be answered. Have fun! :)</b>
+        <br>
         <hr>
 
+        <h3>Questions</h3>
         <form:form method="post" modelAttribute="solution">
 
             <form:input type="hidden" path="id"/>
@@ -35,29 +39,29 @@
             <form:input type="hidden" path="volunteer.id" name="id" value="${volunteer.id}"/>
 
             <div class="form-group">
-                <label><b>What was your role in this project?</b></label><br>
+                <label><b>1. What was your role in this project?</b></label><br>
                 <form:radiobutton path="role" value="1"/> I carried out operational or simple tasks under the supervision or the direct guidance of others. <br>
                 <form:radiobutton path="role" value="2"/> I completed easy tasks in autonomy.<br>
                 <form:radiobutton path="role" value="3"/> I carried out complex tasks under given instructions; supervise and support the work and the performance of others.<br>
                 <form:radiobutton path="role" value="4"/> I managed the professional development of people and teams; I managed and transformed the context; I developed new ideas and I fostered innovation. <br>
-            </div>
+            </div><br>
 
             <div class="form-group">
-                <label><b>What kind of tasks were you in charge of?</b></label><br>
+                <label><b>2. What kind of tasks were you in charge of?</b></label><br>
                 <form:radiobutton path="autonomy" value="1"/> Simple; recurrent that required easy tools and simple rules.<br>
                 <form:radiobutton path="autonomy" value="2"/> Recurrent that required the choice of proper resources and tools as well as to adapt the  behaviour accordingly.<br>
                 <form:radiobutton path="autonomy" value="3"/> Specialised; sometimes unexpected that required creative solutions.<br>
                 <form:radiobutton path="autonomy" value="4"/> Complex and unpredicatble, not necessarily specialised that integrated knowledge from different fields.<br>
-            </div>
+            </div><br>
 
             <div class="form-group">
-                <label><b>Describe briefly your tasks within this project:</b></label><br>
+                <label><b>3. Describe briefly your tasks within this project:</b></label><br>
                 <form:textarea path="task" class="form-control"/>
                 <form:errors path="task" cssClass="text-danger"/><br>
-            </div>
+            </div><br>
 
             <div class="form-group">
-               <b>Below you will find 14 statements. Please indicate the extent to which you believe these statements apply to you.<br>
+               <b>4. Below you will find 14 statements. Please indicate the extent to which you believe these statements apply to you.<br>
                     Ensure that you are describing what you are like rather than what you want to be like.
                    Don’t think too long about the statements; there are no right or wrong answers.</b><br>
 
@@ -204,24 +208,24 @@
                 </table>
             </div>
 
+            <br>
             <div class="form-group">
-                <label><b>What challenged you at most? What were the most critical moments you had to tackle? How did you face them? What kind of resources did you use? </b></label><br>
+                <label><b>5. What challenged you at most? Were there any critical moments you had to tackle? If so, how did you face them? What kind of resources did you use? </b></label><br>
                 <form:textarea path="challenge" class="form-control"/>
                 <form:errors path="challenge" cssClass="text-danger"/><br>
-            </div>
+            </div><br>
 
             <div class="form-group">
-                <label><b>What was the most important thing you have learnt thanks to this project? What would you do in the same way in a next, similar situation and what differently? Why? </b></label><br>
+                <label><b>6. What was the most important thing you have learnt thanks to this project? What would you do in the same way in a next, similar situation and what differently? Why? </b></label><br>
                 <form:textarea path="lessonLearned" class="form-control"/>
                 <form:errors path="lessonLearned" cssClass="text-danger"/><br>
-            </div>
+            </div><br>
 
             <div class="form-group">
-                <label><b>Additional comments:</b></label><br>
+                <label><b>7. Additional comments:</b></label><br>
                 <form:textarea path="comments" class="form-control"/>
                 <form:errors path="comments" cssClass="text-danger"/><br>
             </div>
-            <br>
             <input type="submit" value="Save" class="btn btn-save"><br>
         </form:form>
     </div>

@@ -34,7 +34,7 @@ Volunteer's perspective:
     - (S)he clicks on the link and log-in.
     - (S)he takes the competence test and saves it.
     - (S)he is redirected to the results page where (s)he can see her/his results, together with the development tips for each competence.
-    - On her/his dashboard volunteer can view all invitations, take the test and view the results of the tests already taken.
+    - On her/his dashboard volunteer can view all competenceTests, take the test and view the results of the tests already taken.
 
 
 ***

@@ -23,9 +23,8 @@
             <h2>Your competence tests:</h2>
         </div>
 
-        <section id="your-invitations" class="section-bg" >
+        <section id="your-competenceTests" >
             <div class="container">
-
                 <h3>Invitations:</h3>
                 <table class="table table-hover">
                     <thead>
@@ -38,13 +37,13 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${volunteer.competenceTestInvitations}" var="competenceTestInvitation">
+                    <c:forEach items="${competenceTestsWithoutSolutions}" var="testWithoutSolution">
                         <tr>
-                            <td>${competenceTestInvitation.id}</td>
-                            <td>${competenceTestInvitation.name}</td>
-                            <td>${competenceTestInvitation.description}</td>
-                            <td>${competenceTestInvitation.organisation}</td>
-                            <td><a href="${volunteer.id}/competenceTest/${competenceTestInvitation.id}">Take</a>
+                            <td>${testWithoutSolution.id}</td>
+                            <td>${testWithoutSolution.name}</td>
+                            <td>${testWithoutSolution.description}</td>
+                            <td>${testWithoutSolution.organisation}</td>
+                            <td><a href="${volunteer.id}/competenceTest/${testWithoutSolution.id}">Take the test!</a>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -53,7 +52,8 @@
             </div>
         </section>
 
-        <section id="your-solved-tests" class="section-bg">
+
+        <section id="your-solved-tests">
             <div class="container">
                 <h3>Solved:</h3>
                 <table class="table table-hover">

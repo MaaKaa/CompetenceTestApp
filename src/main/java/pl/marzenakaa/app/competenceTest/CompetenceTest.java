@@ -38,8 +38,8 @@ public class CompetenceTest {
 
     private String link;
 
-    @ManyToMany(mappedBy = "competenceTestInvitations", fetch = FetchType.EAGER)
-    private List<Volunteer> invitedVolunteers;
+    @ManyToMany(mappedBy = "competenceTests", fetch = FetchType.EAGER)
+    private List<Volunteer> volunteers;
 
     @OneToMany(mappedBy = "competenceTest", cascade = CascadeType.ALL)
     private List<Solution> solutions;
@@ -95,12 +95,12 @@ public class CompetenceTest {
         this.link = link;
     }
 
-    public List<Volunteer> getInvitedVolunteers() {
-        return invitedVolunteers;
+    public List<Volunteer> getVolunteers() {
+        return volunteers;
     }
 
-    public void setInvitedVolunteers(List<Volunteer> invitedVolunteers) {
-        this.invitedVolunteers = invitedVolunteers;
+    public void setVolunteers(List<Volunteer> volunteers) {
+        this.volunteers = volunteers;
     }
 
     public List<Solution> getSolutions() {
