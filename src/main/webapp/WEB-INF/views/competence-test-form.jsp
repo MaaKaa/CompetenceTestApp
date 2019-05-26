@@ -19,7 +19,7 @@
         <br>
         <br>
         <br>
-        <a href="<c:url value="/vol/logged/${volunteer.id}"/>">Back to Volunteer's Dashboard</a>
+        <a href="<c:url value="/vol/logged/${volunteer.id}"/>">Back to the Dashboard</a>
         <br>
         <br>
         <h3><p style="color:#1bb1dc;">Project Name: ${competenceTest.name}</p></h3>

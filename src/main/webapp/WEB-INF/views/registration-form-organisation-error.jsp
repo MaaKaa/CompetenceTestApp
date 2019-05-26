@@ -11,18 +11,18 @@
     <link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">
 </head>
 <body>
-    <%@ include file="header.jspf" %>
+<%@ include file="header.jspf" %>
 
-    <div class="container section-bg">
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="card mt-4">
+<div class="container section-bg">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="card mt-4">
 
-            <div class="card-body">
+        <div class="card-body">
 
-                <h3>Register</h3>
+            <h3>Register</h3>
 
             <form:form method="post" modelAttribute="organisation">
 
@@ -30,14 +30,15 @@
 
                 <div class="form-group col-md-4">
                     <label>Email:</label>
-                <form:input path="email" class="form-control" placeholder="example@example.com" />
-                <form:errors path="email" cssClass="text-danger" />
+                    <form:input path="email" class="form-control" placeholder="example@example.com" />
+                    <form:errors path="email" cssClass="text-danger" />
+                    <p style="color:red">This e-mail is already in a database. Try again.</p>
                 </div>
 
                 <div class="form-group col-md-4">
                     <label>Pasword:</label>
-                <form:password path="password" class="form-control"/>
-                <form:errors path="password" cssClass="text-danger" />
+                    <form:password path="password" class="form-control"/>
+                    <form:errors path="password" cssClass="text-danger" />
                 </div>
 
                 <div class="form-group col-md-4">
@@ -62,8 +63,8 @@
                 <div class="form-group col-md-4">
                     <label>Fields of activity:</label><br>
                     <div class="form-check">
-                    <form:checkboxes path="fieldsOfActivity" items="${fieldsOfActivity}" itemLabel="name" itemValue="id"/>
-                    <form:errors path="fieldsOfActivity" cssClass="text-danger" />
+                        <form:checkboxes path="fieldsOfActivity" items="${fieldsOfActivity}" itemLabel="name" itemValue="id"/>
+                        <form:errors path="fieldsOfActivity" cssClass="text-danger" />
                     </div>
                 </div>
 
@@ -77,13 +78,13 @@
                 </div>
 
                 <div class="form-group col-md-4">
-                <label>City:</label>
-                <form:input path="city" class="form-control"/>
-                <form:errors path="city" cssClass="text-danger" />
+                    <label>City:</label>
+                    <form:input path="city" class="form-control"/>
+                    <form:errors path="city" cssClass="text-danger" />
                 </div>
 
                 <div class="form-group col-md-4">
-                <label>Country:</label>
+                    <label>Country:</label>
                     <form:input path="country" class="form-control"/>
                     <form:errors path="country" cssClass="text-danger" />
                 </div>
@@ -92,12 +93,12 @@
             </form:form>
 
             <a href="<c:url value="login"/>">Already have an account? Login!</a><br>
-            </div>
+        </div>
     </div>
 
-        <br>
-        <br>
-        <%@ include file="footer.jspf" %>
+    <br>
+    <br>
+    <%@ include file="footer.jspf" %>
 
 </body>
 </html>

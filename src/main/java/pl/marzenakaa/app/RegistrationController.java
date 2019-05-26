@@ -24,7 +24,6 @@ public class RegistrationController {
     @Autowired
     FIeldOfActivityService fieldOfActivityService;
 
-    //REGISTRATION: TO BE FINISHED, WHEN THE LOG-IN WILL BE READY (now it only saves the user's details in the DB)
     @GetMapping("/register")
     public String showRegisterForm(Model model){
         model.addAttribute("organisation", new Organisation());
@@ -36,8 +35,13 @@ public class RegistrationController {
         if (result.hasErrors()) {
             return "registration-form-organisation";
         }
-        organisation.setPassword(BCrypt.hashpw(organisation.getPassword(), BCrypt.gensalt()));
-        organisationService.create(organisation);
+        Organisation organisation1 = organisationService.readByEmail(organisation.getEmail());
+        if(organisation1 == null){
+            organisation.setPassword(BCrypt.hashpw(organisation.getPassword(), BCrypt.gensalt()));
+            organisationService.create(organisation);
+        }else{
+            return "registration-form-organisation-error";
+        }
         return "login";
     }
 

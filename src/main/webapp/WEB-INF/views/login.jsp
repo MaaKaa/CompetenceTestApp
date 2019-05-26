@@ -12,29 +12,43 @@
 <body>
     <%@ include file="header.jspf" %>
 
-    <br>
-    <br>
-    <br>
-    <div class="container">
-        <h2>Login</h2>
-        <form method="post" >
+    <div class="container section-bg">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
-            Email:
-            <input type="text" name="email" id="email"/><br>
+        <div class="card mt-4">
 
-            Password:
-            <input type="password" name="password" id="password"/><br>
+            <div class="card-body">
 
-            <c:if test="${isLogged == false}">
-                <div class="error">Login failed</div><br><br>
-            </c:if>
+                    <h3>Log in</h3>
 
-            <input type="submit" value="Login" class="btn btn-save"><br>
+                <form method="post" >
 
-        </form>
+                    <div class="form-group col-md-4">
+                        <label>Email:</label>
+                        <input type="text" class="form-control" name="email" id="email"/><br>
+                    </div>
 
-        <a href="<c:url value="register"/>">Don't have an account yet? Register here!</a><br>
-    </div>
+                    <div class="form-group col-md-4">
+                        <label>Password:</label>
+                        <input type="password" class="form-control" name="password" id="password"/><br>
+                    </div>
+
+                    <c:if test="${isLogged == false}">
+                        <div class="error">Login failed</div><br><br>
+                    </c:if>
+
+                    <input type="submit" value="Login" class="btn btn-save"><br>
+
+                </form>
+
+                <a href="<c:url value="register"/>">Don't have an account yet? Register here!</a><br>
+            </div>
+        </div>
 
     <br>
     <br>

@@ -20,7 +20,7 @@
     <br>
     <br>
     <div class="container">
-        <header style="color:#1bb1dc;">Admin's Dashboard</header><br>
+        <h3><header style="color:#1bb1dc;">Admin's Dashboard</header></h3><br>
     </div>
 
     <section id="users" class="section-bg" >
@@ -28,7 +28,7 @@
 
             <h3>Users</h3>
 
-            <p>Organisations</p><br>
+            <h5>Organisations</h5>
 
             <table class="table table-hover">
                 <thead>
@@ -61,7 +61,7 @@
                 </tbody>
             </table>
 
-            <p>Volunteers</p><br>
+            <h5>Volunteers</h5>
 
             <table class="table table-hover">
                 <thead>

@@ -23,7 +23,7 @@ public class CustomAuthorizationFilter extends GenericFilterBean {
         Organisation organisation = (Organisation) session.getAttribute("organisationSession");
         if (organisation == null) {
             HttpServletResponse httpResponse = (HttpServletResponse) response;
-            httpResponse.sendRedirect("/register");
+            httpResponse.sendRedirect("/login");
         } else {
             chain.doFilter(request, response);
         }

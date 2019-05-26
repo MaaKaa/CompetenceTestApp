@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 <head>
-    <title>Organisation</title>
+    <title>Organisation's Dashboard</title>
     <script src="<c:url value="/webjars/jquery/3.0.0/jquery.min.js"/>"></script>
     <script src="<c:url value="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"/>"></script>
     <link href="<c:url value="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>" rel="stylesheet">
@@ -20,7 +20,7 @@
         <br>
         <br>
         <div class="container">
-            <header style="color:#1bb1dc;">Hi ${organisation.name}!</header><br>
+            <h3><header style="color:#1bb1dc;">Hello ${organisation.name}!</header></h3><br>
         </div>
 
         <section id="create-competence-test" class="section-bg" >

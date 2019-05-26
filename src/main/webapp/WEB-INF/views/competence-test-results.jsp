@@ -13,14 +13,13 @@
 <body>
     <%@ include file="header.jspf" %>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
     <div class="container">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
         <a href="<c:url value="/vol/logged/${volunteer.id}"/>">Back to Volunteer's Dashboard</a><br>
 

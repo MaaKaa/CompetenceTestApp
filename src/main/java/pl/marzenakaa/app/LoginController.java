@@ -32,7 +32,8 @@ public class LoginController {
         if (BCrypt.checkpw(password, organisation.getPassword())) {
             model.addAttribute("organisationSession", organisation);
             model.addAttribute("isLogged", true);
-            return "redirect:org/logged/1";
+            Long organisationId = organisation.getId();
+            return "redirect:org/logged/" + organisationId;
         }
         return "login";
     }

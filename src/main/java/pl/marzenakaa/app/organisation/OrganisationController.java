@@ -1,5 +1,7 @@
 package pl.marzenakaa.app.organisation;
 
+import org.apache.commons.lang3.RandomStringUtils;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import pl.marzenakaa.app.volunteer.Volunteer;
 import pl.marzenakaa.app.volunteer.VolunteerService;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/org/logged")
@@ -58,6 +61,15 @@ public class OrganisationController {
             return "competence-test-management";
         }
         volunteerService.create(volunteer);
+        /*Volunteer volunteer1 = volunteerService.readByEmail(volunteer.getEmail());
+        if(volunteer1 == null){
+            volunteer.setPassword(RandomStringUtils.randomAlphanumeric(8));
+            volunteerService.create(volunteer);
+        }else{
+            Hibernate.initialize(volunteer1.getCompetenceTests());
+            List<CompetenceTest> competenceTests =  volunteer1.getCompetenceTests();
+            competenceTests.add(competenceTestService.read(ctId));
+        }*/
         return "redirect: ";
     }
 }
