@@ -25,9 +25,9 @@
 
         <section id="create-competence-test" class="section-bg" >
             <div class="container">
-
+                <br>
                 <h3>Create Competence Test</h3>
-                <p>Find out what did volunteers learn thanks to your project!</p><br>
+                <p>Find out what did volunteers learnt thanks to your project!</p>
 
                 <div class="card">
 
@@ -81,7 +81,7 @@
                             <td>${competenceTest.description}</td>
                             <td>${competenceTest.link}</td>
                             <td>${competenceTest.organisation}</td>
-                            <td><a href="/org/logged/${organisation.id}/competence-test/${competenceTest.id}">View</a>
+                            <td><a href="/org/logged/${organisation.id}/competence-test/${competenceTest.id}">View | Invite volunteers</a>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -91,8 +91,29 @@
 
         <section id="overall-stats" class="section-bg">
             <div class="container">
-
+                <br>
                 <h3>Overall statistics:</h3>
+
+                <p>Number of volunteers who completed all your tests: </p><br>
+                <h5>Role and Autonomy result:</h5>
+                <p>General:</p>
+                <p>Accomplished:</p>
+                <p>Expert:</p>
+
+                <h5>Communication</h5>
+                <p>Partial:</p>
+                <p>Plain:</p>
+                <p>Excellent:</p>
+
+                <h5>Flexibility</h5>
+                <p>Partial:</p>
+                <p>Plain:</p>
+                <p>Excellent:</p>
+
+                <h5>Teamwork</h5>
+                <p>Partial:</p>
+                <p>Plain:</p>
+                <p>Excellent:</p>
 
             </div>
         </section>

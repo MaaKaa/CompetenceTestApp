@@ -69,7 +69,7 @@ public class CompetenceTestService {
         return competenceTestsWithoutSolutions;
     }
 
-    /*Do poprawienia:
+    /*Do poprawienia (w takiem wersji nie wyświetla się w sekcji "Not solved" w daschboardzie VOL:
     public List<CompetenceTest> readAllWithoutSolutionsByVolunteerId(Long id){
         List<CompetenceTest> competenceTestsWithoutSolutions = new ArrayList<>();
         List<CompetenceTest> competenceTests = competenceTestRepository.findByVolunteerId(id);

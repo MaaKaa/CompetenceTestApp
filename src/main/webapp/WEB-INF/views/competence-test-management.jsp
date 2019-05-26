@@ -51,8 +51,6 @@
 
         </form:form> <br>
 
-
-
         <h2>Invited Volunteers:</h2><br>
 
         <table class="table table-hover">
@@ -75,9 +73,37 @@
             </tbody>
         </table>
 
-        <br>
-        <h2>Test's statistics:</h2><br>
+        <br>>
     </div>
+
+    <section id="test-stats" class="section-bg">
+        <div class="container">
+            <br>
+            <h3>Test's statistics:</h3>
+
+            <p>Number of volunteers who completed the test:</p><br>
+            <h5>Role and Autonomy result:</h5>
+            <p>General:</p>
+            <p>Accomplished:</p>
+            <p>Expert:</p>
+
+            <h5>Communication</h5>
+            <p>Partial:</p>
+            <p>Plain:</p>
+            <p>Excellent:</p>
+
+            <h5>Flexibility</h5>
+            <p>Partial:</p>
+            <p>Plain:</p>
+            <p>Excellent:</p>
+
+            <h5>Teamwork</h5>
+            <p>Partial:</p>
+            <p>Plain:</p>
+            <p>Excellent:</p>
+
+        </div>
+    </section>
 
     <br>
     <br>
