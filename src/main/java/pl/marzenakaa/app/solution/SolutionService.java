@@ -28,9 +28,8 @@ public class SolutionService {
         return solutionRepository.findAll();
     }
 
-    //zwraca wiele wyników, bo WOL może dodać kilka Solutions do jednego testu - trzeba to poprawić.
-    public Solution readByCompetenceTestIdAndVolunteerId(Long id, Long vId){
-        return solutionRepository.findByCompetenceTestIdAndVolunteerId(id, vId);
+    public List <Solution> readAllByCompetenceTestIdAndVolunteerId(Long id, Long vId){
+        return solutionRepository.findAllByCompetenceTestIdAndVolunteerId(id, vId);
     }
 
     public void update(Solution solution) {
@@ -65,7 +64,7 @@ public class SolutionService {
         } else if (sum >= 12 && sum <= 15){
             return "Plain";
         } else {
-            return "Excelent";
+            return "Excellent";
         }
     }
 
@@ -78,7 +77,7 @@ public class SolutionService {
         } else if (sum >= 10 && sum <= 12){
             return "Plain";
         } else {
-            return "Excelent";
+            return "Excellent";
         }
     }
 
@@ -91,7 +90,7 @@ public class SolutionService {
         } else if (sum >= 6 && sum <= 7){
             return "Plain";
         } else {
-            return "Excelent";
+            return "Excellent";
         }
     }
 }

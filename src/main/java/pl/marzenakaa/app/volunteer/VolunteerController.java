@@ -51,7 +51,7 @@ public class VolunteerController {
     @GetMapping("/logged/{id}/competenceTest/{ctId}/results")
     public String showCompetenceTestResults(@PathVariable Long id, @PathVariable Long ctId, Model model){
         model.addAttribute("volunteer", volunteerService.readWithInvitations(id));
-        model.addAttribute("solutionByCompetenceTestIdAndVolunteerId", solutionService.readByCompetenceTestIdAndVolunteerId(ctId, id));
+        model.addAttribute("solutionByCompetenceTestIdAndVolunteerId", solutionService.readAllByCompetenceTestIdAndVolunteerId(ctId, id));
         return "competence-test-results";
     }
 }

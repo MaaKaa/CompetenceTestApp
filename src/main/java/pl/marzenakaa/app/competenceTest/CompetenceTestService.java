@@ -61,7 +61,7 @@ public class CompetenceTestService {
         List<CompetenceTest> competenceTestsWithoutSolutions = new ArrayList<>();
         List<CompetenceTest> competenceTests = competenceTestRepository.findByVolunteerId(id);
         for(CompetenceTest competenceTest : competenceTests){
-            Solution solution = solutionRepository.findByCompetenceTestIdAndVolunteerId(competenceTest.getId(), id);
+            List<Solution> solution = solutionRepository.findAllByCompetenceTestIdAndVolunteerId(competenceTest.getId(), id);
             if(solution == null){
                 competenceTestsWithoutSolutions.add(competenceTest);
             }
