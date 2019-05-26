@@ -28,6 +28,10 @@ public class SolutionService {
         return solutionRepository.findAll();
     }
 
+    public Solution readByCompetenceTestIdAndVolunteerId(Long id, Long vId){
+        return solutionRepository.findByCompetenceTestIdAndVolunteerId(id, vId);
+    }
+
     public List <Solution> readAllByCompetenceTestIdAndVolunteerId(Long id, Long vId){
         return solutionRepository.findAllByCompetenceTestIdAndVolunteerId(id, vId);
     }

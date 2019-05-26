@@ -23,9 +23,39 @@
             <h2>Your competence tests:</h2>
         </div>
 
+
+        <section id="your-competenceTests-2" >
+            <div class="container">
+                <h3>All Invitations:</h3>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Organisation</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${volunteer.competenceTests}" var="competenceTest">
+                        <tr>
+                            <td>${competenceTest.id}</td>
+                            <td>${competenceTest.name}</td>
+                            <td>${competenceTest.description}</td>
+                            <td>${competenceTest.organisation}</td>
+                            <td><a href="${volunteer.id}/competenceTest/${competenceTest.id}">Take the test!</a>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+                <br>
+            </div>
+        </section>
+
         <section id="your-competenceTests" >
             <div class="container">
-                <h3>Invitations:</h3>
+                <h3>Not solved:</h3>
                 <table class="table table-hover">
                     <thead>
                     <tr>
@@ -51,7 +81,6 @@
                 <br>
             </div>
         </section>
-
 
         <section id="your-solved-tests">
             <div class="container">

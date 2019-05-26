@@ -61,13 +61,28 @@ public class CompetenceTestService {
         List<CompetenceTest> competenceTestsWithoutSolutions = new ArrayList<>();
         List<CompetenceTest> competenceTests = competenceTestRepository.findByVolunteerId(id);
         for(CompetenceTest competenceTest : competenceTests){
-            List<Solution> solution = solutionRepository.findAllByCompetenceTestIdAndVolunteerId(competenceTest.getId(), id);
-            if(solution == null){
-                competenceTestsWithoutSolutions.add(competenceTest);
-            }
+            Solution solution = solutionRepository.findByCompetenceTestIdAndVolunteerId(competenceTest.getId(), id);
+                if(solution == null){
+                    competenceTestsWithoutSolutions.add(competenceTest);
+                }
         }
         return competenceTestsWithoutSolutions;
     }
+
+    /*Do poprawienia:
+    public List<CompetenceTest> readAllWithoutSolutionsByVolunteerId(Long id){
+        List<CompetenceTest> competenceTestsWithoutSolutions = new ArrayList<>();
+        List<CompetenceTest> competenceTests = competenceTestRepository.findByVolunteerId(id);
+        for(CompetenceTest competenceTest : competenceTests){
+            List<Solution> solutions = solutionRepository.findAllByCompetenceTestIdAndVolunteerId(competenceTest.getId(), id);
+            for (Solution solution : solutions){
+                if(solution == null){
+                    competenceTestsWithoutSolutions.add(competenceTest);
+                }
+            }
+        }
+        return competenceTestsWithoutSolutions;
+    }*/
 
     public void update(CompetenceTest competenceTest) {
         competenceTestRepository.save(competenceTest);

@@ -25,7 +25,7 @@ public class VolunteerController {
 
     @GetMapping("/logged/{id}")
     public String showVolunteerHomePage(@PathVariable Long id, Model model){
-        Volunteer volunteer = volunteerService.readWithInvitationsAndSolutions(id);
+        Volunteer volunteer = volunteerService.readWithCompetenceTestsAndSolutions(id);
         model.addAttribute("volunteer", volunteer);
         model.addAttribute("competenceTestsWithoutSolutions", competenceTestService.readAllWithoutSolutionsByVolunteerId(id));
         return "dashboard-volunteer";
@@ -33,7 +33,7 @@ public class VolunteerController {
 
     @GetMapping("/logged/{id}/competenceTest/{ctId}")
     public String showCompetenceTest(@PathVariable Long id, @PathVariable Long ctId, Model model){
-        model.addAttribute("volunteer", volunteerService.readWithInvitations(id));
+        model.addAttribute("volunteer", volunteerService.readWithCompetenceTests(id));
         model.addAttribute("competenceTest", competenceTestService.read(ctId));
         model.addAttribute("solution", new Solution());
         return "competence-test-form";
@@ -50,8 +50,8 @@ public class VolunteerController {
 
     @GetMapping("/logged/{id}/competenceTest/{ctId}/results")
     public String showCompetenceTestResults(@PathVariable Long id, @PathVariable Long ctId, Model model){
-        model.addAttribute("volunteer", volunteerService.readWithInvitations(id));
-        model.addAttribute("solutionByCompetenceTestIdAndVolunteerId", solutionService.readAllByCompetenceTestIdAndVolunteerId(ctId, id));
+        model.addAttribute("volunteer", volunteerService.readWithCompetenceTests(id));
+        model.addAttribute("solutionByCompetenceTestIdAndVolunteerId", solutionService.readByCompetenceTestIdAndVolunteerId(ctId, id));
         return "competence-test-results";
     }
 }

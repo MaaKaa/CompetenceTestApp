@@ -25,7 +25,13 @@ public class VolunteerService {
         return volunteerRepository.findByEmail(email);
     }
 
-    public Volunteer readWithInvitations(Long id){
+    public Volunteer readByEmailWithCompetenceTests(String email){
+        Volunteer volunteer = readByEmail(email);
+        Hibernate.initialize(volunteer.getCompetenceTests());
+        return volunteer;
+    }
+
+    public Volunteer readWithCompetenceTests(Long id){
         Volunteer volunteer = read(id);
         Hibernate.initialize(volunteer.getCompetenceTests());
         return volunteer;
@@ -37,7 +43,7 @@ public class VolunteerService {
         return volunteer;
     }
 
-    public Volunteer readWithInvitationsAndSolutions(Long id){
+    public Volunteer readWithCompetenceTestsAndSolutions(Long id){
         Volunteer volunteer = read(id);
         Hibernate.initialize(volunteer.getCompetenceTests());
         Hibernate.initialize(volunteer.getSolutions());

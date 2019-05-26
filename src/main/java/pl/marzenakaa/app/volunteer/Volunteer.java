@@ -20,7 +20,6 @@ public class Volunteer {
     @Size(min = 3, max = 150)
     private String name;
 
-    @NotBlank
     @Column(name = "email", unique = true)
     @Email
     private String email;

@@ -56,20 +56,22 @@ public class OrganisationController {
     }
 
     @PostMapping("/{id}/competence-test/{ctId}")
-    public String processInviteVolunteersForm(@PathVariable Long id, @ModelAttribute("volunteer") @Valid Volunteer volunteer, BindingResult result){
+    public String processInviteVolunteersForm(@PathVariable Long id, @PathVariable Long ctId, @ModelAttribute("volunteer") @Valid Volunteer volunteer, BindingResult result){
         if (result.hasErrors()) {
             return "competence-test-management";
         }
-        volunteerService.create(volunteer);
-        /*Volunteer volunteer1 = volunteerService.readByEmail(volunteer.getEmail());
+        Volunteer volunteer1 = volunteerService.readByEmailWithCompetenceTests(volunteer.getEmail());
         if(volunteer1 == null){
+            //Być może to generowane hasło trzeba przypisać do zmiennej i zapisać w bazie? A potem je zasolić? Bo teraz WOL nie może się jednak zalogować:
             volunteer.setPassword(RandomStringUtils.randomAlphanumeric(8));
             volunteerService.create(volunteer);
         }else{
-            Hibernate.initialize(volunteer1.getCompetenceTests());
-            List<CompetenceTest> competenceTests =  volunteer1.getCompetenceTests();
+            List<CompetenceTest> competenceTests = volunteer1.getCompetenceTests();
             competenceTests.add(competenceTestService.read(ctId));
-        }*/
+            volunteer1.setCompetenceTests(competenceTests);
+            volunteerService.update(volunteer1);
+        }
+
         return "redirect: ";
     }
 }
