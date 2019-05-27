@@ -81,7 +81,7 @@
                             <td>${competenceTest.description}</td>
                             <td>${competenceTest.link}</td>
                             <td>${competenceTest.organisation}</td>
-                            <td><a href="/org/logged/${organisation.id}/competence-test/${competenceTest.id}">View | Invite volunteers</a>
+                            <td><a href="/org/logged/competence-test/${competenceTest.id}">View | Invite volunteers</a>
                         </tr>
                     </c:forEach>
                     </tbody>

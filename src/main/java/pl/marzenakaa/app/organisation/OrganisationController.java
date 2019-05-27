@@ -11,6 +11,7 @@ import pl.marzenakaa.app.competenceTest.CompetenceTestService;
 import pl.marzenakaa.app.volunteer.Volunteer;
 import pl.marzenakaa.app.volunteer.VolunteerService;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -26,7 +27,56 @@ public class OrganisationController {
     @Autowired
     VolunteerService volunteerService;
 
+    @GetMapping("/")
+    public String showOrganisationHomePage(HttpSession session, Model model){
+        Organisation organisationSession = (Organisation)session.getAttribute("organisationSession");
+        Organisation organisation = organisationService.readWithCompetenceTests(organisationSession.getId());
+        model.addAttribute("organisation", organisation);
+        CompetenceTest competenceTest = new CompetenceTest();
+        competenceTest.setOrganisation(organisation);
+        model.addAttribute("competenceTest", competenceTest);
+        return "dashboard-organisation";
+    }
 
+    @PostMapping("/")
+    public String processCreateCompetenceTestForm(@ModelAttribute("competenceTest") @Valid CompetenceTest competenceTest, BindingResult result) {
+        if (result.hasErrors()) {
+            return "dashboard-organisation";
+        }
+        competenceTestService.create(competenceTest);
+        return "redirect: ";
+    }
+
+    @GetMapping("/competence-test/{ctId}")
+    public String showCompetenceTestManagementPage(HttpSession session, @PathVariable Long ctId, Model model){
+        model.addAttribute("organisation", session.getAttribute("organisationSession"));
+        model.addAttribute("competenceTest", competenceTestService.read(ctId));
+        model.addAttribute("volunteer", new Volunteer());
+        return "competence-test-management";
+    }
+
+    @PostMapping("/competence-test/{ctId}")
+    public String processInviteVolunteersForm(@PathVariable Long ctId, @ModelAttribute("volunteer") @Valid Volunteer volunteer, BindingResult result){
+        if (result.hasErrors()) {
+            return "competence-test-management";
+        }
+
+        Volunteer volunteer2 = volunteerService.readByEmail(volunteer.getEmail());
+        if(volunteer2 == null){
+            //Być może to generowane hasło trzeba przypisać do zmiennej i zapisać w bazie? A potem je zasolić? Bo teraz WOL nie może się jednak zalogować:
+            volunteer.setPassword(RandomStringUtils.randomAlphanumeric(8));
+            volunteerService.create(volunteer);
+        }else{
+            volunteer2 = volunteerService.readByEmailWithCompetenceTests(volunteer.getEmail());
+            List<CompetenceTest> competenceTests = volunteer2.getCompetenceTests();
+            competenceTests.add(competenceTestService.read(ctId));
+            volunteer2.setCompetenceTests(competenceTests);
+            volunteerService.update(volunteer2);
+        }
+
+        return "redirect: ";
+    }
+    /*
     @GetMapping("/{id}")
     public String showOrganisationHomePage(@PathVariable Long id, Model model){
         Organisation organisation = organisationService.readWithCompetenceTests(id);
@@ -72,5 +122,5 @@ public class OrganisationController {
         }
 
         return "redirect: ";
-    }
+    }*/
 }
