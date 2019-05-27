@@ -2,6 +2,7 @@ package pl.marzenakaa.app.filter;
 
 import org.springframework.web.filter.GenericFilterBean;
 import pl.marzenakaa.app.organisation.Organisation;
+import pl.marzenakaa.app.volunteer.Volunteer;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -13,19 +14,20 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = {"/org/*"})
-public class CustomAuthorizationFilter extends GenericFilterBean {
+@WebFilter(urlPatterns = {"/vol/*"})
+public class CustomAuthorizationFilterVolunteer extends GenericFilterBean {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpSession session = req.getSession();
-        Organisation organisation = (Organisation) session.getAttribute("organisationSession");
-        if (organisation == null) {
+        Volunteer volunteer = (Volunteer) session.getAttribute("volunteerSession");
+        if (volunteer == null) {
             HttpServletResponse httpResponse = (HttpServletResponse) response;
             httpResponse.sendRedirect("/login");
         } else {
             chain.doFilter(request, response);
         }
     }
+
 }
