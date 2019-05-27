@@ -27,20 +27,20 @@ public class RegistrationController {
     @GetMapping("/register")
     public String showRegisterForm(Model model){
         model.addAttribute("organisation", new Organisation());
-        return "registration-form-organisation";
+        return "registration-form";
     }
 
     @PostMapping("/register")
     public String processRegisterForm(@ModelAttribute("organisation") @Valid Organisation organisation, BindingResult result){
         if (result.hasErrors()) {
-            return "registration-form-organisation";
+            return "registration-form";
         }
         Organisation organisation1 = organisationService.readByEmail(organisation.getEmail());
         if(organisation1 == null){
             organisation.setPassword(BCrypt.hashpw(organisation.getPassword(), BCrypt.gensalt()));
             organisationService.create(organisation);
         }else{
-            return "registration-form-organisation-error";
+            return "registration-form-error";
         }
         return "login";
     }

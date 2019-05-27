@@ -57,38 +57,4 @@ public class VolunteerController {
         model.addAttribute("solutionByCompetenceTestIdAndVolunteerId", solutionService.readByCompetenceTestIdAndVolunteerId(ctId, volunteer.getId()));
         return "competence-test-results";
     }
-
-    /*
-    @GetMapping("/logged/{id}")
-    public String showVolunteerHomePage(@PathVariable Long id, Model model){
-        Volunteer volunteer = volunteerService.readWithCompetenceTestsAndSolutions(id);
-        model.addAttribute("volunteer", volunteer);
-        model.addAttribute("competenceTestsWithoutSolutions", competenceTestService.readAllWithoutSolutionsByVolunteerId(id));
-        return "dashboard-volunteer";
-    }
-
-    @GetMapping("/logged/{id}/competenceTest/{ctId}")
-    public String showCompetenceTest(@PathVariable Long id, @PathVariable Long ctId, Model model){
-        model.addAttribute("volunteer", volunteerService.readWithCompetenceTests(id));
-        model.addAttribute("competenceTest", competenceTestService.read(ctId));
-        model.addAttribute("solution", new Solution());
-        return "competence-test-form";
-    }
-
-    @PostMapping("/logged/{id}/competenceTest/{ctId}")
-    public String processCompetenceTest(@ModelAttribute("solution") @Valid Solution solution, BindingResult result){
-        if (result.hasErrors()) {
-            return "competence-test-form";
-        }
-        solutionService.create(solution);
-        return "redirect:/vol/logged/{id}/competenceTest/{ctId}/results";
-    }
-
-    @GetMapping("/logged/{id}/competenceTest/{ctId}/results")
-    public String showCompetenceTestResults(@PathVariable Long id, @PathVariable Long ctId, Model model){
-        model.addAttribute("volunteer", volunteerService.readWithCompetenceTests(id));
-        model.addAttribute("solutionByCompetenceTestIdAndVolunteerId", solutionService.readByCompetenceTestIdAndVolunteerId(ctId, id));
-        return "competence-test-results";
-    }
-     */
 }
