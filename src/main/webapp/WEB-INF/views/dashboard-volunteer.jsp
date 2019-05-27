@@ -44,7 +44,7 @@
                             <td>${competenceTest.name}</td>
                             <td>${competenceTest.description}</td>
                             <td>${competenceTest.organisation}</td>
-                            <td><a href="${volunteer.id}/competenceTest/${competenceTest.id}">Take the test!</a>
+                            <td><a href="/vol/logged/competenceTest/${competenceTest.id}">Take the test!</a>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -73,7 +73,7 @@
                             <td>${testWithoutSolution.name}</td>
                             <td>${testWithoutSolution.description}</td>
                             <td>${testWithoutSolution.organisation}</td>
-                            <td><a href="${volunteer.id}/competenceTest/${testWithoutSolution.id}">Take the test!</a>
+                            <td><a href="/vol/logged/competenceTest/${testWithoutSolution.id}">Take the test!</a>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -102,7 +102,7 @@
                             <td>${solutionByVolunteer.competenceTest.name}</td>
                             <td>${solutionByVolunteer.competenceTest.description}</td>
                             <td>${solutionByVolunteer.competenceTest.organisation}</td>
-                            <td><a href="${volunteer.id}/competenceTest/${solutionByVolunteer.competenceTest.id}/results">View results</a>
+                            <td><a href="/vol/logged/competenceTest/${solutionByVolunteer.competenceTest.id}/results">View results</a>
                         </tr>
                     </c:forEach>
                     </tbody>

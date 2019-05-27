@@ -21,7 +21,7 @@
         <br>
         <br>
 
-        <a href="<c:url value="/vol/logged/${volunteer.id}"/>">Back to Volunteer's Dashboard</a><br><br>
+        <a href="<c:url value="/vol/logged/"/>">Back to Volunteer's Dashboard</a><br><br>
 
         <h3><p style="color:#1bb1dc;">Competence Test: "${solutionByCompetenceTestIdAndVolunteerId.competenceTest.name}" Results</p></h3>
 

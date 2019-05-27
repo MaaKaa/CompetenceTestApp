@@ -1,7 +1,6 @@
 package pl.marzenakaa.app.filter;
 
 import org.springframework.web.filter.GenericFilterBean;
-import pl.marzenakaa.app.organisation.Organisation;
 import pl.marzenakaa.app.volunteer.Volunteer;
 
 import javax.servlet.FilterChain;
