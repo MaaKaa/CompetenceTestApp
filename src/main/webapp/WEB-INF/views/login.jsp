@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
+<html>
 <head>
     <title>Log in</title>
     <script src="<c:url value="/webjars/jquery/3.0.0/jquery.min.js"/>"></script>
@@ -20,35 +21,38 @@
         <br>
         <br>
 
-        <div class="card mt-4">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card mt-4">
 
-            <div class="card-body">
+                    <div class="card-body">
 
-                    <h3>Log in</h3>
+                        <h3>Log in </h3>
 
-                <form method="post" >
+                        <form method="post" >
 
-                    <div class="form-group col-md-4">
-                        <label>Email:</label>
-                        <input type="text" class="form-control" name="email" id="email"/><br>
+                            <div class="form-group">
+                                <label>Email:</label>
+                                <input type="text" class="form-control" name="email" id="email"/><br>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Password:</label>
+                                <input type="password" class="form-control" name="password" id="password"/><br>
+                            </div>
+
+                            <c:if test="${isLogged == false}">
+                                <div class="error">Login failed</div><br><br>
+                            </c:if>
+
+                            <input type="submit" value="Login" class="btn btn-save"><br>
+
+                        </form>
+
+                        <a href="<c:url value="register"/>">Don't have an account yet? Register here!</a><br>
                     </div>
-
-                    <div class="form-group col-md-4">
-                        <label>Password:</label>
-                        <input type="password" class="form-control" name="password" id="password"/><br>
-                    </div>
-
-                    <c:if test="${isLogged == false}">
-                        <div class="error">Login failed</div><br><br>
-                    </c:if>
-
-                    <input type="submit" value="Login" class="btn btn-save"><br>
-
-                </form>
-
-                <a href="<c:url value="register"/>">Don't have an account yet? Register here!</a><br>
             </div>
-        </div>
+
 
     <br>
     <br>

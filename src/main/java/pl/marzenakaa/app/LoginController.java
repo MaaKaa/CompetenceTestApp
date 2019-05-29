@@ -10,12 +10,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import pl.marzenakaa.app.organisation.Organisation;
 import pl.marzenakaa.app.organisation.OrganisationService;
+import pl.marzenakaa.app.volunteer.Volunteer;
+import pl.marzenakaa.app.volunteer.VolunteerService;
 
 @Controller
-@SessionAttributes("organisationSession")
+@SessionAttributes({"organisationSession", "volunteerSession"})
 public class LoginController {
     @Autowired
     OrganisationService organisationService;
+
+    @Autowired
+    VolunteerService volunteerService;
 
     @GetMapping("/login")
     public String login() {
@@ -24,16 +29,31 @@ public class LoginController {
 
     @PostMapping("/login")
     public String login(@RequestParam String email, @RequestParam String password, Model model) {
-        Organisation organisation = organisationService.readByEmail(email);
+
         model.addAttribute("isLogged", false);
-        if (organisation == null) {
+        Volunteer volunteer = volunteerService.readByEmail(email);
+        Organisation organisation = organisationService.readByEmail(email);
+
+        if(organisation == null && volunteer == null){
             return "login";
         }
-        if (BCrypt.checkpw(password, organisation.getPassword())) {
-            model.addAttribute("organisationSession", organisation);
-            model.addAttribute("isLogged", true);
-            return "redirect:org/logged/";
+
+        if(organisation != null){
+            if (BCrypt.checkpw(password, organisation.getPassword())) {
+                model.addAttribute("organisationSession", organisation);
+                model.addAttribute("isLogged", true);
+                return "redirect:org/logged/";
+            }
         }
+
+        if(volunteer != null){
+            if (BCrypt.checkpw(password, volunteer.getPassword())) {
+                model.addAttribute("volunteerSession", volunteer);
+                model.addAttribute("isLogged", true);
+                return "redirect:vol/logged/";
+            }
+        }
+
         return "login";
     }
 }
