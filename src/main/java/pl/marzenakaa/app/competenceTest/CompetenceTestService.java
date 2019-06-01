@@ -69,54 +69,43 @@ public class CompetenceTestService {
         return competenceTestsWithoutSolutions;
     }
 
-    public int readNumberOfSolutionsWhereRoleAndAutonomyResultIsGeneral(Long id){
-        return competenceTestRepository.countSolutionsWhereRoleAndAutonomyResultIsGeneral(id);
+    // ***
+    public int readNumberOfSolutionsByCompetenceResult(String competenceName, Long id, String level){
+        return competenceTestRepository.countSolutionsByCompetenceResult(competenceName, id, level);
     }
 
-    public int readNumberOfSolutionsWhereRoleAndAutonomyResultIsAccomplished(Long id){
-        return competenceTestRepository.countSolutionsWhereRoleAndAutonomyResultIsAccomplished(id);
+
+    public int readNumberOfSolutionsByRoleAndAutonomyResult(Long id, String level){
+        return competenceTestRepository.countSolutionsByRoleAndAutonomyResult(id, level);
     }
 
-    public int readNumberOfSolutionsWhereRoleAndAutonomyResultIsExpert(Long id){
-        return competenceTestRepository.countSolutionsWhereRoleAndAutonomyResultIsExpert(id);
+    public int readNumberOfSolutionsByCommunicationResult(Long id, String level){
+        return competenceTestRepository.countSolutionsByCommunicationResult(id, level);
     }
 
-    public int readNumberOfSolutionsWhereFlexibilityResultIsPartial(Long id){
-        return competenceTestRepository.countSolutionsWhereFlexibilityResultIsPartial(id);
+    public int readNumberOfSolutionsByFlexibilityResult(Long id, String level){
+        return competenceTestRepository.countSolutionsByFlexibilityResult(id, level);
     }
 
-    public int readNumberOfSolutionsWhereFLexibilityResultIsPlain(Long id){
-        return competenceTestRepository.countSolutionsWhereFlexibilityResultIsPlain(id);
+    public int readNumberOfSolutionsByTeamworkResult(Long id, String level){
+        return competenceTestRepository.countSolutionsByTeamworkResult(id, level);
     }
 
-    public int readNumberOfSolutionsWhereFlexibilityResultIsExcellent(Long id){
-        return competenceTestRepository.countSolutionsWhereFLexibilityResultIsExcellent(id);
+    public int readAllNumberOfSolutionsByRoleAndAutonomyResult(Long id, String level){
+        return competenceTestRepository.countAllSolutionsByRoleAndAutonomyResult(id, level);
     }
 
-    public int readNumberOfSolutionsWhereTeamworkResultIsPartial(Long id){
-        return competenceTestRepository.countSolutionsWhereTeamworkResultIsPartial(id);
+    public int readAllNumberOfSolutionsByCommunicationResult(Long id, String level){
+        return competenceTestRepository.countAllSolutionsByCommunicationResult(id, level);
     }
 
-    public int readNumberOfSolutionsWhereTeamworkResultIsPlain(Long id){
-        return competenceTestRepository.countSolutionsWhereTeamworkResultIsPlain(id);
+    public int readAllNumberOfSolutionsByFlexibilityResult(Long id, String level){
+        return competenceTestRepository.countAllSolutionsByFlexibilityResult(id, level);
     }
 
-    public int readNumberOfSolutionsWhereTeamworkResultIsExcellent(Long id){
-        return competenceTestRepository.countSolutionsWhereTeamworkResultIsExcellent(id);
+    public int readAllNumberOfSolutionsByTeamworkResult(Long id, String level){
+        return competenceTestRepository.countAllSolutionsByTeamworkResult(id, level);
     }
-
-    public int readNumberOfSolutionsWhereCommunicationResultIsPartial(Long id){
-        return competenceTestRepository.countSolutionsWhereCommunicationResultIsPartial(id);
-    }
-
-    public int readNumberOfSolutionsWhereCommunicationResultIsPlain(Long id){
-        return competenceTestRepository.countSolutionsWhereCommunicationResultIsPlain(id);
-    }
-
-    public int readNumberOfSolutionsWhereCommunicationResultIsExcellent(Long id){
-        return competenceTestRepository.countSolutionsWhereCommunicationResultIsExcellent(id);
-    }
-
 
     public void update(CompetenceTest competenceTest) {
         competenceTestRepository.save(competenceTest);

@@ -91,29 +91,67 @@
 
         <section id="overall-stats" class="section-bg">
             <div class="container">
-                <br>
-                <h3>Overall statistics:</h3>
+                <h3>Test's statistics:</h3>
 
-                <p>Number of volunteers who completed all your tests: </p><br>
-                <h5>Role and Autonomy result:</h5>
-                <p>General:</p>
-                <p>Accomplished:</p>
-                <p>Expert:</p>
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <h5>Number of volunteers who completed all your tests:</h5><br>
+                            <c:set var="noOfCompleted" value="${competenceTest.solutions}"/><!-- Do poprawy -->
+                            ${fn:length(noOfCompleted)}
+                        </div>
+                    </div>
 
-                <h5>Communication</h5>
-                <p>Partial:</p>
-                <p>Plain:</p>
-                <p>Excellent:</p>
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <h5>Number of volunteers invited to all of your tests:</h5><br>
+                            <c:set var="noOfInvited" value="${competenceTest.volunteers}"/> <!-- Do poprawy -->
+                            ${fn:length(noOfInvited)}
+                        </div>
+                    </div>
 
-                <h5>Flexibility</h5>
-                <p>Partial:</p>
-                <p>Plain:</p>
-                <p>Excellent:</p>
+                    <h3>Test: ${statsRoleAndAutonomyGeneralFromAllTestsTEST}</h3>
 
-                <h5>Teamwork</h5>
-                <p>Partial:</p>
-                <p>Plain:</p>
-                <p>Excellent:</p>
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <h5>Role and Autonomy results:</h5>
+                            <p>General: ${statsRoleAndAutonomyGeneralFromAllTests}</p>
+                            <p>Accomplished: ${statsRoleAndAutonomyAccomplishedFromAllTests}</p>
+                            <p>Expert: ${statsRoleAndAutonomyExpertFromAllTests}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <h5>Communication results</h5>
+                            <p>Partial: ${statsCommunicationPartialFromAllTests}</p>
+                            <p>Plain: ${statsCommunicationPlainFromAllTests}</p>
+                            <p>Excellent: ${statsCommunicationExcellentFromAllTests}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <h5>Flexibility results</h5>
+                            <p>Partial: ${statsFlexibilityPartialFromAllTests}</p>
+                            <p>Plain: ${statsFlexibilityPlainFromAllTests}</p>
+                            <p>Excellent: ${statsFlexibilityExcellentFromAllTests}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <h5>Teamwork results</h5>
+                            <p>Partial: ${statsTeamworkPartialFromAllTests}</p>
+                            <p>Plain: ${statsTeamworkPlainFromAllTests}</p>
+                            <p>Excellent: ${statsTeamworkExcellentFromAllTests}</p>
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
         </section>

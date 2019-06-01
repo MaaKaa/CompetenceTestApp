@@ -20,7 +20,7 @@
         <br>
         <br>
         <!-- link nie działa - może trzeba zmienić zasięg sesji? -->
-        <a href="<c:url value="/org/logged"/>">Back to Organisation's Dashboard</a><br>
+        <a href="<c:url value="/org/logged/"/>">Back to Organisation's Dashboard</a><br>
         <br>
 
         <h2 style="color:#1bb1dc;">${competenceTest.name}</h2><br>
@@ -138,7 +138,6 @@
                 </div>
 
             </div>
-
 
         </div>
     </section>
