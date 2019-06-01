@@ -27,11 +27,6 @@ public interface CompetenceTestRepository extends JpaRepository<CompetenceTest, 
     @Query(value = "SELECT COUNT(solutions.id) FROM competenceTests JOIN solutions ON competenceTest_id=solutions.competenceTest_id WHERE competenceTest_id=?1 AND teamWorkResult=?2", nativeQuery = true)
     int countSolutionsByTeamworkResult(Long id, String level);
 
-    // ***
-    @Query(value = "SELECT COUNT(solutions.id) FROM competenceTests JOIN solutions ON competenceTest_id=solutions.competenceTest_id WHERE ?1=?2 AND teamWorkResult=?3", nativeQuery = true)
-    int countSolutionsByCompetenceResult(String competenceName, Long id, String level);
-
-
     //Statistics for all the Competence Test of the given Organisation:
     @Query(value = "SELECT COUNT(solutions.id) FROM competenceTests JOIN solutions ON competenceTest_id=solutions.competenceTest_id WHERE organisation_id=?1 AND resultRoleAndAutonomy=?2", nativeQuery = true)
     int countAllSolutionsByRoleAndAutonomyResult(Long id, String level);

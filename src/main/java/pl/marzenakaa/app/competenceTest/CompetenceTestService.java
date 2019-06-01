@@ -69,12 +69,6 @@ public class CompetenceTestService {
         return competenceTestsWithoutSolutions;
     }
 
-    // ***
-    public int readNumberOfSolutionsByCompetenceResult(String competenceName, Long id, String level){
-        return competenceTestRepository.countSolutionsByCompetenceResult(competenceName, id, level);
-    }
-
-
     public int readNumberOfSolutionsByRoleAndAutonomyResult(Long id, String level){
         return competenceTestRepository.countSolutionsByRoleAndAutonomyResult(id, level);
     }
