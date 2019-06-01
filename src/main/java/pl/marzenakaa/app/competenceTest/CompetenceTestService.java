@@ -69,20 +69,54 @@ public class CompetenceTestService {
         return competenceTestsWithoutSolutions;
     }
 
-    /*Do poprawienia (w takiem wersji nie wyświetla się w sekcji "Not solved" w daschboardzie VOL:
-    public List<CompetenceTest> readAllWithoutSolutionsByVolunteerId(Long id){
-        List<CompetenceTest> competenceTestsWithoutSolutions = new ArrayList<>();
-        List<CompetenceTest> competenceTests = competenceTestRepository.findByVolunteerId(id);
-        for(CompetenceTest competenceTest : competenceTests){
-            List<Solution> solutions = solutionRepository.findAllByCompetenceTestIdAndVolunteerId(competenceTest.getId(), id);
-            for (Solution solution : solutions){
-                if(solution == null){
-                    competenceTestsWithoutSolutions.add(competenceTest);
-                }
-            }
-        }
-        return competenceTestsWithoutSolutions;
-    }*/
+    public int readNumberOfSolutionsWhereRoleAndAutonomyResultIsGeneral(Long id){
+        return competenceTestRepository.countSolutionsWhereRoleAndAutonomyResultIsGeneral(id);
+    }
+
+    public int readNumberOfSolutionsWhereRoleAndAutonomyResultIsAccomplished(Long id){
+        return competenceTestRepository.countSolutionsWhereRoleAndAutonomyResultIsAccomplished(id);
+    }
+
+    public int readNumberOfSolutionsWhereRoleAndAutonomyResultIsExpert(Long id){
+        return competenceTestRepository.countSolutionsWhereRoleAndAutonomyResultIsExpert(id);
+    }
+
+    public int readNumberOfSolutionsWhereFlexibilityResultIsPartial(Long id){
+        return competenceTestRepository.countSolutionsWhereFlexibilityResultIsPartial(id);
+    }
+
+    public int readNumberOfSolutionsWhereFLexibilityResultIsPlain(Long id){
+        return competenceTestRepository.countSolutionsWhereFlexibilityResultIsPlain(id);
+    }
+
+    public int readNumberOfSolutionsWhereFlexibilityResultIsExcellent(Long id){
+        return competenceTestRepository.countSolutionsWhereFLexibilityResultIsExcellent(id);
+    }
+
+    public int readNumberOfSolutionsWhereTeamworkResultIsPartial(Long id){
+        return competenceTestRepository.countSolutionsWhereTeamworkResultIsPartial(id);
+    }
+
+    public int readNumberOfSolutionsWhereTeamworkResultIsPlain(Long id){
+        return competenceTestRepository.countSolutionsWhereTeamworkResultIsPlain(id);
+    }
+
+    public int readNumberOfSolutionsWhereTeamworkResultIsExcellent(Long id){
+        return competenceTestRepository.countSolutionsWhereTeamworkResultIsExcellent(id);
+    }
+
+    public int readNumberOfSolutionsWhereCommunicationResultIsPartial(Long id){
+        return competenceTestRepository.countSolutionsWhereCommunicationResultIsPartial(id);
+    }
+
+    public int readNumberOfSolutionsWhereCommunicationResultIsPlain(Long id){
+        return competenceTestRepository.countSolutionsWhereCommunicationResultIsPlain(id);
+    }
+
+    public int readNumberOfSolutionsWhereCommunicationResultIsExcellent(Long id){
+        return competenceTestRepository.countSolutionsWhereCommunicationResultIsExcellent(id);
+    }
+
 
     public void update(CompetenceTest competenceTest) {
         competenceTestRepository.save(competenceTest);

@@ -85,21 +85,25 @@
                 <div class="col-sm">
                     <div class="card-body">
                         <h5>Number of volunteers who completed the test:</h5><br>
+                        <c:set var="noOfCompleted" value="${competenceTest.solutions}"/>
+                        ${fn:length(noOfCompleted)}
                     </div>
                 </div>
 
                 <div class="col-sm">
                     <div class="card-body">
                         <h5>Number of volunteers invited:</h5><br>
+                        <c:set var="noOfInvited" value="${competenceTest.volunteers}"/>
+                        ${fn:length(noOfInvited)}
                     </div>
                 </div>
 
                 <div class="col-sm">
                     <div class="card-body">
-                        <h5>Role and Autonomy result:</h5>
-                        <p>General:</p>
-                        <p>Accomplished:</p>
-                        <p>Expert:</p>
+                        <h5>Role and Autonomy results:</h5>
+                        <p>General: ${statsRoleAndAutonomyGeneral}</p>
+                        <p>Accomplished: ${statsRoleAndAutonomyAccomplished}</p>
+                        <p>Expert: ${statsRoleAndAutonomyExpert}</p>
                     </div>
                 </div>
 
@@ -108,28 +112,28 @@
             <div class="row">
                 <div class="col-sm">
                     <div class="card-body">
-                        <h5>Communication</h5>
-                        <p>Partial:</p>
-                        <p>Plain:</p>
-                        <p>Excellent:</p>
+                        <h5>Communication results</h5>
+                        <p>Partial: ${statsCommunicationPartial}</p>
+                        <p>Plain: ${statsCommunicationPlain}</p>
+                        <p>Excellent: ${statsCommunicationExcellent}</p>
                     </div>
                 </div>
 
                 <div class="col-sm">
                     <div class="card-body">
-                        <h5>Flexibility</h5>
-                        <p>Partial:</p>
-                        <p>Plain:</p>
-                        <p>Excellent:</p>
+                        <h5>Flexibility results</h5>
+                        <p>Partial: ${statsFlexibilityPartial}</p>
+                        <p>Plain: ${statsFlexibilityPlain}</p>
+                        <p>Excellent: ${statsFlexibilityExcellent}</p>
                     </div>
                 </div>
 
                 <div class="col-sm">
                     <div class="card-body">
-                        <h5>Teamwork</h5>
-                        <p>Partial:</p>
-                        <p>Plain:</p>
-                        <p>Excellent:</p>
+                        <h5>Teamwork results</h5>
+                        <p>Partial: ${statsTeamworkPartial}</p>
+                        <p>Plain: ${statsTeamworkPlain}</p>
+                        <p>Excellent: ${statsTeamworkExcellent}</p>
                     </div>
                 </div>
 

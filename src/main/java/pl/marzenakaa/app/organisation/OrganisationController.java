@@ -51,8 +51,20 @@ public class OrganisationController {
     @GetMapping("/competence-test/{ctId}")
     public String showCompetenceTestManagementPage(HttpSession session, @PathVariable Long ctId, Model model){
         model.addAttribute("organisation", session.getAttribute("organisationSession"));
-        model.addAttribute("competenceTest", competenceTestService.read(ctId));
+        model.addAttribute("competenceTest", competenceTestService.readWithSolutions(ctId));
         model.addAttribute("volunteer", new Volunteer());
+        model.addAttribute("statsRoleAndAutonomyGeneral", competenceTestService.readNumberOfSolutionsWhereRoleAndAutonomyResultIsGeneral(ctId));
+        model.addAttribute("statsRoleAndAutonomyAccomplished", competenceTestService.readNumberOfSolutionsWhereRoleAndAutonomyResultIsAccomplished(ctId));
+        model.addAttribute("statsRoleAndAutonomyExpert", competenceTestService.readNumberOfSolutionsWhereRoleAndAutonomyResultIsExpert(ctId));
+        model.addAttribute("statsCommunicationPartial", competenceTestService.readNumberOfSolutionsWhereCommunicationResultIsPartial(ctId));
+        model.addAttribute("statsCommunicationPlain", competenceTestService.readNumberOfSolutionsWhereCommunicationResultIsPlain(ctId));
+        model.addAttribute("statsCommunicationExcellent", competenceTestService.readNumberOfSolutionsWhereCommunicationResultIsExcellent(ctId));
+        model.addAttribute("statsFlexibilityPartial", competenceTestService.readNumberOfSolutionsWhereFlexibilityResultIsPartial(ctId));
+        model.addAttribute("statsFlexibilityPlain", competenceTestService.readNumberOfSolutionsWhereFLexibilityResultIsPlain(ctId));
+        model.addAttribute("statsFlexibilityExcellent", competenceTestService.readNumberOfSolutionsWhereFlexibilityResultIsExcellent(ctId));
+        model.addAttribute("statsTeamworkPartial", competenceTestService.readNumberOfSolutionsWhereTeamworkResultIsPartial(ctId));
+        model.addAttribute("statsTeamworkPlain", competenceTestService.readNumberOfSolutionsWhereTeamworkResultIsPlain(ctId));
+        model.addAttribute("statsTeamworkExcellent", competenceTestService.readNumberOfSolutionsWhereTeamworkResultIsExcellent(ctId));
         return "competence-test-management";
     }
 
@@ -63,8 +75,8 @@ public class OrganisationController {
         }
 
         Volunteer volunteer1 = volunteerService.readByEmail(volunteer.getEmail());
+
         if(volunteer1 == null){
-            //Być może to generowane hasło trzeba przypisać do zmiennej i zapisać w bazie? A potem je zasolić? Bo teraz WOL nie może się jednak zalogować:
             String tempPassword = RandomStringUtils.randomAlphanumeric(8);
             volunteer.setTemporaryPassword(tempPassword);
             volunteer.setPassword(BCrypt.hashpw(tempPassword, BCrypt.gensalt()));
