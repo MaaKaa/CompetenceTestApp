@@ -74,34 +74,67 @@
             </tbody>
         </table>
 
-        <br>>
+        <br>
     </div>
 
     <section id="test-stats" class="section-bg">
         <div class="container">
-            <br>
             <h3>Test's statistics:</h3>
 
-            <p>Number of volunteers who completed the test:</p><br>
-            <h5>Role and Autonomy result:</h5>
-            <p>General:</p>
-            <p>Accomplished:</p>
-            <p>Expert:</p>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="card-body">
+                        <h5>Number of volunteers who completed the test:</h5><br>
+                    </div>
+                </div>
 
-            <h5>Communication</h5>
-            <p>Partial:</p>
-            <p>Plain:</p>
-            <p>Excellent:</p>
+                <div class="col-sm">
+                    <div class="card-body">
+                        <h5>Number of volunteers invited:</h5><br>
+                    </div>
+                </div>
 
-            <h5>Flexibility</h5>
-            <p>Partial:</p>
-            <p>Plain:</p>
-            <p>Excellent:</p>
+                <div class="col-sm">
+                    <div class="card-body">
+                        <h5>Role and Autonomy result:</h5>
+                        <p>General:</p>
+                        <p>Accomplished:</p>
+                        <p>Expert:</p>
+                    </div>
+                </div>
 
-            <h5>Teamwork</h5>
-            <p>Partial:</p>
-            <p>Plain:</p>
-            <p>Excellent:</p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm">
+                    <div class="card-body">
+                        <h5>Communication</h5>
+                        <p>Partial:</p>
+                        <p>Plain:</p>
+                        <p>Excellent:</p>
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="card-body">
+                        <h5>Flexibility</h5>
+                        <p>Partial:</p>
+                        <p>Plain:</p>
+                        <p>Excellent:</p>
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="card-body">
+                        <h5>Teamwork</h5>
+                        <p>Partial:</p>
+                        <p>Plain:</p>
+                        <p>Excellent:</p>
+                    </div>
+                </div>
+
+            </div>
+
 
         </div>
     </section>

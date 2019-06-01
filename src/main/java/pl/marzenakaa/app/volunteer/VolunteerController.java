@@ -44,7 +44,7 @@ public class VolunteerController {
     @PostMapping("/competenceTest/{ctId}")
     public String processCompetenceTest(@ModelAttribute("solution") @Valid Solution solution, BindingResult result){
         if (result.hasErrors()) {
-            return "competence-test-form";
+            return "redirect:/vol/logged/competenceTest/{ctId}";
         }
         solutionService.create(solution);
         return "redirect:/vol/logged/competenceTest/{ctId}/results";

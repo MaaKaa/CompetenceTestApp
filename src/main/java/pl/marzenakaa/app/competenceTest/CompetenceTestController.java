@@ -16,6 +16,7 @@ import javax.validation.Valid;
 @Controller
 public class CompetenceTestController {
 
+    /*
     @Autowired
     SolutionService solutionService;
 
@@ -35,6 +36,6 @@ public class CompetenceTestController {
         }
         solutionService.create(solution);
         return "redirect:competence-test-results";
-    }
+    }*/
 
 }

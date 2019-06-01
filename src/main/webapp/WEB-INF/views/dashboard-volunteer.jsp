@@ -23,7 +23,7 @@
             <h2>Your competence tests:</h2>
         </div>
 
-
+<!--
         <section id="your-competenceTests-2" >
             <div class="container">
                 <h3>All Invitations:</h3>
@@ -52,8 +52,9 @@
                 <br>
             </div>
         </section>
+-->
 
-        <section id="your-competenceTests" >
+        <section id="your-competenceTests">
             <div class="container">
                 <h3>Not solved:</h3>
                 <table class="table table-hover">
