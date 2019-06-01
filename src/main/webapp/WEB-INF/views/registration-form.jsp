@@ -2,7 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
-<html>
 <head>
     <title>Registration form: Organisation</title>
     <script src="<c:url value="/webjars/jquery/3.0.0/jquery.min.js"/>"></script>
@@ -34,7 +33,7 @@
 
                     <div class="card-body">
 
-                        <h3>Register</h3>
+                        <h3 style="color:#1bb1dc;">Register</h3>
 
                         <form:form method="post" modelAttribute="organisation">
 

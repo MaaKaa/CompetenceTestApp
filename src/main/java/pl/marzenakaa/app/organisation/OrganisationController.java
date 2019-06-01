@@ -65,8 +65,8 @@ public class OrganisationController {
         Volunteer volunteer1 = volunteerService.readByEmail(volunteer.getEmail());
         if(volunteer1 == null){
             //Być może to generowane hasło trzeba przypisać do zmiennej i zapisać w bazie? A potem je zasolić? Bo teraz WOL nie może się jednak zalogować:
-            //volunteer.setPassword(RandomStringUtils.randomAlphanumeric(8));
-            String tempPassword = "12345";
+            String tempPassword = RandomStringUtils.randomAlphanumeric(8);
+            volunteer.setTemporaryPassword(tempPassword);
             volunteer.setPassword(BCrypt.hashpw(tempPassword, BCrypt.gensalt()));
             volunteerService.create(volunteer);
         }else{

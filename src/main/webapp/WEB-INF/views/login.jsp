@@ -24,10 +24,17 @@
         <div class="row">
             <div class="col-sm">
                 <div class="card mt-4">
+                    <div class="card-body">
+                        Opis
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card mt-4">
 
                     <div class="card-body">
 
-                        <h3>Log in </h3>
+                        <h3 style="color:#1bb1dc;">Log in </h3>
 
                         <form method="post" >
 
@@ -51,12 +58,13 @@
 
                         <a href="<c:url value="register"/>">Don't have an account yet? Register here!</a><br>
                     </div>
+                </div>
             </div>
 
-
     <br>
     <br>
-    <%@ include file="footer.jspf" %>
-
+            <%@ include file="footer.jspf" %>
+        </div>
+    </div>
 </body>
 </html>

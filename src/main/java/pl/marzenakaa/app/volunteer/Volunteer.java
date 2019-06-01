@@ -24,6 +24,8 @@ public class Volunteer {
     @Email
     private String email;
 
+    private String temporaryPassword;
+
     private String password;
 
     private String age;
@@ -65,6 +67,14 @@ public class Volunteer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getTemporaryPassword() {
+        return temporaryPassword;
+    }
+
+    public void setTemporaryPassword(String temporaryPassword) {
+        this.temporaryPassword = temporaryPassword;
     }
 
     public String getPassword() {
