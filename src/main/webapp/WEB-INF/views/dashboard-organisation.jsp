@@ -7,8 +7,17 @@
     <title>Organisation's Dashboard</title>
     <script src="<c:url value="/webjars/jquery/3.0.0/jquery.min.js"/>"></script>
     <script src="<c:url value="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"/>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <link href="<c:url value="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="/resources/css/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/resources/css/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/resources/css/lib/animate/animate.min.css" rel="stylesheet">
 </head>
 <body>
 <%@ include file="header.jspf" %>
@@ -81,7 +90,7 @@
                             <td>${competenceTest.description}</td>
                             <td>${competenceTest.link}</td>
                             <td>${competenceTest.organisation}</td>
-                            <td><a href="/org/logged/competence-test/${competenceTest.id}">View | Invite volunteers</a>
+                            <td><a href="/org/logged/competence-test/${competenceTest.id}">Manage | Invite volunteers</a>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -91,33 +100,24 @@
 
         <section id="overall-stats" class="section-bg">
             <div class="container">
-                <h3>Test's statistics:</h3>
+                <h3>Tests' statistics:</h3>
 
                 <div class="row">
                     <div class="col-sm">
                         <div class="card-body">
-                            <h5>Number of volunteers who completed all your tests:</h5><br>
-                            <c:set var="noOfCompleted" value="${competenceTest.solutions}"/><!-- Do poprawy -->
-                            ${fn:length(noOfCompleted)}
+                            <h5 align="center">Volunteers:</h5>
+                            <canvas id="volunteersChart"></canvas>
+                            </p><c:set var="noOfCompleted" value="${competenceTest.solutions}"/><!-- Do poprawy -->
                         </div>
                     </div>
 
                     <div class="col-sm">
                         <div class="card-body">
-                            <h5>Number of volunteers invited to all of your tests:</h5><br>
-                            <c:set var="noOfInvited" value="${competenceTest.volunteers}"/> <!-- Do poprawy -->
-                            ${fn:length(noOfInvited)}
-                        </div>
-                    </div>
-
-                    <h3>Test: ${statsRoleAndAutonomyGeneralFromAllTestsTEST}</h3>
-
-                    <div class="col-sm">
-                        <div class="card-body">
-                            <h5>Role and Autonomy results:</h5>
-                            <p>General: ${statsRoleAndAutonomyGeneralFromAllTests}</p>
+                            <h5 align="center">Role and Autonomy results:</h5><br>
+                            <canvas id="roleAndAutonomyChart"></canvas>
+                            <!-- <p>General: ${statsRoleAndAutonomyGeneralFromAllTests}</p>
                             <p>Accomplished: ${statsRoleAndAutonomyAccomplishedFromAllTests}</p>
-                            <p>Expert: ${statsRoleAndAutonomyExpertFromAllTests}</p>
+                            <p>Expert: ${statsRoleAndAutonomyExpertFromAllTests}</p> -->
                         </div>
                     </div>
 
@@ -126,39 +126,141 @@
                 <div class="row">
                     <div class="col-sm">
                         <div class="card-body">
-                            <h5>Communication results</h5>
-                            <p>Partial: ${statsCommunicationPartialFromAllTests}</p>
+                            <h5 align="center">Communication results</h5>
+                            <canvas id="communicationChart"></canvas>
+                            <!-- <p>Partial: ${statsCommunicationPartialFromAllTests}</p>
                             <p>Plain: ${statsCommunicationPlainFromAllTests}</p>
-                            <p>Excellent: ${statsCommunicationExcellentFromAllTests}</p>
+                            <p>Excellent: ${statsCommunicationExcellentFromAllTests}</p> -->
                         </div>
                     </div>
 
                     <div class="col-sm">
                         <div class="card-body">
-                            <h5>Flexibility results</h5>
-                            <p>Partial: ${statsFlexibilityPartialFromAllTests}</p>
+                            <h5 align="center">Flexibility results</h5>
+                            <canvas id="flexibilityChart"></canvas>
+                            <!-- <p>Partial: ${statsFlexibilityPartialFromAllTests}</p>
                             <p>Plain: ${statsFlexibilityPlainFromAllTests}</p>
-                            <p>Excellent: ${statsFlexibilityExcellentFromAllTests}</p>
+                            <p>Excellent: ${statsFlexibilityExcellentFromAllTests}</p> -->
                         </div>
                     </div>
 
                     <div class="col-sm">
                         <div class="card-body">
-                            <h5>Teamwork results</h5>
-                            <p>Partial: ${statsTeamworkPartialFromAllTests}</p>
+                            <h5 align="center">Teamwork results</h5>
+                            <canvas id="teamworkChart"></canvas>
+                            <!-- <p>Partial: ${statsTeamworkPartialFromAllTests}</p>
                             <p>Plain: ${statsTeamworkPlainFromAllTests}</p>
-                            <p>Excellent: ${statsTeamworkExcellentFromAllTests}</p>
+                            <p>Excellent: ${statsTeamworkExcellentFromAllTests}</p> -->
                         </div>
                     </div>
 
                 </div>
 
+                <h5>Description:</h5>
+                <p>You invited [numer] of volunteers. ${fn:length(noOfCompleted)} of them completed the test. </p>
+                <p>This chart shows the main result of the Competence Test. [opis]</p>
             </div>
         </section>
 
+
+    <script>
+        var ctx = document.getElementById('volunteersChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['No. of invited volunteers', 'No. of tests completed'],
+                datasets: [{
+                    label: 'Volunteers',
+                    backgroundColor: ['#413e66', '#1bb1dc'],
+                    borderColor: ['#413e66', '#1bb1dc'],
+                    data: [30, 15]
+                }]
+            },
+            options: {
+                legend: {
+                    position: 'right',
+                }
+            }
+        });
+
+        var ctx = document.getElementById('roleAndAutonomyChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['General', 'Accomplished', 'Expert'],
+                datasets: [{
+                    backgroundColor: ['#413e66', '#1bb1dc', '#065e77'],
+                    borderColor: ['#413e66', '#1bb1dc', '#065e77'],
+                    data: [${statsRoleAndAutonomyGeneralFromAllTests}, ${statsRoleAndAutonomyAccomplishedFromAllTests}, ${statsRoleAndAutonomyExpertFromAllTests}]
+                }]
+            },
+            options: {
+                legend: {
+                    display: false,
+                }
+            }
+        });
+
+        var ctx = document.getElementById('communicationChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Partial', 'Plain', 'Excellent'],
+                datasets: [{
+                    label: 'Communication results',
+                    backgroundColor: ['#413e66', '#1bb1dc', '#065e77'],
+                    borderColor: ['#413e66', '#1bb1dc', '#065e77'],
+                    data: [${statsCommunicationPartialFromAllTests}, ${statsCommunicationPlainFromAllTests}, ${statsCommunicationExcellentFromAllTests}]
+                }]
+            },
+            options: {
+                legend: {
+                    display: false,
+                }
+            }
+        });
+
+        var ctx = document.getElementById('flexibilityChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Partial', 'Plain', 'Excellent'],
+                datasets: [{
+                    label: 'Flexibility results',
+                    backgroundColor: ['#413e66', '#1bb1dc', '#065e77'],
+                    borderColor: ['#413e66', '#1bb1dc', '#065e77'],
+                    data: [${statsFlexibilityPartialFromAllTests}, ${statsFlexibilityPlainFromAllTests}, ${statsFlexibilityExcellentFromAllTests}]
+                }]
+            },
+            options: {
+                legend: {
+                    display: false,
+                }
+            }
+        });
+
+        var ctx = document.getElementById('teamworkChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Partial', 'Plain', 'Excellent'],
+                datasets: [{
+                    label: 'Teamwork results',
+                    backgroundColor: ['#413e66', '#1bb1dc', '#065e77'],
+                    borderColor: ['#413e66', '#1bb1dc', '#065e77'],
+                    data: [${statsTeamworkPartialFromAllTests}, ${statsTeamworkPlainFromAllTests}, ${statsTeamworkExcellentFromAllTests}]
+                }]
+            },
+            options: {
+                legend: {
+                    display: false,
+                    fullWidth: false,
+                }
+            }
+        });
+    </script>
     <br>
     <br>
     <%@ include file="footer.jspf" %>
-
 </body>
 </html>

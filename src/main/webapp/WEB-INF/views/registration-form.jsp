@@ -23,8 +23,11 @@
             <div class="col-sm">
                 <div class="card mt-4">
                     <div class="card-body">
-                        <p>Opis korzyści dla Organizacji</p>
-                        <p>Info o koncie wolonatriusza</p>
+                        <h5>Are you an organisation representative?</h5>
+                        <p>Opis korzyści</p>
+                        <br>
+                        <h5>Are you a volunteer?</h5>
+                        <p>Ask your organisation to invite you to a competence test!</p>
                     </div>
                 </div>
             </div>
