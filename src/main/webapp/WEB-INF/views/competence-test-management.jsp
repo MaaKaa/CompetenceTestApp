@@ -30,7 +30,6 @@
         <br>
         <br>
         <br>
-        <!-- link nie działa - może trzeba zmienić zasięg sesji? -->
         <a href="<c:url value="/org/logged/"/>">Back to Organisation's Dashboard</a><br>
         <br>
 
@@ -103,9 +102,7 @@
                     </c:forEach>
                     </tbody>
                 </table>
-
                 <br>
-            </div>
             </div>
         </section>
 
@@ -125,9 +122,6 @@
                 <div class="col-sm">
                     <div class="card-body">
                         <canvas id="roleAndAutonomyChart"></canvas>
-                        <!-- <p>General: ${statsRoleAndAutonomyGeneralFromAllTests}</p>
-                            <p>Accomplished: ${statsRoleAndAutonomyAccomplishedFromAllTests}</p>
-                            <p>Expert: ${statsRoleAndAutonomyExpertFromAllTests}</p> -->
                     </div>
                 </div>
 
@@ -154,9 +148,6 @@
                     <div class="card-body">
                         <h6 class="text-center">Communication</h6>
                         <canvas id="communicationChart"></canvas>
-                        <!-- <p>Partial: ${statsCommunicationPartialFromAllTests}</p>
-                            <p>Plain: ${statsCommunicationPlainFromAllTests}</p>
-                            <p>Excellent: ${statsCommunicationExcellentFromAllTests}</p> -->
                     </div>
                 </div>
 
@@ -164,9 +155,6 @@
                     <div class="card-body">
                         <h6 class="text-center">Flexibility</h6>
                         <canvas id="flexibilityChart"></canvas>
-                        <!-- <p>Partial: ${statsFlexibilityPartialFromAllTests}</p>
-                            <p>Plain: ${statsFlexibilityPlainFromAllTests}</p>
-                            <p>Excellent: ${statsFlexibilityExcellentFromAllTests}</p> -->
                     </div>
                 </div>
 
@@ -174,9 +162,6 @@
                     <div class="card-body">
                         <h6 class="text-center">Teamwork</h6>
                         <canvas id="teamworkChart"></canvas>
-                        <!-- <p>Partial: ${statsTeamworkPartialFromAllTests}</p>
-                            <p>Plain: ${statsTeamworkPlainFromAllTests}</p>
-                            <p>Excellent: ${statsTeamworkExcellentFromAllTests}</p> -->
                     </div>
                 </div>
             </div>
@@ -195,14 +180,13 @@
                         <c:set var="noOfCompleted" value="${competenceTest.solutions}"/>
                         <c:set var="noOfInvited" value="${competenceTest.volunteers}"/>
                         You invited <b>${fn:length(noOfInvited)}</b> volunteers to take this tests. <b>${fn:length(noOfCompleted)}</b> of them completed this test.
-
                     </div>
                 </div>
 
                 <div class="col-sm">
                     <div class="card-body">
                         <canvas id="volunteersChart"></canvas>
-                        </p><c:set var="noOfCompleted" value="${competenceTest.solutions}"/><!-- Do poprawy -->
+                        <c:set var="noOfCompleted" value="${competenceTest.solutions}"/><!-- Do poprawy -->
                     </div>
                 </div>
             </div>
@@ -220,8 +204,8 @@
 
 
     <script>
-        var ctx = document.getElementById('roleAndAutonomyChart').getContext('2d');
-        var chart = new Chart(ctx, {
+        var ctxRoleAndAutonomy = document.getElementById('roleAndAutonomyChart').getContext('2d');
+        var chartRoleAndAutonomy = new Chart(ctxRoleAndAutonomy, {
             type: 'bar',
             data: {
                 labels: ['General', 'Accomplished', 'Expert'],
@@ -238,8 +222,8 @@
             }
         });
 
-        var ctx = document.getElementById('communicationChart').getContext('2d');
-        var chart = new Chart(ctx, {
+        var ctxCommunication = document.getElementById('communicationChart').getContext('2d');
+        var chartCommunication = new Chart(ctxCommunication, {
             type: 'bar',
             data: {
                 labels: ['Partial', 'Plain', 'Excellent'],
@@ -257,8 +241,8 @@
             }
         });
 
-        var ctx = document.getElementById('flexibilityChart').getContext('2d');
-        var chart = new Chart(ctx, {
+        var ctxFlexibility = document.getElementById('flexibilityChart').getContext('2d');
+        var chartFlexibility = new Chart(ctxFlexibility, {
             type: 'bar',
             data: {
                 labels: ['Partial', 'Plain', 'Excellent'],
@@ -276,8 +260,8 @@
             }
         });
 
-        var ctx = document.getElementById('teamworkChart').getContext('2d');
-        var chart = new Chart(ctx, {
+        var ctxTeamwork = document.getElementById('teamworkChart').getContext('2d');
+        var chartTeamwork = new Chart(ctxTeamwork, {
             type: 'bar',
             data: {
                 labels: ['Partial', 'Plain', 'Excellent'],
@@ -296,8 +280,8 @@
             }
         });
 
-        var ctx = document.getElementById('volunteersChart').getContext('2d');
-        var chart = new Chart(ctx, {
+        var ctxVolunteers = document.getElementById('volunteersChart').getContext('2d');
+        var chartVolunteers = new Chart(ctxVolunteers, {
             type: 'pie',
             data: {
                 labels: ['No. of invited volunteers', 'No. of tests completed'],
@@ -315,6 +299,7 @@
             }
         });
     </script>
+
     <br>
     <br>
     <%@ include file="footer.jspf" %>

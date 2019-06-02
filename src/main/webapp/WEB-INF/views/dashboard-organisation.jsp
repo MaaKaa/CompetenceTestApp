@@ -117,9 +117,6 @@
                     <div class="col-sm">
                         <div class="card-body">
                             <canvas id="roleAndAutonomyChart"></canvas>
-                            <!-- <p>General: ${statsRoleAndAutonomyGeneralFromAllTests}</p>
-                            <p>Accomplished: ${statsRoleAndAutonomyAccomplishedFromAllTests}</p>
-                            <p>Expert: ${statsRoleAndAutonomyExpertFromAllTests}</p> -->
                         </div>
                     </div>
 
@@ -146,9 +143,6 @@
                         <div class="card-body">
                             <h6 class="text-center">Communication</h6>
                             <canvas id="communicationChart"></canvas>
-                            <!-- <p>Partial: ${statsCommunicationPartialFromAllTests}</p>
-                            <p>Plain: ${statsCommunicationPlainFromAllTests}</p>
-                            <p>Excellent: ${statsCommunicationExcellentFromAllTests}</p> -->
                         </div>
                     </div>
 
@@ -156,9 +150,6 @@
                         <div class="card-body">
                             <h6 class="text-center">Flexibility</h6>
                             <canvas id="flexibilityChart"></canvas>
-                            <!-- <p>Partial: ${statsFlexibilityPartialFromAllTests}</p>
-                            <p>Plain: ${statsFlexibilityPlainFromAllTests}</p>
-                            <p>Excellent: ${statsFlexibilityExcellentFromAllTests}</p> -->
                         </div>
                     </div>
 
@@ -166,9 +157,6 @@
                         <div class="card-body">
                             <h6 class="text-center">Teamwork</h6>
                             <canvas id="teamworkChart"></canvas>
-                            <!-- <p>Partial: ${statsTeamworkPartialFromAllTests}</p>
-                            <p>Plain: ${statsTeamworkPlainFromAllTests}</p>
-                            <p>Excellent: ${statsTeamworkExcellentFromAllTests}</p> -->
                         </div>
                     </div>
                 </div>
@@ -209,27 +197,8 @@
 
 
     <script>
-        var ctx = document.getElementById('volunteersChart').getContext('2d');
-        var chart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ['No. of invited volunteers', 'No. of tests completed'],
-                datasets: [{
-                    label: 'Volunteers',
-                    backgroundColor: ['#413e66', '#1bb1dc'],
-                    borderColor: ['#413e66', '#1bb1dc'],
-                    data: [30, 15]
-                }]
-            },
-            options: {
-                legend: {
-                    position: 'right'
-                }
-            }
-        });
-
-        var ctx = document.getElementById('roleAndAutonomyChart').getContext('2d');
-        var chart = new Chart(ctx, {
+        var ctxRoleAndAutonomy = document.getElementById('roleAndAutonomyChart').getContext('2d');
+        var chartRoleAndAutonomy = new Chart(ctxRoleAndAutonomy, {
             type: 'bar',
             data: {
                 labels: ['General', 'Accomplished', 'Expert'],
@@ -246,8 +215,8 @@
             }
         });
 
-        var ctx = document.getElementById('communicationChart').getContext('2d');
-        var chart = new Chart(ctx, {
+        var ctxCommunication = document.getElementById('communicationChart').getContext('2d');
+        var chartComunication = new Chart(ctxCommunication, {
             type: 'bar',
             data: {
                 labels: ['Partial', 'Plain', 'Excellent'],
@@ -265,8 +234,8 @@
             }
         });
 
-        var ctx = document.getElementById('flexibilityChart').getContext('2d');
-        var chart = new Chart(ctx, {
+        var ctxFlexibility = document.getElementById('flexibilityChart').getContext('2d');
+        var chartFlexibility = new Chart(ctxFlexibility, {
             type: 'bar',
             data: {
                 labels: ['Partial', 'Plain', 'Excellent'],
@@ -284,8 +253,8 @@
             }
         });
 
-        var ctx = document.getElementById('teamworkChart').getContext('2d');
-        var chart = new Chart(ctx, {
+        var ctxTeamwork = document.getElementById('teamworkChart').getContext('2d');
+        var chartTeamwork = new Chart(ctxTeamwork, {
             type: 'bar',
             data: {
                 labels: ['Partial', 'Plain', 'Excellent'],
@@ -303,6 +272,26 @@
                 }
             }
         });
+
+        var ctxVolunteers = document.getElementById('volunteersChart').getContext('2d');
+        var chartVolunteers = new Chart(ctxVolunteers, {
+            type: 'pie',
+            data: {
+                labels: ['No. of invited volunteers', 'No. of tests completed'],
+                datasets: [{
+                    label: 'Volunteers',
+                    backgroundColor: ['#413e66', '#1bb1dc'],
+                    borderColor: ['#413e66', '#1bb1dc'],
+                    data: [30, 15]
+                }]
+            },
+            options: {
+                legend: {
+                    position: 'right'
+                }
+            }
+        });
+
     </script>
     <br>
     <br>
