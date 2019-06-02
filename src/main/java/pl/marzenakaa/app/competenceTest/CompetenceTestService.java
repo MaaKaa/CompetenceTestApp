@@ -69,35 +69,35 @@ public class CompetenceTestService {
         return competenceTestsWithoutSolutions;
     }
 
-    public int readNumberOfSolutionsByRoleAndAutonomyResult(Long id, String level){
+    public int readTestStatsForRoleAndAutonomy(Long id, String level){
         return competenceTestRepository.countSolutionsByRoleAndAutonomyResult(id, level);
     }
 
-    public int readNumberOfSolutionsByCommunicationResult(Long id, String level){
+    public int readTestStatsForCommunication(Long id, String level){
         return competenceTestRepository.countSolutionsByCommunicationResult(id, level);
     }
 
-    public int readNumberOfSolutionsByFlexibilityResult(Long id, String level){
+    public int readTestStatsForFlexibility(Long id, String level){
         return competenceTestRepository.countSolutionsByFlexibilityResult(id, level);
     }
 
-    public int readNumberOfSolutionsByTeamworkResult(Long id, String level){
+    public int readTestStatsForTeamwork(Long id, String level){
         return competenceTestRepository.countSolutionsByTeamworkResult(id, level);
     }
 
-    public int readAllNumberOfSolutionsByRoleAndAutonomyResult(Long id, String level){
+    public int readOrgStatsForRoleAndAutonomy(Long id, String level){
         return competenceTestRepository.countAllSolutionsByRoleAndAutonomyResult(id, level);
     }
 
-    public int readAllNumberOfSolutionsByCommunicationResult(Long id, String level){
+    public int readOrgStatsForCommunication(Long id, String level){
         return competenceTestRepository.countAllSolutionsByCommunicationResult(id, level);
     }
 
-    public int readAllNumberOfSolutionsByFlexibilityResult(Long id, String level){
+    public int readOrgStatsForFlexibility(Long id, String level){
         return competenceTestRepository.countAllSolutionsByFlexibilityResult(id, level);
     }
 
-    public int readAllNumberOfSolutionsByTeamworkResult(Long id, String level){
+    public int readOrgStatsForTeamwork(Long id, String level){
         return competenceTestRepository.countAllSolutionsByTeamworkResult(id, level);
     }
 

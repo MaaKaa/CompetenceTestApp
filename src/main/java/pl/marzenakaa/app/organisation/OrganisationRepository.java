@@ -9,4 +9,6 @@ public interface OrganisationRepository extends JpaRepository <Organisation, Lon
     List<Organisation> findAll();
 
     Organisation findByEmail(String email);
+
+
 }

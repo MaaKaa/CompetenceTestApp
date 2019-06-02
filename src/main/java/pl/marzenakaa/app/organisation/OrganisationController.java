@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.marzenakaa.app.competenceTest.CompetenceTest;
 import pl.marzenakaa.app.competenceTest.CompetenceTestService;
+import pl.marzenakaa.app.solution.Solution;
 import pl.marzenakaa.app.volunteer.Volunteer;
 import pl.marzenakaa.app.volunteer.VolunteerService;
 
@@ -37,19 +38,21 @@ public class OrganisationController {
         CompetenceTest competenceTest = new CompetenceTest();
         competenceTest.setOrganisation(organisation);
         model.addAttribute("competenceTest", competenceTest);
-        //Statistics:
-        model.addAttribute("statsRoleAndAutonomyGeneralFromAllTests", competenceTestService.readAllNumberOfSolutionsByRoleAndAutonomyResult(organisationId, "General"));
-        model.addAttribute("statsRoleAndAutonomyAccomplishedFromAllTests", competenceTestService.readAllNumberOfSolutionsByRoleAndAutonomyResult(organisationId, "Accomplished"));
-        model.addAttribute("statsRoleAndAutonomyExpertFromAllTests", competenceTestService.readAllNumberOfSolutionsByRoleAndAutonomyResult(organisationId, "Expert"));
-        model.addAttribute("statsCommunicationPartialFromAllTests", competenceTestService.readAllNumberOfSolutionsByCommunicationResult(organisationId, "Partial"));
-        model.addAttribute("statsCommunicationPlainFromAllTests", competenceTestService.readAllNumberOfSolutionsByCommunicationResult(organisationId, "Plain"));
-        model.addAttribute("statsCommunicationExcellentFromAllTests", competenceTestService.readAllNumberOfSolutionsByCommunicationResult(organisationId, "Excellent"));
-        model.addAttribute("statsFlexibilityPartialFromAllTests", competenceTestService.readAllNumberOfSolutionsByFlexibilityResult(organisationId, "Partial"));
-        model.addAttribute("statsFlexibilityPlainFromAllTests", competenceTestService.readAllNumberOfSolutionsByFlexibilityResult(organisationId, "PLain"));
-        model.addAttribute("statsFlexibilityExcellentFromAllTests", competenceTestService.readAllNumberOfSolutionsByFlexibilityResult(organisationId, "Excellent"));
-        model.addAttribute("statsTeamworkPartialFromAllTests", competenceTestService.readAllNumberOfSolutionsByTeamworkResult(organisationId, "Partial"));
-        model.addAttribute("statsTeamworkPlainFromAllTests", competenceTestService.readAllNumberOfSolutionsByTeamworkResult(organisationId, "Plain"));
-        model.addAttribute("statsTeamworkExcellentFromAllTests", competenceTestService.readAllNumberOfSolutionsByTeamworkResult(organisationId, "Excellent"));
+        //Generate statistics:
+        model.addAttribute("statsRoleAndAutonomyGeneralFromAllTests", competenceTestService.readOrgStatsForRoleAndAutonomy(organisationId, "General"));
+        model.addAttribute("statsRoleAndAutonomyAccomplishedFromAllTests", competenceTestService.readOrgStatsForRoleAndAutonomy(organisationId, "Accomplished"));
+        model.addAttribute("statsRoleAndAutonomyExpertFromAllTests", competenceTestService.readOrgStatsForRoleAndAutonomy(organisationId, "Expert"));
+        model.addAttribute("statsCommunicationPartialFromAllTests", competenceTestService.readOrgStatsForCommunication(organisationId, "Partial"));
+        model.addAttribute("statsCommunicationPlainFromAllTests", competenceTestService.readOrgStatsForCommunication(organisationId, "Plain"));
+        model.addAttribute("statsCommunicationExcellentFromAllTests", competenceTestService.readOrgStatsForCommunication(organisationId, "Excellent"));
+        model.addAttribute("statsFlexibilityPartialFromAllTests", competenceTestService.readOrgStatsForFlexibility(organisationId, "Partial"));
+        model.addAttribute("statsFlexibilityPlainFromAllTests", competenceTestService.readOrgStatsForFlexibility(organisationId, "PLain"));
+        model.addAttribute("statsFlexibilityExcellentFromAllTests", competenceTestService.readOrgStatsForFlexibility(organisationId, "Excellent"));
+        model.addAttribute("statsTeamworkPartialFromAllTests", competenceTestService.readOrgStatsForTeamwork(organisationId, "Partial"));
+        model.addAttribute("statsTeamworkPlainFromAllTests", competenceTestService.readOrgStatsForTeamwork(organisationId, "Plain"));
+        model.addAttribute("statsTeamworkExcellentFromAllTests", competenceTestService.readOrgStatsForTeamwork(organisationId, "Excellent"));
+        model.addAttribute("numberOfVolunteers", countVolunteers(organisationId));
+        model.addAttribute("numberOfSolutions", countSolutions(organisationId));
         return "dashboard-organisation";
     }
 
@@ -67,19 +70,19 @@ public class OrganisationController {
         model.addAttribute("organisation", session.getAttribute("organisationSession"));
         model.addAttribute("competenceTest", competenceTestService.readWithSolutions(ctId));
         model.addAttribute("volunteer", new Volunteer());
-        //Statistics:
-        model.addAttribute("statsRoleAndAutonomyGeneral", competenceTestService.readNumberOfSolutionsByRoleAndAutonomyResult(ctId, "General"));
-        model.addAttribute("statsRoleAndAutonomyAccomplished", competenceTestService.readNumberOfSolutionsByRoleAndAutonomyResult(ctId, "Accomplished"));
-        model.addAttribute("statsRoleAndAutonomyExpert", competenceTestService.readNumberOfSolutionsByRoleAndAutonomyResult(ctId, "Expert"));
-        model.addAttribute("statsCommunicationPartial", competenceTestService.readNumberOfSolutionsByCommunicationResult(ctId, "Partial"));
-        model.addAttribute("statsCommunicationPlain", competenceTestService.readNumberOfSolutionsByCommunicationResult(ctId, "Plain"));
-        model.addAttribute("statsCommunicationExcellent", competenceTestService.readNumberOfSolutionsByCommunicationResult(ctId, "Excellent"));
-        model.addAttribute("statsFlexibilityPartial", competenceTestService.readNumberOfSolutionsByFlexibilityResult(ctId, "Partial"));
-        model.addAttribute("statsFlexibilityPlain", competenceTestService.readNumberOfSolutionsByFlexibilityResult(ctId, "Plain"));
-        model.addAttribute("statsFlexibilityExcellent", competenceTestService.readNumberOfSolutionsByFlexibilityResult(ctId, "Excellent"));
-        model.addAttribute("statsTeamworkPartial", competenceTestService.readNumberOfSolutionsByTeamworkResult(ctId, "Partial"));
-        model.addAttribute("statsTeamworkPlain", competenceTestService.readNumberOfSolutionsByTeamworkResult(ctId, "Plain"));
-        model.addAttribute("statsTeamworkExcellent", competenceTestService.readNumberOfSolutionsByTeamworkResult(ctId, "Excellent"));
+        //Generate statistics:
+        model.addAttribute("statsRoleAndAutonomyGeneral", competenceTestService.readTestStatsForRoleAndAutonomy(ctId, "General"));
+        model.addAttribute("statsRoleAndAutonomyAccomplished", competenceTestService.readTestStatsForRoleAndAutonomy(ctId, "Accomplished"));
+        model.addAttribute("statsRoleAndAutonomyExpert", competenceTestService.readTestStatsForRoleAndAutonomy(ctId, "Expert"));
+        model.addAttribute("statsCommunicationPartial", competenceTestService.readTestStatsForCommunication(ctId, "Partial"));
+        model.addAttribute("statsCommunicationPlain", competenceTestService.readTestStatsForCommunication(ctId, "Plain"));
+        model.addAttribute("statsCommunicationExcellent", competenceTestService.readTestStatsForCommunication(ctId, "Excellent"));
+        model.addAttribute("statsFlexibilityPartial", competenceTestService.readTestStatsForFlexibility(ctId, "Partial"));
+        model.addAttribute("statsFlexibilityPlain", competenceTestService.readTestStatsForFlexibility(ctId, "Plain"));
+        model.addAttribute("statsFlexibilityExcellent", competenceTestService.readTestStatsForFlexibility(ctId, "Excellent"));
+        model.addAttribute("statsTeamworkPartial", competenceTestService.readTestStatsForTeamwork(ctId, "Partial"));
+        model.addAttribute("statsTeamworkPlain", competenceTestService.readTestStatsForTeamwork(ctId, "Plain"));
+        model.addAttribute("statsTeamworkExcellent", competenceTestService.readTestStatsForTeamwork(ctId, "Excellent"));
         return "competence-test-management";
     }
 
@@ -89,22 +92,43 @@ public class OrganisationController {
             return "competence-test-management";
         }
 
-        Volunteer volunteer1 = volunteerService.readByEmail(volunteer.getEmail());
+        Volunteer vol = volunteerService.readByEmail(volunteer.getEmail());
 
-        if(volunteer1 == null){
+        if(vol == null){
             String tempPassword = RandomStringUtils.randomAlphanumeric(8);
             volunteer.setTemporaryPassword(tempPassword);
             volunteer.setPassword(BCrypt.hashpw(tempPassword, BCrypt.gensalt()));
             volunteerService.create(volunteer);
         }else{
-            volunteer1 = volunteerService.readByEmailWithCompetenceTests(volunteer.getEmail());
-            List<CompetenceTest> competenceTests = volunteer1.getCompetenceTests();
+            vol = volunteerService.readByEmailWithCompetenceTests(volunteer.getEmail());
+            List<CompetenceTest> competenceTests = vol.getCompetenceTests();
             competenceTests.add(competenceTestService.read(ctId));
-            volunteer1.setCompetenceTests(competenceTests);
-            volunteerService.update(volunteer1);
+            vol.setCompetenceTests(competenceTests);
+            volunteerService.update(vol);
         }
 
         return "redirect: ";
     }
 
+    public int countVolunteers(Long id){
+        int numberOfVolunteers = 0;
+        Organisation organisation = organisationService.readWithCompetenceTests(id);
+        List<CompetenceTest> competenceTests = organisation.getCompetenceTests();
+        for(CompetenceTest competenceTest : competenceTests){
+            List<Volunteer> volunteers = competenceTest.getVolunteers();
+            numberOfVolunteers =+ volunteers.size();
+        }
+        return numberOfVolunteers;
+    }
+
+    public int countSolutions(Long id){
+        int numberOfSolutions = 0;
+        Organisation organisation = organisationService.readWithCompetenceTests(id);
+        List<CompetenceTest> competenceTests = organisation.getCompetenceTests();
+        for(CompetenceTest competenceTest : competenceTests){
+            List<Solution> solutions = competenceTestService.readWithSolutions(competenceTest.getId()).getSolutions();
+            numberOfSolutions =+ solutions.size();
+        }
+        return numberOfSolutions;
+    }
 }

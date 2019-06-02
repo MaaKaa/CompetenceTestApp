@@ -31,8 +31,19 @@
         <br>
         <br>
         <div class="container">
-            <h3><header style="color:#1bb1dc;">Hello ${organisation.name}!</header></h3><br>
+            <h3 style="color:#1bb1dc;">Hello ${organisation.name}!</h3><br>
         </div>
+
+
+        <section id="instruction-org">
+            <div class="container">
+                <div class="row align-items-center">
+                    Step 1: Create competence test
+                    Step 2: Invite volunteers
+                    Step 3: Check the results!
+                </div>
+            </div>
+        </section>
 
         <section id="create-competence-test" class="section-bg" >
             <div class="container">
@@ -172,14 +183,14 @@
                 <div class="row">
                     <div class="col-sm">
                         <div class="card-body">
-                            You created <b>[number]</b> of competence tests. Altogether, you invited <b>[number]</b> of volunteers to take these tests. Finally, <b>${fn:length(noOfCompleted)}</b> volunteers completed your tests.
+                            <c:set var="noOfCompetenceTests" value="${organisation.competenceTests}"/>
+                            You created <b>${fn:length(noOfCompetenceTests)}</b> competence test(s). Altogether, you invited <b>${numberOfVolunteers}</b> volunteer(s) to take these tests. Finally, <b>${numberOfSolutions}</b> volunteers completed your tests.
                         </div>
                     </div>
 
                     <div class="col-sm">
                         <div class="card-body">
                             <canvas id="volunteersChart"></canvas>
-                            </p><c:set var="noOfCompleted" value="${competenceTest.solutions}"/><!-- Do poprawy -->
                         </div>
                     </div>
                 </div>
@@ -282,7 +293,7 @@
                     label: 'Volunteers',
                     backgroundColor: ['#413e66', '#1bb1dc'],
                     borderColor: ['#413e66', '#1bb1dc'],
-                    data: [30, 15]
+                    data: ['${numberOfVolunteers}', '${numberOfSolutions}']
                 }]
             },
             options: {

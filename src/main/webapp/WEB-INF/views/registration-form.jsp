@@ -49,14 +49,9 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Pasword:</label>
+                                <label>Password:</label>
                                 <form:password path="password" class="form-control"/>
                                 <form:errors path="password" cssClass="text-danger" />
-                            </div>
-
-                            <div class="form-group">
-                                <label>Re-type Pasword:</label>
-
                             </div>
 
                             <h5>About your organisation</h5>
