@@ -7,9 +7,11 @@
     <title>Organisation's Dashboard</title>
     <script src="<c:url value="/webjars/jquery/3.0.0/jquery.min.js"/>"></script>
     <script src="<c:url value="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"/>"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <link href="<c:url value="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>" rel="stylesheet">
     <link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
@@ -57,11 +59,12 @@
                                 <form:textarea path="description" class="form-control" placeholder="Short description that will remind volunteers what this project was about."/>
                                 <form:errors path="description" cssClass="text-danger"/>
                             </div>
-                            <input type="submit" value="Save" class="btn btn-save">
+                            <input type="submit" value="Create Competence Test!" class="btn btn-save">
                         </form:form>
                     </div>
                 </div>
             </div>
+            <br>
         </section>
 
         <br>
@@ -100,20 +103,19 @@
 
         <section id="overall-stats" class="section-bg">
             <div class="container">
-                <h3>Tests' statistics:</h3>
+                <br>
+                <h3>Statistics:</h3>
 
                 <div class="row">
                     <div class="col-sm">
-                        <div class="card-body">
-                            <h5 align="center">Volunteers:</h5>
-                            <canvas id="volunteersChart"></canvas>
-                            </p><c:set var="noOfCompleted" value="${competenceTest.solutions}"/><!-- Do poprawy -->
-                        </div>
+                        <h5 class="text-center">Experience Complexity Level:</h5>
+                        <h6 class="text-center">This outcome shows how advanced the volunteers are in terms of responsibility and autonomy.</h6>
                     </div>
+                </div>
 
+                <div class="row align-items-center">
                     <div class="col-sm">
                         <div class="card-body">
-                            <h5 align="center">Role and Autonomy results:</h5><br>
                             <canvas id="roleAndAutonomyChart"></canvas>
                             <!-- <p>General: ${statsRoleAndAutonomyGeneralFromAllTests}</p>
                             <p>Accomplished: ${statsRoleAndAutonomyAccomplishedFromAllTests}</p>
@@ -121,12 +123,28 @@
                         </div>
                     </div>
 
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <p><b>General:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p><b>Accomplished:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p><b>Expert:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <br>
+                <div class="row">
+                    <div class="col-sm">
+                        <h5 class="text-center">Competencies results:</h5>
+                        <h6 class="text-center">These outcomes show how advanced the volunteers are in using a particular competence. It was calculated on the basis of competence indicators that evaluate volunteer's skills and knowledge connected with a given competence.</h6>
+                    </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm">
                         <div class="card-body">
-                            <h5 align="center">Communication results</h5>
+                            <h6 class="text-center">Communication</h6>
                             <canvas id="communicationChart"></canvas>
                             <!-- <p>Partial: ${statsCommunicationPartialFromAllTests}</p>
                             <p>Plain: ${statsCommunicationPlainFromAllTests}</p>
@@ -136,7 +154,7 @@
 
                     <div class="col-sm">
                         <div class="card-body">
-                            <h5 align="center">Flexibility results</h5>
+                            <h6 class="text-center">Flexibility</h6>
                             <canvas id="flexibilityChart"></canvas>
                             <!-- <p>Partial: ${statsFlexibilityPartialFromAllTests}</p>
                             <p>Plain: ${statsFlexibilityPlainFromAllTests}</p>
@@ -146,19 +164,46 @@
 
                     <div class="col-sm">
                         <div class="card-body">
-                            <h5 align="center">Teamwork results</h5>
+                            <h6 class="text-center">Teamwork</h6>
                             <canvas id="teamworkChart"></canvas>
                             <!-- <p>Partial: ${statsTeamworkPartialFromAllTests}</p>
                             <p>Plain: ${statsTeamworkPlainFromAllTests}</p>
                             <p>Excellent: ${statsTeamworkExcellentFromAllTests}</p> -->
                         </div>
                     </div>
-
                 </div>
 
-                <h5>Description:</h5>
-                <p>You invited [numer] of volunteers. ${fn:length(noOfCompleted)} of them completed the test. </p>
-                <p>This chart shows the main result of the Competence Test. [opis]</p>
+                <hr>
+                <br>
+                <div class="row">
+                    <div class="col-sm">
+                        <h5 class="text-center">Volunteers</h5>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card-body">
+                            You created <b>[number]</b> of competence tests. Altogether, you invited <b>[number]</b> of volunteers to take these tests. Finally, <b>${fn:length(noOfCompleted)}</b> volunteers completed your tests.
+                        </div>
+                    </div>
+
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <canvas id="volunteersChart"></canvas>
+                            </p><c:set var="noOfCompleted" value="${competenceTest.solutions}"/><!-- Do poprawy -->
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <br>
+                <div class="row justify-content-center">
+                    <a href="#create-competence-test"><button class="btn btn-save">Create new Competence Test!</button></a>
+                </div>
+
+                <br>
+                <br>
             </div>
         </section>
 
@@ -178,7 +223,7 @@
             },
             options: {
                 legend: {
-                    position: 'right',
+                    position: 'right'
                 }
             }
         });
@@ -191,12 +236,12 @@
                 datasets: [{
                     backgroundColor: ['#413e66', '#1bb1dc', '#065e77'],
                     borderColor: ['#413e66', '#1bb1dc', '#065e77'],
-                    data: [${statsRoleAndAutonomyGeneralFromAllTests}, ${statsRoleAndAutonomyAccomplishedFromAllTests}, ${statsRoleAndAutonomyExpertFromAllTests}]
+                    data: ['${statsRoleAndAutonomyGeneralFromAllTests}', '${statsRoleAndAutonomyAccomplishedFromAllTests}', '${statsRoleAndAutonomyExpertFromAllTests}']
                 }]
             },
             options: {
                 legend: {
-                    display: false,
+                    display: false
                 }
             }
         });
@@ -210,12 +255,12 @@
                     label: 'Communication results',
                     backgroundColor: ['#413e66', '#1bb1dc', '#065e77'],
                     borderColor: ['#413e66', '#1bb1dc', '#065e77'],
-                    data: [${statsCommunicationPartialFromAllTests}, ${statsCommunicationPlainFromAllTests}, ${statsCommunicationExcellentFromAllTests}]
+                    data: ['${statsCommunicationPartialFromAllTests}', '${statsCommunicationPlainFromAllTests}', '${statsCommunicationExcellentFromAllTests}']
                 }]
             },
             options: {
                 legend: {
-                    display: false,
+                    display: false
                 }
             }
         });
@@ -229,12 +274,12 @@
                     label: 'Flexibility results',
                     backgroundColor: ['#413e66', '#1bb1dc', '#065e77'],
                     borderColor: ['#413e66', '#1bb1dc', '#065e77'],
-                    data: [${statsFlexibilityPartialFromAllTests}, ${statsFlexibilityPlainFromAllTests}, ${statsFlexibilityExcellentFromAllTests}]
+                    data: ['${statsFlexibilityPartialFromAllTests}', '${statsFlexibilityPlainFromAllTests}', '${statsFlexibilityExcellentFromAllTests}']
                 }]
             },
             options: {
                 legend: {
-                    display: false,
+                    display: false
                 }
             }
         });
@@ -248,13 +293,13 @@
                     label: 'Teamwork results',
                     backgroundColor: ['#413e66', '#1bb1dc', '#065e77'],
                     borderColor: ['#413e66', '#1bb1dc', '#065e77'],
-                    data: [${statsTeamworkPartialFromAllTests}, ${statsTeamworkPlainFromAllTests}, ${statsTeamworkExcellentFromAllTests}]
+                    data: ['${statsTeamworkPartialFromAllTests}', '${statsTeamworkPlainFromAllTests}', '${statsTeamworkExcellentFromAllTests}']
                 }]
             },
             options: {
                 legend: {
                     display: false,
-                    fullWidth: false,
+                    fullWidth: false
                 }
             }
         });

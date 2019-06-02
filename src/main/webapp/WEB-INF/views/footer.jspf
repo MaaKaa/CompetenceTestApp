@@ -1,3 +1,22 @@
+<html>
+<head>
+    <title>Organisation's Dashboard</title>
+    <script src="<c:url value="/webjars/jquery/3.0.0/jquery.min.js"/>"></script>
+    <script src="<c:url value="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"/>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <link href="<c:url value="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>" rel="stylesheet">
+    <link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="/resources/css/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/resources/css/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/resources/css/lib/animate/animate.min.css" rel="stylesheet">
+</head>
+<body>
+
 <!--==========================
 Footer Section
 ============================-->
@@ -72,3 +91,6 @@ Footer Section
         </div>
     </div>
 </footer><!-- #footer -->
+
+</body>
+</html>
