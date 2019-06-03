@@ -40,7 +40,9 @@ Volunteer's perspective:
 ***
 USED TOOLS/FRAMEWORKS:
 
-- Java: Spring MVC + Spring Data
-- Layout: HTML (.jsp)
-- Styling: CSS/Bootstrap, libraries: font-awesome, ionicons, animate
+- Java: Spring MVC 
+- Database: MySQL + JPA: Hibernate + Spring Data
+- Layout: HTML (.jsp, taglibs: JSTL, Spring's form tag library)
+- Styling: CSS/Bootstrap, libraries: font-awesome, ionicons, animate, Chart.js
+- Scripting: Javascript
 - IntelliJ Ultimate Edition, Workbench
