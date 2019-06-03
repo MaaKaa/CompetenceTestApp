@@ -31,7 +31,6 @@ public class Solution {
     @JoinColumn(name = "volunteer_id")
     private Volunteer volunteer;
 
-    //zmienne przechowujące odpowiedzi do pytań (do zastanowienia, czy zmienić typ int na String)
     @NotNull
     private int role;
 
@@ -88,8 +87,6 @@ public class Solution {
     @Size(min = 3, max = 500)
     private String lessonLearned;
 
-    @NotBlank
-    @Size(min = 3, max = 500)
     private String comments;
 
     public Solution() {
@@ -147,7 +144,7 @@ public class Solution {
         return resultRoleAndAutonomy;
     }
 
-    public void setResultRoleAndAutonomy(String resultRoleAndAutonomy) {
+    void setResultRoleAndAutonomy(String resultRoleAndAutonomy) {
         this.resultRoleAndAutonomy = resultRoleAndAutonomy;
     }
 
@@ -211,7 +208,7 @@ public class Solution {
         return communicationResult;
     }
 
-    public void setCommunicationResult(String communicationResult) {
+    void setCommunicationResult(String communicationResult) {
         this.communicationResult = communicationResult;
     }
 
@@ -259,7 +256,7 @@ public class Solution {
         return teamWorkResult;
     }
 
-    public void setTeamWorkResult(String teamWorkResult) {
+    void setTeamWorkResult(String teamWorkResult) {
         this.teamWorkResult = teamWorkResult;
     }
 
@@ -291,7 +288,7 @@ public class Solution {
         return flexibilityResult;
     }
 
-    public void setFlexibilityResult(String flexibilityResult) {
+    void setFlexibilityResult(String flexibilityResult) {
         this.flexibilityResult = flexibilityResult;
     }
 

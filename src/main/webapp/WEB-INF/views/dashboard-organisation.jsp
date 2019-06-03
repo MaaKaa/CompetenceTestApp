@@ -78,7 +78,7 @@
             <br>
         </section>
 
-        <br>
+        <hr>
 
         <section id="your-competence-tests">
             <div class="container">
@@ -111,6 +111,8 @@
                 </table>
             </div>
         </section>
+
+        <hr>
 
         <section id="overall-stats" class="section-bg">
             <div class="container">
@@ -184,7 +186,7 @@
                     <div class="col-sm">
                         <div class="card-body">
                             <c:set var="noOfCompetenceTests" value="${organisation.competenceTests}"/>
-                            You created <b>${fn:length(noOfCompetenceTests)}</b> competence test(s). Altogether, you invited <b>${numberOfVolunteers}</b> volunteer(s) to take these tests. Finally, <b>${numberOfSolutions}</b> volunteers completed your tests.
+                            You created <b>${fn:length(noOfCompetenceTests)}</b> competence test(s). Altogether, you invited <b>${numberOfVolunteers}</b> volunteer(s) to take these tests. So far, <b>${numberOfSolutions}</b> volunteers completed your tests.
                         </div>
                     </div>
 

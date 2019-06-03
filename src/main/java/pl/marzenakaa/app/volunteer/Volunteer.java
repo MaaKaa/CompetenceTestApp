@@ -133,16 +133,6 @@ public class Volunteer {
         this.solutions = solutions;
     }
 
-    public void addCompetenceTestInvitation(CompetenceTest competenceTest){
-        competenceTests.add(competenceTest);
-        competenceTest.getVolunteers().add(this);
-    }
-
-    public void removeCompetenceTestInvitation(CompetenceTest competenceTest){
-        competenceTests.remove(competenceTest);
-        competenceTest.getVolunteers().remove(this);
-    }
-
     @Override
     public String toString() {
         return name;

@@ -35,6 +35,7 @@ public class OrganisationController {
         Long organisationId = organisationSession.getId();
         Organisation organisation = organisationService.readWithCompetenceTests(organisationId);
         model.addAttribute("organisation", organisation);
+        //Create new Competence Test form:
         CompetenceTest competenceTest = new CompetenceTest();
         competenceTest.setOrganisation(organisation);
         model.addAttribute("competenceTest", competenceTest);
@@ -51,8 +52,8 @@ public class OrganisationController {
         model.addAttribute("statsTeamworkPartialFromAllTests", competenceTestService.readOrgStatsForTeamwork(organisationId, "Partial"));
         model.addAttribute("statsTeamworkPlainFromAllTests", competenceTestService.readOrgStatsForTeamwork(organisationId, "Plain"));
         model.addAttribute("statsTeamworkExcellentFromAllTests", competenceTestService.readOrgStatsForTeamwork(organisationId, "Excellent"));
-        model.addAttribute("numberOfVolunteers", countVolunteers(organisationId));
-        model.addAttribute("numberOfSolutions", countSolutions(organisationId));
+        model.addAttribute("numberOfVolunteers", countInvitedVolunteers(organisationId));
+        model.addAttribute("numberOfSolutions", countSolvedCompetenceTests(organisationId));
         return "dashboard-organisation";
     }
 
@@ -69,6 +70,7 @@ public class OrganisationController {
     public String showCompetenceTestManagementPage(HttpSession session, @PathVariable Long ctId, Model model){
         model.addAttribute("organisation", session.getAttribute("organisationSession"));
         model.addAttribute("competenceTest", competenceTestService.readWithSolutions(ctId));
+        //Invite volunteers form:
         model.addAttribute("volunteer", new Volunteer());
         //Generate statistics:
         model.addAttribute("statsRoleAndAutonomyGeneral", competenceTestService.readTestStatsForRoleAndAutonomy(ctId, "General"));
@@ -110,7 +112,7 @@ public class OrganisationController {
         return "redirect: ";
     }
 
-    public int countVolunteers(Long id){
+    private int countInvitedVolunteers(Long id){
         int numberOfVolunteers = 0;
         Organisation organisation = organisationService.readWithCompetenceTests(id);
         List<CompetenceTest> competenceTests = organisation.getCompetenceTests();
@@ -121,14 +123,14 @@ public class OrganisationController {
         return numberOfVolunteers;
     }
 
-    public int countSolutions(Long id){
-        int numberOfSolutions = 0;
+    private int countSolvedCompetenceTests(Long id){
+        int numberOfSolved = 0;
         Organisation organisation = organisationService.readWithCompetenceTests(id);
         List<CompetenceTest> competenceTests = organisation.getCompetenceTests();
         for(CompetenceTest competenceTest : competenceTests){
             List<Solution> solutions = competenceTestService.readWithSolutions(competenceTest.getId()).getSolutions();
-            numberOfSolutions =+ solutions.size();
+            numberOfSolved =+ solutions.size();
         }
-        return numberOfSolutions;
+        return numberOfSolved;
     }
 }

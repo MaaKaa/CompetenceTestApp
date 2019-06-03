@@ -103,7 +103,6 @@ public class WebConfig implements WebMvcConfigurer {
         return dataSource;
     }
 
-    //https://www.baeldung.com/spring-security-registration-password-encoding-bcrypt
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
