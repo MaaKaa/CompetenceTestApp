@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.marzenakaa.app.competenceTest.CompetenceTest;
 import pl.marzenakaa.app.competenceTest.CompetenceTestService;
+import pl.marzenakaa.app.mails.EmailServiceImpl;
 import pl.marzenakaa.app.solution.Solution;
 import pl.marzenakaa.app.volunteer.Volunteer;
 import pl.marzenakaa.app.volunteer.VolunteerService;
@@ -28,6 +29,9 @@ public class OrganisationController {
 
     @Autowired
     VolunteerService volunteerService;
+
+    @Autowired
+    EmailServiceImpl emailService;
 
     @GetMapping("/")
     public String showOrganisationHomePage(HttpSession session, Model model){
@@ -101,6 +105,8 @@ public class OrganisationController {
             volunteer.setTemporaryPassword(tempPassword);
             volunteer.setPassword(BCrypt.hashpw(tempPassword, BCrypt.gensalt()));
             volunteerService.create(volunteer);
+            emailService.sendSimpleMessage("uptodot@gmail.com", "Testowy subject", "testowa tresc");//nie wyskoczył błąd, ale wiadomość nie doszła do obiorcy...
+
         }else{
             vol = volunteerService.readByEmailWithCompetenceTests(volunteer.getEmail());
             List<CompetenceTest> competenceTests = vol.getCompetenceTests();

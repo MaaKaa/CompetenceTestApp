@@ -23,7 +23,9 @@ NGOs' perspective:
 
     - NGO regiesters.
     - After logging-in, the NGO generates a competence test for its project: enters project's name and description, and saves it.
-    - Then, the NGO can invite volunteers: types volunteer's name and email address, and the app: 1). check, whether such volunteer is already in the database. If, so, it updates his/her "competenceTests" field. If not, creates new record in the database, 2). sends the email invitation to the volunteer.
+    - Then, the NGO can invite volunteers: types volunteer's name and email address, and the app: 
+        1). checks, whether such volunteer is already in the database. If, so, it updates his/her "competenceTests" field. If not, creates new record in the database, 
+        2). sends the email invitation to the volunteer.
     - Volunteer logs in, takes the competence test and saves it. (S)he is redirected to the results page.
     - NGO can view cumulative results for the project.
     - In it's dashoboard, the NGO can: create a new project, view and edit all its competence tests, as well as view the overall tests' statistics (for all tests alogether).
