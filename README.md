@@ -8,7 +8,7 @@ But no matter the reason, the fact is that every volunteering experience is an o
 Thanks to this app NGOs can:
 
     1. Generate a competence test for a particular project,
-    2. Ask volunteers to fill it in,
+    2. Ask volunteers to fill it in by sendng them an automatic invitation,
     3. View the results: find out, what volunteers learnt through this project.
 
 Benefits:
@@ -23,10 +23,10 @@ NGOs' perspective:
 
     - NGO regiesters.
     - After logging-in, the NGO generates a competence test for its project: enters project's name and description, and saves it.
-    - Then, the NGO can invite volunteers: types volunteer's name and email address, and the app sends the invitation containing the link to the competence test.
-    - Volunteer takes the competence test and saves it. (S)he is redirected to the results page.
+    - Then, the NGO can invite volunteers: types volunteer's name and email address, and the app: 1). check, whether such volunteer is already in the database. If, so, it updates his/her "competenceTests" field. If not, creates new record in the database, 2). sends the email invitation to the volunteer.
+    - Volunteer logs in, takes the competence test and saves it. (S)he is redirected to the results page.
     - NGO can view cumulative results for the project.
-    - In it's dashoborad, the NGO can: create a new test, view and edit all its competence tests, as well as view the overall tests' statistics.
+    - In it's dashoboard, the NGO can: create a new project, view and edit all its competence tests, as well as view the overall tests' statistics (for all tests alogether).
 
 Volunteer's perspective:
 
@@ -35,6 +35,8 @@ Volunteer's perspective:
     - (S)he takes the competence test and saves it.
     - (S)he is redirected to the results page where (s)he can see her/his results, together with the development tips for each competence.
     - On her/his dashboard volunteer can view all competenceTests, take the test and view the results of the tests already taken.
+    
+    Note: volunteer cannot register himself/herself - (s)he must receive an intivation to use to app.
 
 
 ***
