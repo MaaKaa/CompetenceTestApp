@@ -141,7 +141,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Bean
     public JavaMailSender getJavaMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
-        EmailCredentials credentials = new EmailCredentials();
+        EmailCredentials credentials = new EmailCredentials(); //This file is not added to Git. It contains login and password to the email client.
 
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
@@ -152,7 +152,7 @@ public class WebConfig implements WebMvcConfigurer {
         javaMailProperties.put("mail.smtp.starttls.enable", "true");
         javaMailProperties.put("mail.smtp.auth", "true");
         javaMailProperties.put("mail.transport.protocol", "smtp");
-        javaMailProperties.put("mail.debug", "true");//Prints out everything on screen
+        javaMailProperties.put("mail.debug", "true");//Prints out the log on the screen
 
         mailSender.setJavaMailProperties(javaMailProperties);
         return mailSender;

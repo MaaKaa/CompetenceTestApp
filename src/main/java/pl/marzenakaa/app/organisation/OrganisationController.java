@@ -93,7 +93,7 @@ public class OrganisationController {
     }
 
     @PostMapping("/competence-test/{ctId}")
-    public String processInviteVolunteersForm(@PathVariable Long ctId, @ModelAttribute("volunteer") @Valid Volunteer volunteer, BindingResult result){
+    public String processInviteVolunteersForm(HttpSession session, @PathVariable Long ctId, @ModelAttribute("volunteer") @Valid Volunteer volunteer, BindingResult result){
         if (result.hasErrors()) {
             return "competence-test-management";
         }
@@ -105,14 +105,29 @@ public class OrganisationController {
             volunteer.setTemporaryPassword(tempPassword);
             volunteer.setPassword(BCrypt.hashpw(tempPassword, BCrypt.gensalt()));
             volunteerService.create(volunteer);
-            emailService.sendSimpleMessage("uptodot@gmail.com", "Testowy subject", "testowa tresc");//nie wyskoczył błąd, ale wiadomość nie doszła do obiorcy...
-
+            //before deployment: change "to" to volunteer.getEmail():
+            emailService.sendHtmlMessage("kacprowicz.marzena@gmail.com", "Competence test: New invitation", "<p>Hello " + volunteer.getName() + "! </p>" +
+                    "<p> Organisation <b>" + session.getAttribute("organisationSession") + "</b> invites you to take the competence test concerning the <b>" + competenceTestService.read(ctId).getName() + "</b> project in which you volunteered.</p>" +
+                    "<p>Log in to take the test and find out which competencies you developed thanks to this project!</p>" +
+                    "<p>[link]</p>" +
+                    "<p>Your temporary password: " + volunteer.getTemporaryPassword() + "</p>" +
+                    "<p>If you have any questions, do not hesitate to contact us - we'll be happy to help :) </p>" +
+                    "<p>Greetings,</p>" +
+                    "<p>Competence Test App Team</p>");
         }else{
             vol = volunteerService.readByEmailWithCompetenceTests(volunteer.getEmail());
             List<CompetenceTest> competenceTests = vol.getCompetenceTests();
             competenceTests.add(competenceTestService.read(ctId));
             vol.setCompetenceTests(competenceTests);
             volunteerService.update(vol);
+            //before deployment: change "to" to vol.getEmail():
+            emailService.sendHtmlMessage("kacprowicz.marzena@gmail.com", "Competence test: New invitation", "<p>Hello " + volunteer.getName() + "! </p>" +
+                    "<p> Organisation <b>" + session.getAttribute("organisationSession") + "</b> invites you to take the competence test concerning the <b>" + competenceTestService.read(ctId).getName() + "</b> project in which you volunteered.</p>" +
+                    "<p>Log in to take the test and find out which competencies you developed thanks to this project!</p>" +
+                    "<p>[link]</p>" +
+                    "<p>If you have any questions, do not hesitate to contact us - we'll be happy to help :) </p>" +
+                    "<p>Greetings,</p>" +
+                    "<p>Competence Test App Team</p>");
         }
 
         return "redirect: ";
