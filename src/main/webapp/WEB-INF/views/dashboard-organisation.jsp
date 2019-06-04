@@ -22,7 +22,7 @@
     <link href="/resources/css/lib/animate/animate.min.css" rel="stylesheet">
 </head>
 <body>
-<%@ include file="header.jspf" %>
+    <%@ include file="header.jspf" %>
 
         <br>
         <br>
@@ -55,7 +55,6 @@
                 </div>
             </div>
             <br>
-            <br>
         </section>
 
         <hr>
@@ -64,7 +63,7 @@
             <div class="container">
                 <br>
                 <br>
-                <h3 class="text-center">Create Project</h3><br>
+                <h2 class="text-center">Create Project</h2><br>
 
                 <div class="row align-items-center">
                     <div class="col-sm-6">
@@ -116,7 +115,7 @@
             <div class="container">
                 <br>
                 <br>
-                <h3 class="text-center">Your Competence Tests:</h3>
+                <h2 class="text-center">Your Competence Tests:</h2>
                 <p class="text-center">Here's the list of the Projects you created. Click "Manage | Invite volunteers" to view full project info <br>(including project's statistics)</p><br>
 
                 <div class="row">
@@ -155,7 +154,7 @@
             <div class="container">
                 <br>
                 <br>
-                <h3 class="text-center">View results:</h3>
+                <h2 class="text-center">View results:</h2>
                 <p class="text-center">Here you can see the overall statistics for all the projects you created.<br>
                 If you want to see stats for a particular project, click "Manage | Invite volunteers" in the section above.</p><br>
 
