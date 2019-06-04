@@ -70,9 +70,9 @@
                 <p>There are just three simple steps:</p>
             </header>
 
-            <div class="row feature-item mt-5 pt-5">
+            <div class="row feature-item mt-5 pt-5 align-items-center">
                 <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="img/features-2.svg" class="img-fluid" alt="">
+                    <img src="/resources/img/Org-dashboard.png" class="img-fluid" alt="">
                 </div>
 
                 <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
@@ -89,9 +89,9 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <img src="img/features-1.svg" class="img-fluid" alt="">
+                    <img src="/resources/img/Manage-project.png" class="img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-5 pt-lg-0">
                     <h4>2. Invite volunteers</h4>
@@ -104,9 +104,9 @@
                 </div>
             </div>
 
-            <div class="row feature-item mt-5 pt-5">
+            <div class="row feature-item mt-5 pt-5 align-items-center">
                 <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="img/features-2.svg" class="img-fluid" alt="">
+                    <img src="resources/img/competencies-result.png" class="img-fluid" alt="">
                 </div>
 
                 <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
