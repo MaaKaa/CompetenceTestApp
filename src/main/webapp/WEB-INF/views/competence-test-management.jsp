@@ -186,7 +186,6 @@
                 <div class="col-sm">
                     <div class="card-body">
                         <canvas id="volunteersChart"></canvas>
-                        <c:set var="noOfCompleted" value="${competenceTest.solutions}"/><!-- Do poprawy -->
                     </div>
                 </div>
             </div>

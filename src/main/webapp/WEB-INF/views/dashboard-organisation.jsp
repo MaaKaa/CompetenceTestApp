@@ -91,7 +91,6 @@
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Description</th>
-                        <th scope="col">Link</th>
                         <th scope="col">Organisation</th>
                         <th scope="col">Actions</th>
                     </tr>
@@ -102,7 +101,6 @@
                             <td>${competenceTest.id}</td>
                             <td>${competenceTest.name}</td>
                             <td>${competenceTest.description}</td>
-                            <td>${competenceTest.link}</td>
                             <td>${competenceTest.organisation}</td>
                             <td><a href="/org/logged/competence-test/${competenceTest.id}">Manage | Invite volunteers</a>
                         </tr>
@@ -186,7 +184,9 @@
                     <div class="col-sm">
                         <div class="card-body">
                             <c:set var="noOfCompetenceTests" value="${organisation.competenceTests}"/>
-                            You created <b>${fn:length(noOfCompetenceTests)}</b> competence test(s). Altogether, you invited <b>${numberOfVolunteers}</b> volunteer(s) to take these tests. So far, <b>${numberOfSolutions}</b> volunteers completed your tests.
+                            You created <b>${fn:length(noOfCompetenceTests)}</b> competence test(s).
+                            You invited <b>${numberOfVolunteers}</b> volunteer(s) to take these tests.
+                            So far, <b>${numberOfSolutions}</b> volunteers completed your tests.
                         </div>
                     </div>
 
