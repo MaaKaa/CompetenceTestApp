@@ -69,12 +69,13 @@
                     <div class="col-sm-6">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         </p>
                         <p>
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            <b>Project Name:</b> e.g. Charity Run, Cooking workshops, Office works.
                         </p>
                         <p>
-                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            <b>Project description:</b> Short description that will remind volunteers what this project was about.
                         </p>
                     </div>
 
@@ -86,18 +87,20 @@
                                     <form:input type="hidden" name="${organisation.id}" path="organisation.id"/>
 
 
-                                    <div class="form-group col-md-12">
+                                    <div class="form-group">
                                         <label>Project Name:</label>
-                                        <form:input path="name" class="form-control" placeholder="e.g. Charity Run, Cooking workshops, Office works"/>
+                                        <form:input path="name" class="form-control"/>
                                         <form:errors path="name" cssClass="text-danger" />
                                     </div>
 
-                                    <div class="form-group col-md-12">
+                                    <div class="form-group">
                                         <label>Project Description:</label>
-                                        <form:textarea path="description" class="form-control" placeholder="Short description that will remind volunteers what this project was about."/>
+                                        <form:textarea path="description" class="form-control"/>
                                         <form:errors path="description" cssClass="text-danger"/>
                                     </div>
-                                    <input type="submit" value="Create Competence Test!" class="btn btn-save">
+                                    <div class="form-group">
+                                        <input type="submit" value="Create Competence Test!" class="btn btn-save">
+                                    </div>
                                 </form:form>
                             </div>
                         </div>
