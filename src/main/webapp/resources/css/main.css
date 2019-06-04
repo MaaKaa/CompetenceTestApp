@@ -6,6 +6,7 @@ body {
     background: #f5f8fd;
     color: #444;
     font-family: "Open Sans", sans-serif;
+    font-size: 18px;
 }
 
 a {
@@ -275,8 +276,7 @@ h6 {
     color: #1bb1dc;
 }
 
-#intro .intro-info .btn-get-started,
-#intro .intro-info .btn-services {
+#intro .intro-info .btn-get-started {
     font-family: "Montserrat", sans-serif;
     font-size: 23px;
     font-weight: 600;
@@ -291,8 +291,7 @@ h6 {
     color: #fff;
 }
 
-#intro .intro-info .btn-get-started:hover,
-#intro .intro-info .btn-services:hover {
+#intro .intro-info .btn-get-started:hover {
     background: #0a98c0;
 }
 
@@ -764,7 +763,7 @@ h6 {
     color: #1bb1dc;
 }
 
-/* nieużywane
+/* temporary not in use
 #footer .footer-newsletter {
     margin-bottom: 30px;
 }

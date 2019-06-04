@@ -30,95 +30,140 @@
         <br>
         <br>
         <br>
-        <div class="container">
-            <h3 style="color:#1bb1dc;">Hello ${organisation.name}!</h3><br>
-        </div>
-
+    <div class="container">
+        <h3 style="color:#535074;">Hello ${organisation.name}!</h3>
+        <p style="color: #535074">Welcome to your dashboard. Here's what you can do here:</p>
 
         <section id="instruction-org">
-            <div class="container">
-                <div class="row align-items-center">
-                    Step 1: Create competence test
-                    Step 2: Invite volunteers
-                    Step 3: Check the results!
+            <div class="row">
+                <div class="col-sm">
+                    <div class="card text-center">
+                        <a href="#create-project"><b>Step 1:</b> <br>Create Project</a>
+                    </div>
                 </div>
-            </div>
-        </section>
 
-        <section id="create-competence-test" class="section-bg" >
-            <div class="container">
-                <br>
-                <h3>Create Competence Test</h3>
-                <p>Find out what did volunteers learnt thanks to your project!</p>
+                <div class="col-sm">
+                    <div class="card text-center">
+                        <a href="#your-competence-tests"><b>Step 2:</b> <br>Invite volunteers</a>
+                    </div>
+                </div>
 
-                <div class="card">
-
-                    <div class="card-body">
-                        <form:form method="post" modelAttribute="competenceTest">
-                            <form:input type="hidden" name="id" path="id"/>
-                            <form:input type="hidden" name="${organisation.id}" path="organisation.id"/>
-
-
-                            <div class="form-group col-md-12">
-                                <label>Project Name:</label>
-                                <form:input path="name" class="form-control" placeholder="e.g. Charity Run, Cooking workshops, Office works"/>
-                                <form:errors path="name" cssClass="text-danger" />
-                            </div>
-
-                            <div class="form-group col-md-12">
-                                <label>Project Description:</label>
-                                <form:textarea path="description" class="form-control" placeholder="Short description that will remind volunteers what this project was about."/>
-                                <form:errors path="description" cssClass="text-danger"/>
-                            </div>
-                            <input type="submit" value="Create Competence Test!" class="btn btn-save">
-                        </form:form>
+                <div class="col-sm">
+                    <div class="card text-center">
+                        <a href="#view-results"><b>Step 3:</b> <br>View the results!</a>
                     </div>
                 </div>
             </div>
+            <br>
             <br>
         </section>
 
         <hr>
 
-        <section id="your-competence-tests">
+        <section id="create-project" class="section-bg">
             <div class="container">
+                <br>
+                <br>
+                <h3 class="text-center">Create Project</h3><br>
 
-                <h3>Your Competence Tests:</h3>
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <p>
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                        <p>
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
 
-                <table class="table table-hover">
-                    <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Organisation</th>
-                        <th scope="col">Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach items="${organisation.competenceTests}" var="competenceTest">
-                        <tr>
-                            <td>${competenceTest.id}</td>
-                            <td>${competenceTest.name}</td>
-                            <td>${competenceTest.description}</td>
-                            <td>${competenceTest.organisation}</td>
-                            <td><a href="/org/logged/competence-test/${competenceTest.id}">Manage | Invite volunteers</a>
-                        </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <form:form method="post" modelAttribute="competenceTest">
+                                    <form:input type="hidden" name="id" path="id"/>
+                                    <form:input type="hidden" name="${organisation.id}" path="organisation.id"/>
+
+
+                                    <div class="form-group col-md-12">
+                                        <label>Project Name:</label>
+                                        <form:input path="name" class="form-control" placeholder="e.g. Charity Run, Cooking workshops, Office works"/>
+                                        <form:errors path="name" cssClass="text-danger" />
+                                    </div>
+
+                                    <div class="form-group col-md-12">
+                                        <label>Project Description:</label>
+                                        <form:textarea path="description" class="form-control" placeholder="Short description that will remind volunteers what this project was about."/>
+                                        <form:errors path="description" cssClass="text-danger"/>
+                                    </div>
+                                    <input type="submit" value="Create Competence Test!" class="btn btn-save">
+                                </form:form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
+            <br>
+            <br>
         </section>
 
         <hr>
 
-        <section id="overall-stats" class="section-bg">
+        <section id="your-competence-tests" class="section-bg">
             <div class="container">
                 <br>
-                <h3>Statistics:</h3>
+                <br>
+                <h3 class="text-center">Your Competence Tests:</h3>
+                <p class="text-center">Here's the list of the Projects you created. Click "Manage | Invite volunteers" to view full project info <br>(including project's statistics)</p><br>
+
+                <div class="row">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <!-- <th scope="col">Organisation</th> -->
+                            <th scope="col">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${organisation.competenceTests}" var="competenceTest">
+                            <tr>
+                                <td>${competenceTest.id}</td>
+                                <td>${competenceTest.name}</td>
+                                <td>${competenceTest.description}</td>
+                                <!-- <td>${competenceTest.organisation}</td> -->
+                                <td><a href="/org/logged/competence-test/${competenceTest.id}">Manage | Invite volunteers</a>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <br>
+            <br>
+        </section>
+
+        <hr>
+
+        <section id="view-results" class="section-bg">
+            <div class="container">
+                <br>
+                <br>
+                <h3 class="text-center">View results:</h3>
+                <p class="text-center">Here you can see the overall statistics for all the projects you created.<br>
+                If you want to see stats for a particular project, click "Manage | Invite volunteers" in the section above.</p><br>
+
+                <hr>
 
                 <div class="row">
                     <div class="col-sm">
+                        <br>
                         <h5 class="text-center">Experience Complexity Level:</h5>
                         <h6 class="text-center">This outcome shows how advanced the volunteers are in terms of responsibility and autonomy.</h6>
                     </div>
@@ -206,6 +251,8 @@
                 <br>
                 <br>
             </div>
+            <br>
+            <br>
         </section>
 
 
@@ -306,6 +353,8 @@
         });
 
     </script>
+
+    </div>
     <br>
     <br>
     <%@ include file="footer.jspf" %>

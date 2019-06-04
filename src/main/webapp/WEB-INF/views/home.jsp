@@ -32,7 +32,7 @@
         <div class="container d-flex h-100">
             <div class="row justify-content-center align-self-center">
                 <div class="col-md-6 intro-info order-md-first order-last">
-                    <h2>Find out<br>what volunteers learn <br>in your <span>project!</span></h2>
+                    <h2>Find out<br>what volunteers learn <br>in your <span>projects!</span></h2>
                     <div>
                         <a href="/register" class="btn-get-started scrollto">Get Started</a>
                     </div>
@@ -110,7 +110,7 @@
                 </div>
 
                 <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
-                    <h4>3. View results</h4>
+                    <h4>3. View results!</h4>
                     <p>
                         Delectus alias ut incidunt delectus nam placeat in consequatur. Sed cupiditate quia ea quis. Voluptas nemo qui aut distinctio. Cumque fugit earum est quam officiis numquam. Ducimus corporis autem at blanditiis beatae incidunt sunt.
                     </p>
@@ -194,7 +194,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
 
-                    <div class="owl-carousel testimonials-carousel wow fadeInUp">
+                    <div class="owl-carousel testimonials-carousel">
 
                         <div class="testimonial-item">
                             <img src="/resources/img/testimonial-1.jpg" class="testimonial-img" alt="">
@@ -333,7 +333,7 @@
                 <p>Sed ut perspiciatis unde omnis iste natuse</p>
             </header>
 
-            <ul id="faq-list" class="wow fadeInUp">
+            <ul id="faq-list">
                 <li>
                     <a data-toggle="collapse" class="collapsed" href="#faq1">Non consectetur a erat nam at lectus urna duis? <i class="ion-android-remove"></i></a>
                     <div id="faq1" class="collapse" data-parent="#faq-list">

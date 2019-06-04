@@ -13,7 +13,7 @@
 <body>
     <%@ include file="header.jspf" %>
 
-    <div class="container section-bg">
+    <div class="container">
         <br>
         <br>
         <br>
@@ -60,11 +60,11 @@
                     </div>
                 </div>
             </div>
-
-    <br>
-    <br>
-            <%@ include file="footer.jspf" %>
         </div>
     </div>
+    <br>
+    <br>
+    <%@ include file="footer.jspf" %>
+
 </body>
 </html>

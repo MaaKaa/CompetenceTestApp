@@ -12,14 +12,16 @@
 <body>
     <%@ include file="header.jspf" %>
 
-    <div class="container section-bg">
+    <div class="container">
         <br>
         <br>
         <br>
         <br>
         <br>
         <br>
+
         <div class="row">
+
             <div class="col-sm">
                 <div class="card mt-4">
                     <div class="card-body">
@@ -31,11 +33,10 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-sm">
                 <div class="card mt-4">
-
                     <div class="card-body">
-
                         <h3 style="color:#1bb1dc;">Register</h3>
 
                         <form:form method="post" modelAttribute="organisation">
@@ -102,14 +103,16 @@
 
                         <a href="<c:url value="login"/>">Already have an account? Login!</a><br>
                     </div>
+                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
 
         <br>
         <br>
-        <%@ include file="footer.jspf" %>
+
+    <%@ include file="footer.jspf" %>
 
 </body>
 </html>
