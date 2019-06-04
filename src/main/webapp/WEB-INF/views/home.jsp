@@ -250,7 +250,7 @@
 
             <header class="section-header">
                 <h3>Pricing</h3>
-                <p>The Basic version of the Competence Test App is completely free of charge - try it out!</p>
+                <p>Choose the plan that suits you best:</p>
             </header>
 
             <div class="row flex-items-xs-middle flex-items-xs-center">
@@ -330,7 +330,7 @@
         <div class="container">
             <header class="section-header">
                 <h3>Frequently Asked Questions</h3>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+                <p>Sed ut perspiciatis unde omnis iste natuse</p>
             </header>
 
             <ul id="faq-list" class="wow fadeInUp">
