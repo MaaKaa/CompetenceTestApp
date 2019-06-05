@@ -35,6 +35,8 @@ public class LoginController {
         Organisation organisation = organisationService.readByEmail(email);
 
         if(organisation == null && volunteer == null){
+            model.addAttribute("errorNoUser", true);
+            model.addAttribute("errorNoUserMsg", "No such user. Try again.");
             return "login";
         }
 
@@ -54,6 +56,8 @@ public class LoginController {
             }
         }
 
+        model.addAttribute("errorWrongCredentials", true);
+        model.addAttribute("errorWrongCredentialsMsg", "Email or password incorrect. Try again.");
         return "login";
     }
 }

@@ -40,6 +40,14 @@
                 <c:if test="${success != false}">
                     <a element="div" cssClass="text-danger text-center" style="color:red">${successMsg}</a>
                 </c:if>
+
+                <c:if test="${errorNoUser != false}">
+                    <a element="div" cssClass="text-danger text-center" style="color:red">${errorNoUserMsg}</a>
+                </c:if>
+
+                <c:if test="${errorWrongCredentials != false}">
+                    <a element="div" cssClass="text-danger text-center" style="color:red">${errorWrongCredentialsMsg}</a>
+                </c:if>
                 <br>
                 <br>
 
