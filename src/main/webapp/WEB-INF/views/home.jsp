@@ -57,6 +57,9 @@
                 <p>Communication, flexibility, teamwork - there are lots of competencies that can be developed through volunteering. Also in your organisation!<br>
                    Thanks to the Competence Test App you can easily find out what volunteers learn within your projects!</p>
             </header>
+            <div class="text-center">
+                <img src="/resources/img/Competence_test.png" class="rounded img-fluid" alt="">
+            </div>
         </div>
     </section>
 
@@ -70,9 +73,9 @@
                 <p>There are just three simple steps:</p>
             </header>
 
-            <div class="row feature-item mt-5 pt-5 align-items-center">
+            <div class="row align-items-center">
                 <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="/resources/img/Org-dashboard.png" class="img-fluid" alt="">
+                    <img src="/resources/img/Org-dashboard-2.png" class="rounded img-fluid" alt="">
                 </div>
 
                 <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
@@ -89,9 +92,12 @@
                 </div>
             </div>
 
+            <br>
+            <br>
+
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <img src="/resources/img/Manage-project.png" class="img-fluid" alt="">
+                    <img src="/resources/img/Manage-project-2.png" class="rounded img-fluid" alt="">
                 </div>
                 <div class="col-lg-6 pt-5 pt-lg-0">
                     <h4>2. Invite volunteers</h4>
@@ -104,9 +110,12 @@
                 </div>
             </div>
 
-            <div class="row feature-item mt-5 pt-5 align-items-center">
+            <br>
+            <br>
+
+            <div class="row align-items-center">
                 <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="resources/img/competencies-result.png" class="img-fluid" alt="">
+                    <img src="resources/img/competencies-result-2.png" class="rounded img-fluid" alt="">
                 </div>
 
                 <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
