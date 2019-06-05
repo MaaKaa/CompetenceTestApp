@@ -36,8 +36,16 @@
             </div>
 
             <div class="col-sm-6">
+
+                <c:if test="${success != false}">
+                    <a element="div" cssClass="text-danger text-center" style="color:red">${successMsg}</a>
+                </c:if>
+                <br>
+                <br>
+
                 <div class="card">
                     <div class="card-body">
+
                         <h3 style="color:#1bb1dc;" class="text-center">Log in </h3>
 
                         <form method="post" >

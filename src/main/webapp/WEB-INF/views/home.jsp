@@ -24,9 +24,9 @@
 
 <%@ include file="header.jspf" %>
 
-    <!-- ------------
+    <!-- ==========================
     # Intro Section
-    --------------- -->
+    ========================== -->
 
     <section id="intro" class="clearfix">
         <div class="container d-flex h-100">
@@ -62,9 +62,9 @@
         </div>
     </section>
 
-    <!-- ------------
+    <!-- ==========================
     # Competence Test Section
-    ----------------->
+    ==========================-->
     <section id="competence-test-section" class="section-bg">
         <div class="container">
 
@@ -103,9 +103,9 @@
     </section>
 
     <!--==========================
-          Features Section
+          How it works Section
         ============================-->
-    <section id="features">
+    <section id="how-it-works">
         <div class="container">
             <header class="section-header">
                 <h3>How it works?</h3>
@@ -167,7 +167,7 @@
             </div>
 
         </div>
-    </section><!-- #features -->
+    </section>
 
     <!--==========================
          Get Started Section
@@ -222,7 +222,7 @@
             </div>
         </div>
         <br>
-    </section> <!-- Counter -->
+    </section>
 
     <!--==========================
           Testimonials Section
@@ -282,7 +282,7 @@
 
 
         </div>
-    </section><!-- #testimonials -->
+    </section>
 
     <!--==========================
           Pricing Section
@@ -364,7 +364,7 @@
             </div>
         </div>
 
-    </section><!-- #pricing -->
+    </section>
 
     <!--==========================
       FAQ Section
@@ -434,7 +434,7 @@
             </ul>
 
         </div>
-    </section><!-- #faq -->
+    </section>
 
     <!--==========================
          Get Started Section
@@ -447,48 +447,8 @@
         </div>
     </section>
 
-    <!-- ------------
-    # Services Section
-    ---------------
-    <section id="services" class="section-bg">
-        <div class="container">
 
-            <header class="section-header">
-                <h3>How it works?</h3>
-                <p>There are just 3 simple steps:</p>
-            </header>
-
-            <div class="row">
-                <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="box">
-                        <div class="icon" style="background: #fceef3;"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
-                        <h4 class="title"><a href="">Create a project</a></h4>
-                        <p class="description text-center">Type the name of the project <br>in which volunteers helped you <br>and we'll generate a special Competence Test form for you.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
-                    <div class="box">
-                        <div class="icon" style="background: #fff0da;"><i class="ion-ios-bookmarks-outline" style="color: #e98e06;"></i></div>
-                        <h4 class="title"><a href="">Invite volunteers</a></h4>
-                        <p class="description text-center">Type volunteer's name and email address and we'll sent him/her <br>an invitation to take <br>the Competence Test.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
-                    <div class="box">
-                        <div class="icon" style="background: #e6fdfc;"><i class="ion-ios-paper-outline" style="color: #3fcdc7;"></i></div>
-                        <h4 class="title"><a href="">View the results</a></h4>
-                        <p class="description text-center">Watch the live statistics <br>based on volunteers' responses <br>and find out what they learnt thanks to your project!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    ==========================
+   <!--==========================
       Call To Action Section
     ============================
     <section id="call-to-action" class="wow fadeInUp">

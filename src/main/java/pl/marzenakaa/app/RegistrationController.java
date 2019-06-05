@@ -31,7 +31,7 @@ public class RegistrationController {
     }
 
     @PostMapping("/register")
-    public String processRegisterForm(@ModelAttribute("organisation") @Valid Organisation organisation, BindingResult result){
+    public String processRegisterForm(Model model, @ModelAttribute("organisation") @Valid Organisation organisation, BindingResult result){
         if (result.hasErrors()) {
             return "registration-form";
         }
@@ -40,8 +40,12 @@ public class RegistrationController {
             organisation.setPassword(BCrypt.hashpw(organisation.getPassword(), BCrypt.gensalt()));
             organisationService.create(organisation);
         }else{
-            return "registration-form-error";
+            model.addAttribute("error", true);
+            model.addAttribute("errorMsg", "User with this email already exists. Choose different address.");
+            return "registration-form";
         }
+        model.addAttribute("success", true);
+        model.addAttribute("successMsg", "Registration successful! Now you can log in:");
         return "login";
     }
 

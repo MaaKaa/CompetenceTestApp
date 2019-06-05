@@ -53,6 +53,10 @@
                                 <label>Email:</label>
                                 <form:input path="email" class="form-control" placeholder="example@example.com" />
                                 <form:errors path="email" cssClass="text-danger" />
+
+                                <c:if test="${error != false}">
+                                    <a element="div" cssClass="text-danger" style="color:red">${errorMsg}</a>
+                                </c:if>
                             </div>
 
                             <div class="form-group">
