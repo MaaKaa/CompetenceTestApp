@@ -3,11 +3,19 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <title>Registration form: Organisation</title>
-    <script src="<c:url value="/webjars/jquery/3.0.0/jquery.min.js"/>"></script>
-    <script src="<c:url value="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"/>"></script>
+    <title>Registration form</title>
     <link href="<c:url value="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>" rel="stylesheet">
+    <script src="<c:url value="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"/>"></script>
     <link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">
+    <script src="<c:url value="/webjars/jquery/3.0.0/jquery.min.js"/>"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="/resources/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/resources/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/resources/lib/animate/animate.min.css" rel="stylesheet">
 </head>
 <body>
     <%@ include file="header.jspf" %>
@@ -18,23 +26,21 @@
         <br>
         <br>
         <br>
-        <br>
 
         <div class="row">
 
-            <div class="col-sm">
+            <div class="col-sm-4">
                 <div class="card mt-4">
                     <div class="card-body">
-                        <h5>Are you an organisation representative?</h5>
-                        <p>Opis korzyści</p>
+                        <h5>Create a free account and find out, what volunteers learn in your organisation!</h5>
                         <br>
-                        <h5>Are you a volunteer?</h5>
-                        <p>Ask your organisation to invite you to a competence test!</p>
+                        <p>Are you a volunteer? Ask your organisation to send you an invitation to the Competence Test!</p>
+                        <p>Getting stuck? Let us know how we can help: email</p>
                     </div>
                 </div>
             </div>
 
-            <div class="col-sm">
+            <div class="col-sm-8">
                 <div class="card mt-4">
                     <div class="card-body">
                         <h3 style="color:#1bb1dc;">Register</h3>

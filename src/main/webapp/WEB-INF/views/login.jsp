@@ -4,11 +4,19 @@
 
 <html>
 <head>
-    <title>Log in</title>
-    <script src="<c:url value="/webjars/jquery/3.0.0/jquery.min.js"/>"></script>
-    <script src="<c:url value="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"/>"></script>
+    <title>Log in form</title>
     <link href="<c:url value="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>" rel="stylesheet">
+    <script src="<c:url value="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"/>"></script>
     <link href="<c:url value="/resources/css/main.css"/>" rel="stylesheet">
+    <script src="<c:url value="/webjars/jquery/3.0.0/jquery.min.js"/>"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="/resources/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/resources/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="/resources/lib/animate/animate.min.css" rel="stylesheet">
 </head>
 <body>
     <%@ include file="header.jspf" %>
@@ -21,20 +29,16 @@
         <br>
         <br>
 
-        <div class="row">
-            <div class="col-sm">
-                <div class="card mt-4">
-                    <div class="card-body">
-                        Opis
-                    </div>
-                </div>
+        <div class="row align-items-center">
+
+            <div class="col-sm-3">
+
             </div>
-            <div class="col-sm">
-                <div class="card mt-4">
 
+            <div class="col-sm-6">
+                <div class="card">
                     <div class="card-body">
-
-                        <h3 style="color:#1bb1dc;">Log in </h3>
+                        <h3 style="color:#1bb1dc;" class="text-center">Log in </h3>
 
                         <form method="post" >
 
@@ -60,6 +64,11 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-sm-3">
+
+            </div>
+
         </div>
     </div>
     <br>

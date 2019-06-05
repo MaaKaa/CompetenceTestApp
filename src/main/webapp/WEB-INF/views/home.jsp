@@ -54,11 +54,50 @@
             <header class="section-header">
                 <br>
                 <h3>About</h3>
-                <p>Communication, flexibility, teamwork - there are lots of competencies that can be developed through volunteering. Also in your organisation!<br>
-                   Thanks to the Competence Test App you can easily find out what volunteers learn within your projects!</p>
+                <p>Communication, flexibility, teamwork - there are lots of competencies that can be developed through volunteering. Also in your organisation!<br></p>
             </header>
             <div class="text-center">
                 <img src="/resources/img/Competence_test.png" class="rounded img-fluid" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- ------------
+    # Competence Test Section
+    ----------------->
+    <section id="competence-test-section" class="section-bg">
+        <div class="container">
+
+            <header class="section-header">
+                <h3>Competence Test</h3>
+                <p>Thanks to the Competence Test volunteers can validate three soft skills valuable at the labour market:</p>
+            </header>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon" style="background: #fceef3;"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
+                        <h4 class="title"><a href="">Communication</a></h4>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon" style="background: #fff0da;"><i class="ion-ios-bookmarks-outline" style="color: #e98e06;"></i></div>
+                        <h4 class="title"><a href="">Flexibility</a></h4>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="box">
+                        <div class="icon" style="background: #e6fdfc;"><i class="ion-ios-paper-outline" style="color: #3fcdc7;"></i></div>
+                        <h4 class="title"><a href="">Teamwork</a></h4>
+                    </div>
+                </div>
+
+                <p class="text-center">
+                    The Test is based on the <a href=”http://www.leverproject.eu/”>Lever Model</a> – European model created to assist people in valuing skills and transversal competencies acquired through non-formal and informal learning experiences such as volunteering.
+                </p>
             </div>
         </div>
     </section>
@@ -79,15 +118,15 @@
                 </div>
 
                 <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
-                    <h4>1. Create a project</h4>
+                    <h4>1. Create project</h4>
                     <p>
-                        Delectus alias ut incidunt delectus nam placeat in consequatur. Sed cupiditate quia ea quis. Voluptas nemo qui aut distinctio. Cumque fugit earum est quam officiis numquam. Ducimus corporis autem at blanditiis beatae incidunt sunt.
+                        We bet volunteers supported your organisation with many different projects: some office works, events, workshops, etc. Every project was a chance to develop crucial competencies.
                     </p>
                     <p>
-                        Voluptas saepe natus quidem blanditiis. Non sunt impedit voluptas mollitia beatae. Qui esse molestias. Laudantium libero nisi vitae debitis. Dolorem cupiditate est perferendis iusto.
+                        To check their results, log in and create a project by typing its name and description. We will generate a competence test for you.
                     </p>
                     <p>
-                        Eum quia in. Magni quas ipsum a. Quis ex voluptatem inventore sint quia modi. Numquam est aut fuga mollitia exercitationem nam accusantium provident quia.
+                        The test consists of 4 open and 16 closed questions.
                     </p>
                 </div>
             </div>
@@ -102,10 +141,7 @@
                 <div class="col-lg-6 pt-5 pt-lg-0">
                     <h4>2. Invite volunteers</h4>
                     <p>
-                        Ipsum in aspernatur ut possimus sint. Quia omnis est occaecati possimus ea. Quas molestiae perspiciatis occaecati qui rerum. Deleniti quod porro sed quisquam saepe. Numquam mollitia recusandae non ad at et a.
-                    </p>
-                    <p>
-                        Ad vitae recusandae odit possimus. Quaerat cum ipsum corrupti. Odit qui asperiores ea corporis deserunt veritatis quidem expedita perferendis. Qui rerum eligendi ex doloribus quia sit. Porro rerum eum eum.
+                        Now you can invite volunteers. To do so, simply enter their names and email addresses and will send them an invitation.
                     </p>
                 </div>
             </div>
@@ -120,15 +156,13 @@
 
                 <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1">
                     <h4>3. View results!</h4>
-                    <p>
-                        Delectus alias ut incidunt delectus nam placeat in consequatur. Sed cupiditate quia ea quis. Voluptas nemo qui aut distinctio. Cumque fugit earum est quam officiis numquam. Ducimus corporis autem at blanditiis beatae incidunt sunt.
-                    </p>
-                    <p>
-                        Voluptas saepe natus quidem blanditiis. Non sunt impedit voluptas mollitia beatae. Qui esse molestias. Laudantium libero nisi vitae debitis. Dolorem cupiditate est perferendis iusto.
-                    </p>
-                    <p>
-                        Eum quia in. Magni quas ipsum a. Quis ex voluptatem inventore sint quia modi. Numquam est aut fuga mollitia exercitationem nam accusantium provident quia.
-                    </p>
+                    <p>The results are shown in two dimensions:</p>
+                    <ul>
+                        <li>Experience Complexity Level, summarising volunteer’s experience in terms of responsibility and autonomy. It can be: General, Accomplished or Expert.</li>
+                        <br>
+                        <li>Competencies level. It can be: Partial, Plain, or Excellent.</li>
+                    </ul>
+                    <p>You can view live statistics in your dashboard, both for every project, and for all the projects altogether.</p>
                 </div>
             </div>
 
@@ -344,7 +378,7 @@
 
             <ul id="faq-list">
                 <li>
-                    <a data-toggle="collapse" class="collapsed" href="#faq1">Non consectetur a erat nam at lectus urna duis? <i class="ion-android-remove"></i></a>
+                    <a data-toggle="collapse" class="collapsed" href="#faq1">I am a volunteer. How can I register?<i class="ion-android-remove"></i></a>
                     <div id="faq1" class="collapse" data-parent="#faq-list">
                         <p>
                             Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
