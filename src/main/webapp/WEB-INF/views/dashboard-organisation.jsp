@@ -29,8 +29,19 @@
         <br>
         <br>
         <br>
-        <br>
     <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+            <div class="col-sm-4 text-right">
+                <a href="<c:url value="/login"/>">Log out</a><br>
+            </div>
+        </div>
+
         <h3 style="color:#535074;">Hello ${organisation.name}!</h3>
         <p style="color: #535074">Welcome to your dashboard. Here's what you can do here:</p>
 
@@ -125,11 +136,11 @@
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Description</th>
+                            <th style="width: 5%">ID</th>
+                            <th style="width: 25%">Name</th>
+                            <th style="width: 45%">Description</th>
                             <!-- <th scope="col">Organisation</th> -->
-                            <th scope="col">Actions</th>
+                            <th style="width: 25%">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -180,9 +191,9 @@
 
                     <div class="col-sm">
                         <div class="card-body">
-                            <p><b>General:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <p><b>Accomplished:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            <p><b>Expert:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <h6><b>General:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h6>
+                            <h6><b>Accomplished:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h6>
+                            <h6><b>Expert:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h6>
                         </div>
                     </div>
                 </div>
@@ -231,9 +242,9 @@
                     <div class="col-sm">
                         <div class="card-body">
                             <c:set var="noOfCompetenceTests" value="${organisation.competenceTests}"/>
-                            You created <b>${fn:length(noOfCompetenceTests)}</b> competence test(s).
-                            You invited <b>${numberOfVolunteers}</b> volunteer(s) to take these tests.
-                            So far, <b>${numberOfSolutions}</b> volunteers completed your tests.
+                            <p>You created <b>${fn:length(noOfCompetenceTests)}</b> competence test(s).</p>
+                            <p>You invited <b>${numberOfVolunteers}</b> volunteer(s) to take the test(s).</p>
+                            <p>So far, <b>${numberOfSolutions}</b> volunteer(s) completed your test(s).</p>
                         </div>
                     </div>
 

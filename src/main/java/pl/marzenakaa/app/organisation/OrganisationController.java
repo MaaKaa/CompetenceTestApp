@@ -9,7 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.marzenakaa.app.competenceTest.CompetenceTest;
 import pl.marzenakaa.app.competenceTest.CompetenceTestService;
-import pl.marzenakaa.app.mails.EmailServiceImpl;
+import pl.marzenakaa.app.emails.EmailServiceImpl;
 import pl.marzenakaa.app.solution.Solution;
 import pl.marzenakaa.app.volunteer.Volunteer;
 import pl.marzenakaa.app.volunteer.VolunteerService;
@@ -139,7 +139,7 @@ public class OrganisationController {
         List<CompetenceTest> competenceTests = organisation.getCompetenceTests();
         for(CompetenceTest competenceTest : competenceTests){
             List<Volunteer> volunteers = competenceTest.getVolunteers();
-            numberOfVolunteers =+ volunteers.size();
+            numberOfVolunteers = numberOfVolunteers + volunteers.size();
         }
         return numberOfVolunteers;
     }
@@ -150,7 +150,7 @@ public class OrganisationController {
         List<CompetenceTest> competenceTests = organisation.getCompetenceTests();
         for(CompetenceTest competenceTest : competenceTests){
             List<Solution> solutions = competenceTestService.readWithSolutions(competenceTest.getId()).getSolutions();
-            numberOfSolved =+ solutions.size();
+            numberOfSolved = numberOfSolved + solutions.size();
         }
         return numberOfSolved;
     }

@@ -35,7 +35,7 @@
                         <h5>Create a free account and find out, what volunteers learn in your organisation!</h5>
                         <br>
                         <p>Are you a volunteer? Ask your organisation to send you an invitation to the Competence Test!</p>
-                        <p>Getting stuck? Let us know how we can help: email</p>
+                        <p>Getting stuck? Let us know how we can help: <a href="mailto:hi@competencetest.com">hi@competencetest.com</a></p>
                     </div>
                 </div>
             </div>

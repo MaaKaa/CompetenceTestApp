@@ -1,4 +1,4 @@
-package pl.marzenakaa.app.mails;
+package pl.marzenakaa.app.emails;
 
 public interface EmailService {
 

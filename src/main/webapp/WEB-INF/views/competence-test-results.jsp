@@ -13,50 +13,88 @@
 <body>
     <%@ include file="header.jspf" %>
 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <div class="container">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
 
-        <a href="<c:url value="/vol/logged/"/>">Back to Volunteer's Dashboard</a><br><br>
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="<c:url value="/vol/logged/"/>">Back to Dashboard</a><br>
+                <br>
+            </div>
+            <div class="col-sm-4">
 
-        <h3><p style="color:#1bb1dc;">Competence Test: "${solutionByCompetenceTestIdAndVolunteerId.competenceTest.name}" Results</p></h3>
+            </div>
+            <div class="col-sm-4 text-right">
+                <a href="<c:url value="/login"/>">Log out</a><br>
+            </div>
+        </div>
 
-        Volunteer's name: ${volunteer.name} <br>
+        <section id="test-info" class="section-bg">
+            <div class="container">
+                <br>
+                <h2 style="color:#1bb1dc;" class="text-center">Competence Test: "${solutionByCompetenceTestIdAndVolunteerId.competenceTest.name}" Results</h2>
+                <p class="text-center">Volunteer's name: ${volunteer.name}</p>
+            </div>
+            <br>
+        </section>
 
-        <h3>General result: ${solutionByCompetenceTestIdAndVolunteerId.resultRoleAndAutonomy}</h3><br>
+        <hr>
 
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Result</th>
-                <th scope="col">Description</th>
-            </tr>
-            </thead>
-            <tr>
-                <td>Communication</td>
-                <td>${solutionByCompetenceTestIdAndVolunteerId.communicationResult}</td>
-                <td>Lorem ipsum dolor sit amet.</td>
-            </tr>
-            <tr>
-                <td>Flexibility</td>
-                <td>${solutionByCompetenceTestIdAndVolunteerId.flexibilityResult}</td>
-                <td>Lorem ipsum dolor sit amet.</td>
-            </tr>
-            <tr>
-                <td>Teamwork</td>
-                <td>${solutionByCompetenceTestIdAndVolunteerId.teamWorkResult}</td>
-                <td>Lorem ipsum dolor sit amet.</td>
-            </tr>
-        </table>
+        <section id="experience-complexity-level-result" class="section-bg">
+            <div class="container">
+                <h5 class="text-center">Experience Complexity Level:</h5>
+                <h6 class="text-center">This outcome shows how advanced you were in this project in terms of responsibility and autonomy:</h6>
+                <h3 class="text-center">${solutionByCompetenceTestIdAndVolunteerId.resultRoleAndAutonomy} </h3><br>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="competencies-level-result" class="section-bg">
+            <div class="container">
+                <br>
+                <h5 class="text-center">Competencies results:</h5>
+                <h6 class="text-center">These outcomes show how advanced you were in this project in using a particular competence. It was calculated on the basis of competence indicators that evaluate your skills and knowledge connected with a given competence.</h6>
+
+                <br>
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Result</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                    </thead>
+                    <tr>
+                        <td>Communication</td>
+                        <td>${solutionByCompetenceTestIdAndVolunteerId.communicationResult}</td>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                    </tr>
+                    <tr>
+                        <td>Flexibility</td>
+                        <td>${solutionByCompetenceTestIdAndVolunteerId.flexibilityResult}</td>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                    </tr>
+                    <tr>
+                        <td>Teamwork</td>
+                        <td>${solutionByCompetenceTestIdAndVolunteerId.teamWorkResult}</td>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                    </tr>
+                </table>
+
+            </div>
+        </section>
+
+            <br>
+            <br>
+        </div>
     </div>
 
-    <br>
-    <br>
     <%@ include file="footer.jspf" %>
 
 </body>

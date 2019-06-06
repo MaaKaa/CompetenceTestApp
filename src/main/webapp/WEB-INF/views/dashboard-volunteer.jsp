@@ -30,6 +30,19 @@
         <br>
         <br>
         <div class="container">
+
+            <div class="row">
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-4 text-right">
+                    <a href="<c:url value="/login"/>">Log out</a><br>
+                </div>
+            </div>
+
             <h3 style="color:#535074;">Hello ${volunteer.name}!</h3>
             <p style="color: #535074">Welcome to your dashboard. You can manage your competence tests here.</p>
 
@@ -72,11 +85,11 @@
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Organisation</th>
-                            <th scope="col">Actions</th>
+                            <th style="width: 5%">ID</th>
+                            <th style="width: 20%">Name</th>
+                            <th style="width: 45%">Description</th>
+                            <th style="width: 15%">Organisation</th>
+                            <th style="width: 15%">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -93,16 +106,18 @@
                     </table>
 
                     <br>
+                    <hr>
+                    <br>
 
                     <h3 class="text-center">Completed:</h3>
                     <table class="table table-hover">
                         <thead>
                         <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Organisation</th>
-                            <th scope="col">Actions</th>
+                            <th style="width: 5%">ID</th>
+                            <th style="width: 20%">Name</th>
+                            <th style="width: 45%">Description</th>
+                            <th style="width: 15%">Organisation</th>
+                            <th style="width: 15%">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -134,10 +149,190 @@
                     <p class="text-center">Here you can see the overall statistics for all the competence tests you completed.<br>
                         If you want to see stats for a particular competence test, click "View results" in the table above.</p><br>
                 </div>
+
+                <div class="row">
+                    <div class="col-sm">
+                        <br>
+                        <h5 class="text-center">Experience Complexity Level:</h5>
+                        <h6 class="text-center">This outcome shows how advanced the volunteers are in terms of responsibility and autonomy.</h6>
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <canvas id="roleAndAutonomyChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <h6><b>General:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h6>
+                            <h6><b>Accomplished:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h6>
+                            <h6><b>Expert:</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <br>
+                <div class="row">
+                    <div class="col-sm">
+                        <h5 class="text-center">Competencies results:</h5>
+                        <h6 class="text-center">These outcomes show how advanced the volunteers are in using a particular competence. It was calculated on the basis of competence indicators that evaluate volunteer's skills and knowledge connected with a given competence.</h6>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <h6 class="text-center">Communication</h6>
+                            <canvas id="communicationChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <h6 class="text-center">Flexibility</h6>
+                            <canvas id="flexibilityChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <h6 class="text-center">Teamwork</h6>
+                            <canvas id="teamworkChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <br>
+                <div class="row">
+                    <div class="col-sm">
+                        <h5 class="text-center">Invitations vs. completed</h5>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <c:set var="noOfInvitations" value="${volunteer.competenceTests}"/>
+                            <c:set var="noOfSolutions" value="${volunteer.solutions}"/>
+                            <p>You was invited to <b>${fn:length(noOfInvitations)}</b> competence test(s).</p>
+                            <p>So far, you completed <b>${fn:length(noOfSolutions)}</b> test(s).</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <canvas id="volunteersChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
             </section>
 
 
     </div>
+
+    <script>
+        var ctxRoleAndAutonomy = document.getElementById('roleAndAutonomyChart').getContext('2d');
+        var chartRoleAndAutonomy = new Chart(ctxRoleAndAutonomy, {
+            type: 'bar',
+            data: {
+                labels: ['General', 'Accomplished', 'Expert'],
+                datasets: [{
+                    backgroundColor: ['#413e66', '#1bb1dc', '#065e77'],
+                    borderColor: ['#413e66', '#1bb1dc', '#065e77'],
+                    data: ['${statsRoleAndAutonomyGeneralFromAllTests}', '${statsRoleAndAutonomyAccomplishedFromAllTests}', '${statsRoleAndAutonomyExpertFromAllTests}']
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+
+        var ctxCommunication = document.getElementById('communicationChart').getContext('2d');
+        var chartComunication = new Chart(ctxCommunication, {
+            type: 'bar',
+            data: {
+                labels: ['Partial', 'Plain', 'Excellent'],
+                datasets: [{
+                    label: 'Communication results',
+                    backgroundColor: ['#413e66', '#1bb1dc', '#065e77'],
+                    borderColor: ['#413e66', '#1bb1dc', '#065e77'],
+                    data: ['${statsCommunicationPartialFromAllTests}', '${statsCommunicationPlainFromAllTests}', '${statsCommunicationExcellentFromAllTests}']
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+
+        var ctxFlexibility = document.getElementById('flexibilityChart').getContext('2d');
+        var chartFlexibility = new Chart(ctxFlexibility, {
+            type: 'bar',
+            data: {
+                labels: ['Partial', 'Plain', 'Excellent'],
+                datasets: [{
+                    label: 'Flexibility results',
+                    backgroundColor: ['#413e66', '#1bb1dc', '#065e77'],
+                    borderColor: ['#413e66', '#1bb1dc', '#065e77'],
+                    data: ['${statsFlexibilityPartialFromAllTests}', '${statsFlexibilityPlainFromAllTests}', '${statsFlexibilityExcellentFromAllTests}']
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+
+        var ctxTeamwork = document.getElementById('teamworkChart').getContext('2d');
+        var chartTeamwork = new Chart(ctxTeamwork, {
+            type: 'bar',
+            data: {
+                labels: ['Partial', 'Plain', 'Excellent'],
+                datasets: [{
+                    label: 'Teamwork results',
+                    backgroundColor: ['#413e66', '#1bb1dc', '#065e77'],
+                    borderColor: ['#413e66', '#1bb1dc', '#065e77'],
+                    data: ['${statsTeamworkPartialFromAllTests}', '${statsTeamworkPlainFromAllTests}', '${statsTeamworkExcellentFromAllTests}']
+                }]
+            },
+            options: {
+                legend: {
+                    display: false,
+                    fullWidth: false
+                }
+            }
+        });
+
+        var ctxVolunteers = document.getElementById('volunteersChart').getContext('2d');
+        var chartVolunteers = new Chart(ctxVolunteers, {
+            type: 'pie',
+            data: {
+                labels: ['No. of invitations received', 'No. of tests completed'],
+                datasets: [{
+                    label: 'Volunteers',
+                    backgroundColor: ['#413e66', '#1bb1dc'],
+                    borderColor: ['#413e66', '#1bb1dc'],
+                    data: ['${numberOfVolunteers}', '${numberOfSolutions}']
+                }]
+            },
+            options: {
+                legend: {
+                    position: 'right'
+                }
+            }
+        });
+
+    </script>
 
     <br>
     <br>

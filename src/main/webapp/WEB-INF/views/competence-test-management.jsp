@@ -31,9 +31,19 @@
     <br>
     <br>
     <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="<c:url value="/org/logged/"/>">Back to Dashboard</a><br>
+                <br>
+            </div>
+            <div class="col-sm-4">
 
-        <a href="<c:url value="/org/logged/"/>">Back to Dashboard</a><br>
-        <br>
+            </div>
+            <div class="col-sm-4 text-right">
+                <a href="<c:url value="/login"/>">Log out</a><br>
+            </div>
+        </div>
+
 
         <section id="project-info" class="section-bg">
             <div class="container">
@@ -192,7 +202,8 @@
                         <div class="card-body">
                             <c:set var="noOfCompleted" value="${competenceTest.solutions}"/>
                             <c:set var="noOfInvited" value="${competenceTest.volunteers}"/>
-                            You invited <b>${fn:length(noOfInvited)}</b> volunteers to take this tests. <b>${fn:length(noOfCompleted)}</b> of them completed this test.
+                            <p>You invited <b>${fn:length(noOfInvited)}</b> volunteer(s) to take this test.
+                            <p><b>${fn:length(noOfCompleted)}</b> of them completed this test.</p>
                         </div>
                     </div>
 
