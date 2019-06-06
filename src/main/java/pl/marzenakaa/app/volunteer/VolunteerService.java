@@ -63,6 +63,22 @@ public class VolunteerService {
         return volunteers;
     }
 
+    public int readVolunteerStatsForRoleAndAutonomy(Long id, String level){
+        return volunteerRepository.countVolunteersSolutionsByRoleAndAutonomyResult(id, level);
+    }
+
+    public int readVolunteerStatsForCommunication(Long id, String level){
+        return volunteerRepository.countVolunteersSolutionsByCommunicationResult(id, level);
+    }
+
+    public int readVolunteerStatsForFLexibility(Long id, String level){
+        return volunteerRepository.countVolunteersSolutionsByFlexibilityResult(id, level);
+    }
+
+    public int readVolunteerStatsForTeamwork(Long id, String level){
+        return volunteerRepository.countVolunteersSolutionsByTeamworkResult(id, level);
+    }
+
     public void update(Volunteer volunteer) {
         volunteerRepository.save(volunteer);
     }

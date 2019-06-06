@@ -245,7 +245,7 @@
                 datasets: [{
                     backgroundColor: ['#413e66', '#1bb1dc', '#065e77'],
                     borderColor: ['#413e66', '#1bb1dc', '#065e77'],
-                    data: ['${statsRoleAndAutonomyGeneralFromAllTests}', '${statsRoleAndAutonomyAccomplishedFromAllTests}', '${statsRoleAndAutonomyExpertFromAllTests}']
+                    data: ['${roleAndAutonomyResultGeneral}', '${roleAndAutonomyResultAccomplished}', '${roleAndAutonomyResultExpert}']
                 }]
             },
             options: {
@@ -264,7 +264,7 @@
                     label: 'Communication results',
                     backgroundColor: ['#413e66', '#1bb1dc', '#065e77'],
                     borderColor: ['#413e66', '#1bb1dc', '#065e77'],
-                    data: ['${statsCommunicationPartialFromAllTests}', '${statsCommunicationPlainFromAllTests}', '${statsCommunicationExcellentFromAllTests}']
+                    data: ['${communicationResultPartial}', '${communicationResultPlain}', '${communicationResultExcellent}']
                 }]
             },
             options: {
@@ -283,7 +283,7 @@
                     label: 'Flexibility results',
                     backgroundColor: ['#413e66', '#1bb1dc', '#065e77'],
                     borderColor: ['#413e66', '#1bb1dc', '#065e77'],
-                    data: ['${statsFlexibilityPartialFromAllTests}', '${statsFlexibilityPlainFromAllTests}', '${statsFlexibilityExcellentFromAllTests}']
+                    data: ['${flexibilityResultPartial}', '${flexibilityResultPlain}', '${flexibilityResultExcellent}']
                 }]
             },
             options: {
@@ -302,7 +302,7 @@
                     label: 'Teamwork results',
                     backgroundColor: ['#413e66', '#1bb1dc', '#065e77'],
                     borderColor: ['#413e66', '#1bb1dc', '#065e77'],
-                    data: ['${statsTeamworkPartialFromAllTests}', '${statsTeamworkPlainFromAllTests}', '${statsTeamworkExcellentFromAllTests}']
+                    data: ['${teamworkResultPartial}', '${teamworkResultPlain}', '${teamworkResultExcellent}']
                 }]
             },
             options: {

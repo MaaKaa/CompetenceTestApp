@@ -11,6 +11,7 @@ import pl.marzenakaa.app.solution.SolutionService;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/vol/logged")
@@ -30,6 +31,19 @@ public class VolunteerController {
         Volunteer volunteer = volunteerService.readWithCompetenceTestsAndSolutions(volunteerSession.getId());
         model.addAttribute("volunteer", volunteer);
         model.addAttribute("competenceTestsWithoutSolutions", competenceTestService.readAllWithoutSolutionsByVolunteerId(volunteerSession.getId()));
+        //Generate statistics:
+        model.addAttribute("roleAndAutonomyResultGeneral", volunteerService.readVolunteerStatsForRoleAndAutonomy(volunteer.getId(), "General"));
+        model.addAttribute("roleAndAutonomyResultAccomplished", volunteerService.readVolunteerStatsForRoleAndAutonomy(volunteer.getId(), "Accomplished"));
+        model.addAttribute("roleAndAutonomyResultExpert", volunteerService.readVolunteerStatsForRoleAndAutonomy(volunteer.getId(), "Expert"));
+        model.addAttribute("communicationResultPartial", volunteerService.readVolunteerStatsForCommunication(volunteer.getId(), "Partial"));
+        model.addAttribute("communicationResultPlain", volunteerService.readVolunteerStatsForCommunication(volunteer.getId(), "Plain"));
+        model.addAttribute("communicationResultExcellent", volunteerService.readVolunteerStatsForCommunication(volunteer.getId(), "Excellent"));
+        model.addAttribute("flexibilityResultPartial", volunteerService.readVolunteerStatsForFLexibility(volunteer.getId(), "Partial"));
+        model.addAttribute("flexibilityResultPlain", volunteerService.readVolunteerStatsForFLexibility(volunteer.getId(), "Plain"));
+        model.addAttribute("flexibilityResultExcellent", volunteerService.readVolunteerStatsForFLexibility(volunteer.getId(), "Excellent"));
+        model.addAttribute("teamworkResultPartial", volunteerService.readVolunteerStatsForTeamwork(volunteer.getId(), "Partial"));
+        model.addAttribute("teamworkResultPlain", volunteerService.readVolunteerStatsForTeamwork(volunteer.getId(), "Plain"));
+        model.addAttribute("teamworkResultExcellent", volunteerService.readVolunteerStatsForTeamwork(volunteer.getId(), "Excellent"));
         return "dashboard-volunteer";
     }
 

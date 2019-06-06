@@ -124,7 +124,7 @@ public class OrganisationController {
             emailService.sendHtmlMessage("kacprowicz.marzena@gmail.com", "Competence test: New invitation", "<p>Hello " + volunteer.getName() + "! </p>" +
                     "<p> Organisation <b>" + session.getAttribute("organisationSession") + "</b> invites you to take the competence test concerning the <b>" + competenceTestService.read(ctId).getName() + "</b> project in which you volunteered.</p>" +
                     "<p>Log in to take the test and find out which competencies you developed thanks to this project!</p>" +
-                    "<p>[link]</p>" +
+                    "<p><a href=\"http://competencetest.com/login\">http://competencetest.com/login</a></p>" +
                     "<p>If you have any questions, do not hesitate to contact us - we'll be happy to help :) </p>" +
                     "<p>Greetings,</p>" +
                     "<p>Competence Test App Team</p>");
