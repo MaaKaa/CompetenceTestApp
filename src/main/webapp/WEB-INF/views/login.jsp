@@ -27,7 +27,6 @@
         <br>
         <br>
         <br>
-        <br>
 
         <div class="row align-items-center">
 

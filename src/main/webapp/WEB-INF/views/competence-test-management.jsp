@@ -66,6 +66,14 @@
                 <br>
                 <h2 class="text-center">Invite volunteers!</h2><br>
 
+                <!--<c:if test="${sendingSuccessful == true}">
+                    <div class="text-center" style="color:red">${sendingSuccessMsg}</div>
+                </c:if>
+
+                <c:if test="${sendingFailed == true}">
+                    <div class="text-center" style="color:red">${sendingFailedMsg}</div>
+                </c:if> -->
+
                 <form:form method="post" modelAttribute="volunteer">
                     <form:input type="hidden" path="id" name="id"/>
                     <form:input type="hidden" path="competenceTests" name="competenceTests" value="${competenceTest.id}"/>

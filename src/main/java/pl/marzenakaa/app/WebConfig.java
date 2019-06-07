@@ -138,7 +138,7 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
 
-    @Bean
+    /*@Bean
     public JavaMailSender getJavaMailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         EmailCredentials credentials = new EmailCredentials(); //This file is not added to Git. It contains login and password to the email client.
@@ -149,6 +149,27 @@ public class WebConfig implements WebMvcConfigurer {
         mailSender.setPassword(credentials.getPass());
 
         Properties javaMailProperties = new Properties();
+        javaMailProperties.put("mail.smtp.starttls.enable", "true");
+        javaMailProperties.put("mail.smtp.auth", "true");
+        javaMailProperties.put("mail.transport.protocol", "smtp");
+        javaMailProperties.put("mail.debug", "true");//Prints out the log on the screen
+
+        mailSender.setJavaMailProperties(javaMailProperties);
+        return mailSender;
+    }*/
+
+    @Bean
+    public JavaMailSender getJavaMailSender() {
+        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+        EmailCredentials credentials = new EmailCredentials(); //This file is not added to Git. It contains login and password to the email client.
+
+        mailSender.setHost("smtp.zenbox.pl");
+        mailSender.setPort(587);
+        mailSender.setUsername(credentials.getLogin());
+        mailSender.setPassword(credentials.getPass());
+
+        Properties javaMailProperties = new Properties();
+        javaMailProperties.put("mail.smtp.from", "hi@competencetest.com");
         javaMailProperties.put("mail.smtp.starttls.enable", "true");
         javaMailProperties.put("mail.smtp.auth", "true");
         javaMailProperties.put("mail.transport.protocol", "smtp");
