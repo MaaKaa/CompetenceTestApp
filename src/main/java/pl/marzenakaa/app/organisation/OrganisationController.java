@@ -108,7 +108,7 @@ public class OrganisationController {
             volunteerService.create(volunteer);
             //before deployment: change "to" to volunteer.getEmail():
             try {
-                emailService.sendHtmlMessage("kacprowicz.marzena@gmail.com", "Competence test: New invitation", "<p>Hello " + volunteer.getName() + "! </p>" +
+                emailService.sendHtmlMessage(volunteer.getEmail(), "Competence test: New invitation", "<p>Hello " + volunteer.getName() + "! </p>" +
                         "<p> Organisation <b>" + session.getAttribute("organisationSession") + "</b> invites you to take the competence test concerning the <b>" + competenceTestService.read(ctId).getName() + "</b> project in which you volunteered.</p>" +
                         "<p>Log in to take the test and find out which competencies you developed thanks to this project!</p>" +
                         "<p><a href=\"http://competencetest.com/login\">http://competencetest.com/login</a></p>" +
@@ -131,7 +131,7 @@ public class OrganisationController {
             volunteerService.update(vol);
             //before deployment: change "to" to vol.getEmail():
             try {
-                emailService.sendHtmlMessage("kacprowicz.marzena@gmail.com", "Competence test: New invitation", "<p>Hello " + volunteer.getName() + "! </p>" +
+                emailService.sendHtmlMessage(vol.getEmail(), "Competence test: New invitation", "<p>Hello " + volunteer.getName() + "! </p>" +
                         "<p> Organisation <b>" + session.getAttribute("organisationSession") + "</b> invites you to take the competence test concerning the <b>" + competenceTestService.read(ctId).getName() + "</b> project in which you volunteered.</p>" +
                         "<p>Log in to take the test and find out which competencies you developed thanks to this project!</p>" +
                         "<p><a href=\"http://competencetest.com/login\">http://competencetest.com/login</a></p>" +

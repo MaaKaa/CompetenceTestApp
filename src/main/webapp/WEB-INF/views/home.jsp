@@ -242,36 +242,36 @@
                         <div class="testimonial-item">
                             <img src="/resources/img/testimonial-1.jpg" class="testimonial-img" alt="">
                             <h3>Yan Kowalsky</h3>
-                            <h4>Ceo &amp; Founder</h4>
+                            <h4>Volunteer, Poland</h4>
                             <p>
-                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                                Before taking the Competence Test I had no idea that my volunteering experience matter! Now I know that this is my big asset.
                             </p>
                         </div>
 
                         <div class="testimonial-item">
                             <img src="/resources/img/testimonial-2.jpg" class="testimonial-img" alt="">
                             <h3>Sara Wilsson</h3>
-                            <h4>Ceo &amp; Founder</h4>
+                            <h4>Volunteer, United Kingdom</h4>
                             <p>
-                                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                                Thanks to the Competence Test I feel empowered - I know what my sthrenghts are and how to present them during the job interview.
                             </p>
                         </div>
 
                         <div class="testimonial-item">
                             <img src="/resources/img/testimonial-3.jpg" class="testimonial-img" alt="">
                             <h3>Jana Karlova</h3>
-                            <h4>Ceo &amp; Founder</h4>
+                            <h4>Foundation President, Czech Republic </h4>
                             <p>
-                                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                                I am glad I could support volunteers in discovering their strenghts thanks to the Competence Test.
                             </p>
                         </div>
 
                         <div class="testimonial-item">
                             <img src="/resources/img/testimonial-4.jpg" class="testimonial-img" alt="">
                             <h3>Francesco Piazzini</h3>
-                            <h4>Ceo &amp; Founder</h4>
+                            <h4>Association Member, Italy</h4>
                             <p>
-                                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                                Thanks to the Competence Test we know how to prepare well-suited development plan for our volunteers!
                             </p>
                         </div>
 
@@ -293,7 +293,7 @@
 
             <header class="section-header">
                 <h3>Pricing</h3>
-                <p>Choose the plan that suits you best:</p>
+                <p>Competence Test is in its beta version and it's for free now!</p>
             </header>
 
             <div class="row flex-items-xs-middle flex-items-xs-center">
@@ -335,7 +335,7 @@
                                 <li class="list-group-item">Basic statistics</li>
                                 <li class="list-group-item">24/7 Support System</li>
                             </ul>
-                            <a href="/register" class="btn">Choose Plan</a>
+                            <a href="#pricing" class="btn" style="background-color: #999999">Available soon</a>
                         </div>
                     </div>
                 </div>
@@ -356,7 +356,7 @@
                                 <li class="list-group-item">In depth reports</li>
                                 <li class="list-group-item">24/7 Support System</li>
                             </ul>
-                            <a href="/register" class="btn">Choose Plan</a>
+                            <a href="#pricing" class="btn" style="background-color: #999999">Available soon</a>
                         </div>
                     </div>
                 </div>

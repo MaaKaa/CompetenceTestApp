@@ -93,7 +93,7 @@
                         </div>
 
                         <div class="col-sm-2">
-                            <input type="submit" value="Save" class="btn btn-save">
+                            <input type="submit" value="Send invitation" class="btn btn-save">
                         </div>
                     </div>
 

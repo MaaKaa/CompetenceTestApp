@@ -46,7 +46,7 @@ public class RegistrationController {
         }
         model.addAttribute("success", true);
         model.addAttribute("successMsg", "Registration successful! Now you can log in:");
-        return "login";
+        return "redirect: /login";
     }
 
     @ModelAttribute("fieldsOfActivity")

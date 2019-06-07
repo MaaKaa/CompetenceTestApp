@@ -79,8 +79,10 @@
                 <div class="row align-items-center">
                     <div class="col-sm-6">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            We bet volunteers supported your organisation with many different projects: some office works, events, workshops, etc. Every project was a chance to develop crucial competencies.
+                        </p>
+                        <p>
+                            To check their results, create a project and we will generate a competence test for your volunteers.
                         </p>
                         <p>
                             <b>Project Name:</b> e.g. Charity Run, Cooking workshops, Office works.
