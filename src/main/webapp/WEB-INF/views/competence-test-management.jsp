@@ -198,6 +198,48 @@
                 </div>
 
                 <hr>
+
+                <!-- Show qualitative results:
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <h5 class="text-center">Tasks</h5>
+                            <h6 class="text-center">How volunteers described their tasks:</h6>
+                            <h6>${tasks}</h6>
+                        </div>
+                    </div>
+
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <h5 class="text-center">Challenges</h5>
+                            <h6 class="text-center">How volunteers described the challenges they faced:</h6>
+                            <h6>${challenges}</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <h5 class="text-center">Tasks</h5>
+                            <h6 class="text-center">How volunteers described their tasks:</h6>
+                            <h6>${lessonsLearned}</h6>
+                        </div>
+                    </div>
+
+                    <div class="col-sm">
+                        <div class="card-body">
+                            <h5 class="text-center">Challenges</h5>
+                            <h6 class="text-center">How volunteers described the challenges they faced:</h6>
+                            <h6>${comments}</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <hr> -->
+
                 <br>
                 <div class="row">
                     <div class="col-sm">
