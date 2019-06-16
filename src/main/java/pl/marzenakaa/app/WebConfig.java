@@ -97,7 +97,7 @@ public class WebConfig implements WebMvcConfigurer {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
-    /*
+
     //Local database:
     @Bean
     public DataSource dataSource() {
@@ -107,9 +107,10 @@ public class WebConfig implements WebMvcConfigurer {
         dataSource.setUsername("root");
         dataSource.setPassword("coderslab");
         return dataSource;
-    }*/
+    }
 
 
+    /*
     //Remote database:
     @Bean
     public DataSource dataSource() {
@@ -119,7 +120,7 @@ public class WebConfig implements WebMvcConfigurer {
         dataSource.setUsername("maarzkaa");
         dataSource.setPassword("Jj3yUJbvy2");
         return dataSource;
-    }
+    }*/
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {

@@ -31,4 +31,14 @@ public class HomeController {
         model.addAttribute("noOfSolutions", solutionService.findAll());
         return "home";
     }
+
+    @GetMapping("/about-us")
+    public String showAboutUsPage(){
+        return "about-us";
+    }
+
+    @GetMapping("/privacy-policy")
+    public String showPrivacyPolicyPage(){
+        return "privacy-policy";
+    }
 }
