@@ -59,12 +59,12 @@
 
                             <div class="form-group">
                                 <label>Email:</label>
-                                <input type="text" class="form-control" name="email" id="email"/><br>
+                                <input type="text" class="form-control" name="email" id="email" required/><br>
                             </div>
 
                             <div class="form-group">
                                 <label>Password:</label>
-                                <input type="password" class="form-control" name="password" id="password"/><br>
+                                <input type="password" class="form-control" name="password" id="password" required/><br>
                             </div>
 
                             <c:if test="${isLogged == false}">

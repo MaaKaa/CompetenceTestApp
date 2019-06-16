@@ -51,7 +51,7 @@
 
                             <div class="form-group">
                                 <label>Email:</label>
-                                <form:input path="email" class="form-control" placeholder="example@example.com" />
+                                <form:input path="email" class="form-control" placeholder="example@example.com" required="true" />
                                 <form:errors path="email" cssClass="text-danger" />
 
                                 <c:if test="${error != false}">
@@ -61,7 +61,7 @@
 
                             <div class="form-group">
                                 <label>Password:</label>
-                                <form:password path="password" class="form-control"/>
+                                <form:password path="password" class="form-control" required="true" />
                                 <form:errors path="password" cssClass="text-danger" />
                             </div>
 
@@ -69,20 +69,20 @@
 
                             <div class="form-group">
                                 <label>Name:</label>
-                                <form:input path="name" class="form-control"/>
+                                <form:input path="name" class="form-control" required="true" />
                                 <form:errors path="name" cssClass="text-danger" />
                             </div>
 
                             <div class="form-group">
                                 <label>Description:</label>
-                                <form:textarea path="description" cols="60" rows="3" class="form-control" />
+                                <form:textarea path="description" cols="60" rows="3" class="form-control" required="true" />
                                 <form:errors path="description" cssClass="text-danger" />
                             </div>
 
                             <div class="form-group">
                                 <label>Fields of activity:</label><br>
                                 <div class="form-check">
-                                    <form:checkboxes path="fieldsOfActivity" items="${fieldsOfActivity}" itemLabel="name" itemValue="id"/>
+                                    <form:checkboxes path="fieldsOfActivity" items="${fieldsOfActivity}" itemLabel="name" itemValue="id" required="true" />
                                     <form:errors path="fieldsOfActivity" cssClass="text-danger" />
                                 </div>
                             </div>
@@ -91,14 +91,14 @@
 
                             <div class="form-group">
                                 <label>Website:</label>
-                                <form:input path="website" class="form-control" placeholder="https://example.com" aria-describedby="websiteHelp"/>
+                                <form:input path="website" class="form-control" placeholder="https://example.com" aria-describedby="websiteHelp" required="true" />
                                 <!-- <small id="websiteHelp" class="form-text text-muted">Must start with "http://" or "https://".</small> -->
                                 <form:errors path="website" cssClass="text-danger" />
                             </div>
 
                             <div class="form-group">
                                 <label>City:</label>
-                                <form:input path="city" class="form-control"/>
+                                <form:input path="city" class="form-control" required="true" />
                                 <form:errors path="city" cssClass="text-danger" />
                             </div>
 
