@@ -1,5 +1,6 @@
 package pl.marzenakaa.app;
 
+import org.springframework.cglib.core.Local;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -33,6 +34,7 @@ import pl.marzenakaa.app.organisation.OrganisationConverter;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import javax.validation.Validator;
+import java.rmi.Remote;
 import java.util.Locale;
 import java.util.Properties;
 
@@ -95,6 +97,8 @@ public class WebConfig implements WebMvcConfigurer {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 
+    /*
+    //Local database:
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -102,6 +106,18 @@ public class WebConfig implements WebMvcConfigurer {
         dataSource.setUrl("jdbc:mysql://localhost:3306/competencetest?useSSL=false");
         dataSource.setUsername("root");
         dataSource.setPassword("coderslab");
+        return dataSource;
+    }*/
+
+
+    //Remote database:
+    @Bean
+    public DataSource dataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://aa1ethr1g2sisie.cbharmnnull8.us-west-2.rds.amazonaws.com:3306/ebdb?user");
+        dataSource.setUsername("maarzkaa");
+        dataSource.setPassword("Jj3yUJbvy2");
         return dataSource;
     }
 

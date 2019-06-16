@@ -381,34 +381,45 @@
                     <a data-toggle="collapse" class="collapsed" href="#faq1">I am a volunteer. How can I register?<i class="ion-android-remove"></i></a>
                     <div id="faq1" class="collapse" data-parent="#faq-list">
                         <p>
-                            Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                            Volunteers cannot register themselves – they can use Competence Test being invited by an organisation. So no worries! Simply ask your organization to send you an invitation!
                         </p>
                     </div>
                 </li>
 
                 <li>
-                    <a data-toggle="collapse" href="#faq2" class="collapsed">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque? <i class="ion-android-remove"></i></a>
+                    <a data-toggle="collapse" href="#faq2" class="collapsed">What are the benefits of using the Competence Test App?<i class="ion-android-remove"></i></a>
                     <div id="faq2" class="collapse" data-parent="#faq-list">
                         <p>
-                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                            - NGO becomes more aware on which competencies can be developed within its projects - thus, it becomes more attractive for volunteers.
+                            - Volunteers are empowered - they become more aware of their competencies and learn how to valuate their experience.
                         </p>
                     </div>
                 </li>
 
                 <li>
-                    <a data-toggle="collapse" href="#faq3" class="collapsed">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? <i class="ion-android-remove"></i></a>
+                    <a data-toggle="collapse" href="#faq3" class="collapsed">How it works from the NGO’s perspective?<i class="ion-android-remove"></i></a>
                     <div id="faq3" class="collapse" data-parent="#faq-list">
                         <p>
-                            Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                            1. NGO registers.
+                            2. After logging-in, the NGO generates a competence test for its project: enters project's name and description, and saves it.
+                            3. Then, the NGO can invite volunteers: types volunteer's name and email address, and the app: sends the email invitation to the volunteer.
+                            4. Volunteer logs in, takes the competence test and saves it. (S)he is redirected to the results page.
+                            5. NGO can view cumulative results for the project.
+                            6. In its dashboard, the NGO can: create a new project, view and edit all its competence tests, as well as view the overall tests' statistics (for all tests altogether).
                         </p>
                     </div>
                 </li>
 
                 <li>
-                    <a data-toggle="collapse" href="#faq4" class="collapsed">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? <i class="ion-android-remove"></i></a>
+                    <a data-toggle="collapse" href="#faq4" class="collapsed">How it works from the volunteer’s perspective? <i class="ion-android-remove"></i></a>
                     <div id="faq4" class="collapse" data-parent="#faq-list">
                         <p>
-                            Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                            1. Volunteer receives an invitation.
+                            2. (S)he clicks on the link and log-in.
+                            3. (S)he takes the competence test and saves it.
+                            4. (S)he is redirected to the results page where (s)he can see her/his results, together with the development tips for each competence.
+                            5. On her/his dashboard volunteer can view all Competence Tests, take the test and view the results of the tests already taken.
+                            Note: volunteer cannot register himself/herself - (s)he must receive an invitation to use to app.
                         </p>
                     </div>
                 </li>
@@ -423,10 +434,10 @@
                 </li>
 
                 <li>
-                    <a data-toggle="collapse" href="#faq6" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="ion-android-remove"></i></a>
+                    <a data-toggle="collapse" href="#faq6" class="collapsed">How much it costs?<i class="ion-android-remove"></i></a>
                     <div id="faq6" class="collapse" data-parent="#faq-list">
                         <p>
-                            Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
+                            Competence Test App is now in its beta version, so all the features are for free now. Make the most of it! :)
                         </p>
                     </div>
                 </li>
