@@ -389,47 +389,38 @@
                 <li>
                     <a data-toggle="collapse" href="#faq2" class="collapsed">What are the benefits of using the Competence Test App?<i class="ion-android-remove"></i></a>
                     <div id="faq2" class="collapse" data-parent="#faq-list">
-                        <p>
-                            - NGO becomes more aware on which competencies can be developed within its projects - thus, it becomes more attractive for volunteers.
-                            - Volunteers are empowered - they become more aware of their competencies and learn how to valuate their experience.
-                        </p>
+                        <ul>
+                            <li>NGO becomes more aware on which competencies can be developed within its projects - thus, it becomes more attractive for volunteers.</li>
+                            <li>Volunteers are empowered - they become more aware of their competencies and learn how to valuate their experience.</li>
+                    </ul>
                     </div>
                 </li>
 
                 <li>
                     <a data-toggle="collapse" href="#faq3" class="collapsed">How it works from the NGO’s perspective?<i class="ion-android-remove"></i></a>
                     <div id="faq3" class="collapse" data-parent="#faq-list">
-                        <p>
-                            1. NGO registers.
-                            2. After logging-in, the NGO generates a competence test for its project: enters project's name and description, and saves it.
-                            3. Then, the NGO can invite volunteers: types volunteer's name and email address, and the app: sends the email invitation to the volunteer.
-                            4. Volunteer logs in, takes the competence test and saves it. (S)he is redirected to the results page.
-                            5. NGO can view cumulative results for the project.
-                            6. In its dashboard, the NGO can: create a new project, view and edit all its competence tests, as well as view the overall tests' statistics (for all tests altogether).
-                        </p>
+                        <ol>
+                            <li>NGO registers.</li>
+                            <li>After logging-in, the NGO generates a competence test for its project: enters project's name and description, and saves it.</li>
+                            <li>Then, the NGO can invite volunteers: types volunteer's name and email address, and the app: sends the email invitation to the volunteer.</li>
+                            <li>Volunteer logs in, takes the competence test and saves it. (S)he is redirected to the results page.</li>
+                            <li>NGO can view cumulative results for the project.</li>
+                            <li>In its dashboard, the NGO can: create a new project, view and edit all its competence tests, as well as view the overall tests' statistics (for all tests altogether).</li>
+                        </ol>
                     </div>
                 </li>
 
-                <li>
+                <p>
                     <a data-toggle="collapse" href="#faq4" class="collapsed">How it works from the volunteer’s perspective? <i class="ion-android-remove"></i></a>
                     <div id="faq4" class="collapse" data-parent="#faq-list">
-                        <p>
-                            1. Volunteer receives an invitation.
-                            2. (S)he clicks on the link and log-in.
-                            3. (S)he takes the competence test and saves it.
-                            4. (S)he is redirected to the results page where (s)he can see her/his results, together with the development tips for each competence.
-                            5. On her/his dashboard volunteer can view all Competence Tests, take the test and view the results of the tests already taken.
-                            Note: volunteer cannot register himself/herself - (s)he must receive an invitation to use to app.
-                        </p>
-                    </div>
-                </li>
-
-                <li>
-                    <a data-toggle="collapse" href="#faq5" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="ion-android-remove"></i></a>
-                    <div id="faq5" class="collapse" data-parent="#faq-list">
-                        <p>
-                            Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
-                        </p>
+                        <ol>
+                            <li>Volunteer receives an invitation.</li>
+                            <li>(S)he clicks on the link and log-in.</li>
+                            <li>(S)he takes the competence test and saves it.</li>
+                            <li>(S)he is redirected to the results page where (s)he can see her/his results, together with the development tips for each competence.</li>
+                            <li>On her/his dashboard volunteer can view all Competence Tests, take the test and view the results of the tests already taken.</li>
+                        </ol>
+                        <p>Note: volunteer cannot register himself/herself - (s)he must receive an invitation to use to app.</p>
                     </div>
                 </li>
 
