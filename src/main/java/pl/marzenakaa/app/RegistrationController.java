@@ -18,11 +18,14 @@ import java.util.List;
 
 @Controller
 public class RegistrationController {
-    @Autowired
-    OrganisationService organisationService;
 
-    @Autowired
-    FIeldOfActivityService fieldOfActivityService;
+    private final OrganisationService organisationService;
+    private final FIeldOfActivityService fieldOfActivityService;
+
+    public RegistrationController(OrganisationService organisationService, FIeldOfActivityService fieldOfActivityService) {
+        this.organisationService = organisationService;
+        this.fieldOfActivityService = fieldOfActivityService;
+    }
 
     @GetMapping("/register")
     public String showRegisterForm(Model model){

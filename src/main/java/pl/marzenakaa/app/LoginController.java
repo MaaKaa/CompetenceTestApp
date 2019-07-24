@@ -16,11 +16,14 @@ import pl.marzenakaa.app.volunteer.VolunteerService;
 @Controller
 @SessionAttributes({"organisationSession", "volunteerSession"})
 public class LoginController {
-    @Autowired
-    OrganisationService organisationService;
 
-    @Autowired
-    VolunteerService volunteerService;
+    private final OrganisationService organisationService;
+    private final VolunteerService volunteerService;
+
+    public LoginController(OrganisationService organisationService, VolunteerService volunteerService) {
+        this.organisationService = organisationService;
+        this.volunteerService = volunteerService;
+    }
 
     @GetMapping("/login")
     public String login() {

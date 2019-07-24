@@ -11,17 +11,18 @@ import pl.marzenakaa.app.volunteer.VolunteerService;
 
 @Controller
 public class HomeController {
-    @Autowired
-    VolunteerService volunteerService;
 
-    @Autowired
-    OrganisationService organisationService;
+    private final VolunteerService volunteerService;
+    private final OrganisationService organisationService;
+    private final CompetenceTestService competenceTestService;
+    private final SolutionService solutionService;
 
-    @Autowired
-    CompetenceTestService competenceTestService;
-
-    @Autowired
-    SolutionService solutionService;
+    public HomeController(VolunteerService volunteerService, OrganisationService organisationService, CompetenceTestService competenceTestService, SolutionService solutionService) {
+        this.volunteerService = volunteerService;
+        this.organisationService = organisationService;
+        this.competenceTestService = competenceTestService;
+        this.solutionService = solutionService;
+    }
 
     @GetMapping("/")
     public String showHomePage(Model model){
