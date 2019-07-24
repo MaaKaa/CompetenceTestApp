@@ -9,8 +9,12 @@ import java.util.List;
 @Service
 @Transactional
 public class SolutionService {
-    @Autowired
-    SolutionRepository solutionRepository;
+
+    private final SolutionRepository solutionRepository;
+
+    public SolutionService(SolutionRepository solutionRepository) {
+        this.solutionRepository = solutionRepository;
+    }
 
     public void create(Solution solution) {
         solution.setResultRoleAndAutonomy(calculateResultRoleAndAutonomy(solution));

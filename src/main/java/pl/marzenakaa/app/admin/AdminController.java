@@ -15,17 +15,17 @@ import pl.marzenakaa.app.volunteer.VolunteerService;
 @RequestMapping("admin/")
 public class AdminController {
 
-    @Autowired
-    OrganisationService organisationService;
+    private final OrganisationService organisationService;
+    private final VolunteerService volunteerService;
+    private final CompetenceTestService competenceTestService;
+    private final SolutionService solutionService;
 
-    @Autowired
-    VolunteerService volunteerService;
-
-    @Autowired
-    CompetenceTestService competenceTestService;
-
-    @Autowired
-    SolutionService solutionService;
+    public AdminController(OrganisationService organisationService, VolunteerService volunteerService, CompetenceTestService competenceTestService, SolutionService solutionService) {
+        this.organisationService = organisationService;
+        this.volunteerService = volunteerService;
+        this.competenceTestService = competenceTestService;
+        this.solutionService = solutionService;
+    }
 
     @GetMapping("/")
     public String showAdminDashboard(Model model){

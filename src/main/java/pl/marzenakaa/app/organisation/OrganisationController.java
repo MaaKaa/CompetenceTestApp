@@ -23,17 +23,18 @@ import java.util.List;
 @Controller
 @RequestMapping("/org/logged")
 public class OrganisationController {
-    @Autowired
-    OrganisationService organisationService;
 
-    @Autowired
-    CompetenceTestService competenceTestService;
+    private final OrganisationService organisationService;
+    private final CompetenceTestService competenceTestService;
+    private final VolunteerService volunteerService;
+    private final EmailServiceImpl emailService;
 
-    @Autowired
-    VolunteerService volunteerService;
-
-    @Autowired
-    EmailServiceImpl emailService;
+    public OrganisationController(OrganisationService organisationService, CompetenceTestService competenceTestService, VolunteerService volunteerService, EmailServiceImpl emailService) {
+        this.organisationService = organisationService;
+        this.competenceTestService = competenceTestService;
+        this.volunteerService = volunteerService;
+        this.emailService = emailService;
+    }
 
     @GetMapping("/")
     public String showOrganisationHomePage(HttpSession session, Model model) {

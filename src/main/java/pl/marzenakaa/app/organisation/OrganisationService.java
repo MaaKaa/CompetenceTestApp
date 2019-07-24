@@ -10,8 +10,11 @@ import java.util.List;
 @Transactional
 public class OrganisationService {
 
-    @Autowired
-    OrganisationRepository organisationRepository;
+    private final OrganisationRepository organisationRepository;
+
+    public OrganisationService(OrganisationRepository organisationRepository) {
+        this.organisationRepository = organisationRepository;
+    }
 
     public void create(Organisation organisation) {
         organisationRepository.save(organisation);

@@ -16,11 +16,14 @@ import static org.apache.commons.lang3.StringUtils.deleteWhitespace;
 @Service
 @Transactional
 public class CompetenceTestService {
-    @Autowired
-    CompetenceTestRepository competenceTestRepository;
 
-    @Autowired
-    SolutionRepository solutionRepository;
+    private final CompetenceTestRepository competenceTestRepository;
+    private final SolutionRepository solutionRepository;
+
+    public CompetenceTestService(CompetenceTestRepository competenceTestRepository, SolutionRepository solutionRepository) {
+        this.competenceTestRepository = competenceTestRepository;
+        this.solutionRepository = solutionRepository;
+    }
 
     public void create(CompetenceTest competenceTest) {
         String link = competenceTest.getName();

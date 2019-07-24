@@ -10,8 +10,12 @@ import java.util.List;
 @Service
 @Transactional
 public class VolunteerService {
-    @Autowired
-    VolunteerRepository volunteerRepository;
+
+    private final VolunteerRepository volunteerRepository;
+
+    public VolunteerService(VolunteerRepository volunteerRepository) {
+        this.volunteerRepository = volunteerRepository;
+    }
 
     public void create(Volunteer volunteer) {
         volunteerRepository.save(volunteer);

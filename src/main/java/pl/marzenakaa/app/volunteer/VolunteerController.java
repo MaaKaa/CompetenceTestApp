@@ -16,14 +16,16 @@ import java.util.List;
 @Controller
 @RequestMapping("/vol/logged")
 public class VolunteerController {
-    @Autowired
-    VolunteerService volunteerService;
 
-    @Autowired
-    CompetenceTestService competenceTestService;
+    private final VolunteerService volunteerService;
+    private final CompetenceTestService competenceTestService;
+    private final SolutionService solutionService;
 
-    @Autowired
-    SolutionService solutionService;
+    public VolunteerController(VolunteerService volunteerService, CompetenceTestService competenceTestService, SolutionService solutionService) {
+        this.volunteerService = volunteerService;
+        this.competenceTestService = competenceTestService;
+        this.solutionService = solutionService;
+    }
 
     @GetMapping("/")
     public String showVolunteerHomePage(HttpSession session, Model model){
