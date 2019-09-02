@@ -26,6 +26,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+import pl.marzenakaa.app.admin.DBCredentials;
 import pl.marzenakaa.app.admin.EmailCredentials;
 import pl.marzenakaa.app.competenceTest.CompetenceTestConverter;
 import pl.marzenakaa.app.fieldsOfActivity.FieldOfActivityConverter;
@@ -98,31 +99,24 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
 
-/*
+
     //Local database:
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        DBCredentials dbCredentials = new DBCredentials(); //this file is not added to git.
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/competencetest?useSSL=false");
-        dataSource.setUsername("root");
-        dataSource.setPassword("coderslab");
+        //Local DB - uncomment if you want to use local DB:
+        dataSource.setUrl(dbCredentials.getLocalDbUrl());
+        dataSource.setUsername(dbCredentials.getLocalDbLogin());
+        dataSource.setPassword(dbCredentials.getLocalDbPass());
+
+        //Remote DB - uncomment if you want to use remote DB:
+        //dataSource.setUrl(dbCredentials.getRemoteDbUrl());
+        //dataSource.setUsername(dbCredentials.getRemoteDbLogin());
+        //dataSource.setPassword(dbCredentials.getRemoteDbPass());
         return dataSource;
     }
-*/
-
-
-    //Remote database:
-    @Bean
-    public DataSource dataSource() {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://aa1ethr1g2sisie.cbharmnnull8.us-west-2.rds.amazonaws.com:3306/ebdb?user=maarzkaa&password=Jj3yUJbvy2;");
-        dataSource.setUsername("maarzkaa");
-        dataSource.setPassword("Jj3yUJbvy2");
-        return dataSource;
-    }
-
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
