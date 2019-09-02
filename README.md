@@ -74,11 +74,13 @@ You can use several ways to run this app:
 
 It will build a project and create a WAR file - WAR (Web ARchive) is the standard container file format for packaging Java EE applications as a single, deployable unit which can be deployed on such application servers. You can use this tutorial: https://www.baeldung.com/tomcat-deploy-war
 
+Please note, that the database credentials are not included. To run the app, you must create a database and update WebConfig -> DataSource with relevant Url, username and password.
+
 ## Status
 Project is: _in progress_ 
 
 To-do list (for future development):
-* move the business logic from the OrderingProcessController to services.
+* move the business logic to services.
 * do the refactoring.
 * add Lombok.
 * add unit tests.
