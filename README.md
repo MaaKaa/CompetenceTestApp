@@ -1,6 +1,7 @@
 Online competence test app, dedicated to NGOs. It allows NGOs to find out which competencies volunteers developed through its projects.
 
 ##Table of contents
+
 * [Background](#background)
 * [Features](#features)
 * [Screenshots](#screenshots)
@@ -10,6 +11,7 @@ Online competence test app, dedicated to NGOs. It allows NGOs to find out which 
 * [Contact](#contact)
 
 ##Background
+
 BACKGROUND/ GENERAL DESCRIPTION:
 
 Volunteers support non-governmental organisations (NGOs) with different activities: they do administrative works (e.g. project coordination, office assistance), (co-)organize events, do promotion and fundraising, share their skills, etc. There are different reasons they do it: sometimes NGO's mission is important for them (e.g. they care for ecology), sometimes they want to gain some job experience, and sometimes they just want to pay-off, because someone helped them in the past.
@@ -27,6 +29,7 @@ Benefits:
     - Volunteers are empowered - they become more aware of their competencies and learn how to valuate their experience.
 
 ##Features
+
 HOW IT WORKS?
 
 NGOs' perspective:
@@ -51,6 +54,7 @@ Volunteer's perspective:
     Note: volunteer cannot register himself/herself - (s)he must receive an intivation to use to app.
 
 ##Screenshots
+
 ![choose-screening](/img/CompetenceTest_Home.png)
 ![choose-tickets](/img/CompetenceTest_Home2.png)
 ![choose-tickets](/img/CompetenceTest_Home3.png)
@@ -58,6 +62,7 @@ Volunteer's perspective:
 ![choose-tickets](/img/CompetenceTest_Home5.png)
 
 ##Technologies
+
 USED TOOLS/FRAMEWORKS:
 
 - Java: Spring MVC 
@@ -68,6 +73,7 @@ USED TOOLS/FRAMEWORKS:
 - IntelliJ Ultimate Edition, Workbench
 
 ## Setup
+
 You can use several ways to run this app:
 1. If you use IDE (e.g. IntelliJ, Eclipse), download the whole project. Double-click on the pom.xml file (Project Object Model - it is the fundamental unit of work in Maven that contains information about the project and configuration details used by Maven to build the project). Double-clicking should call "open as a project" option of your IDE.  
 
@@ -77,6 +83,7 @@ You can use several ways to run this app:
 It will build a project and create a WAR file - WAR (Web ARchive) is the standard container file format for packaging Java EE applications as a single, deployable unit which can be deployed on such application servers. You can use this tutorial: https://www.baeldung.com/tomcat-deploy-war
 
 ## Status
+
 Project is: _in progress_ 
 
 To-do list (for future development):
@@ -86,5 +93,6 @@ To-do list (for future development):
 * add unit tests.
 
 ## Contact
+
 Created by [Marzena Kacprowicz](http://zrobtowinternecie.pl/) - feel free to contact me!
 
