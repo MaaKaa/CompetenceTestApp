@@ -107,14 +107,14 @@ public class WebConfig implements WebMvcConfigurer {
         DBCredentials dbCredentials = new DBCredentials(); //this file is not added to git.
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         //Local DB - uncomment if you want to use local DB:
-        dataSource.setUrl(dbCredentials.getLocalDbUrl());
-        dataSource.setUsername(dbCredentials.getLocalDbLogin());
-        dataSource.setPassword(dbCredentials.getLocalDbPass());
+        //dataSource.setUrl(dbCredentials.getLocalDbUrl());
+        //dataSource.setUsername(dbCredentials.getLocalDbLogin());
+        //dataSource.setPassword(dbCredentials.getLocalDbPass());
 
         //Remote DB - uncomment if you want to use remote DB:
-        //dataSource.setUrl(dbCredentials.getRemoteDbUrl());
-        //dataSource.setUsername(dbCredentials.getRemoteDbLogin());
-        //dataSource.setPassword(dbCredentials.getRemoteDbPass());
+        dataSource.setUrl(dbCredentials.getRemoteDbUrl());
+        dataSource.setUsername(dbCredentials.getRemoteDbLogin());
+        dataSource.setPassword(dbCredentials.getRemoteDbPass());
         return dataSource;
     }
 
