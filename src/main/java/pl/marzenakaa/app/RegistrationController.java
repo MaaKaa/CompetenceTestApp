@@ -1,6 +1,5 @@
 package pl.marzenakaa.app;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,6 +37,7 @@ public class RegistrationController {
         if (result.hasErrors()) {
             return "registration-form";
         }
+
         Organisation organisation1 = organisationService.readByEmail(organisation.getEmail());
         if(organisation1 == null){
             organisation.setPassword(BCrypt.hashpw(organisation.getPassword(), BCrypt.gensalt()));
@@ -47,6 +47,7 @@ public class RegistrationController {
             model.addAttribute("errorMsg", "User with this email already exists. Choose different address.");
             return "registration-form";
         }
+
         model.addAttribute("success", true);
         model.addAttribute("successMsg", "Registration successful! Now you can log in:");
         return "redirect: /login";
@@ -56,7 +57,5 @@ public class RegistrationController {
     public List<FieldOfActivity> showFieldsOfActivity(){
         return fieldOfActivityService.findAll();
     }
-
-
 
 }
