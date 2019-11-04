@@ -72,9 +72,9 @@ public class SolutionService {
             return "Unable to generate result";
         } else if (sum <= 11){
             return "Partial";
-        } else if (sum <= 15){
+        } else if (sum <= 17){
             return "Plain";
-        } else if (sum <= 16){
+        } else if (sum <= 18){
             return "Excellent";
         } else {
             return "Unable to generate result";
