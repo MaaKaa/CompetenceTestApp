@@ -3,6 +3,8 @@ package pl.marzenakaa.app.solution;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 
 import static org.junit.Assert.*;
 
