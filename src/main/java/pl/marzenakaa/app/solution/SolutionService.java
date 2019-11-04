@@ -70,12 +70,14 @@ public class SolutionService {
         int sum = solution.getCommunicationQ1()+solution.getCommunicationQ2()+solution.getCommunicationQ3()+solution.getCommunicationQ4()+solution.getCommunicationQ5()+solution.getCommunicationQ6();
         if (sum < 6){
             return "Unable to generate result";
-        } else if (sum >= 6 && sum <= 11){
+        } else if (sum <= 11){
             return "Partial";
-        } else if (sum >= 12 && sum <= 15){
+        } else if (sum <= 15){
             return "Plain";
-        } else {
+        } else if (sum <= 16){
             return "Excellent";
+        } else {
+            return "Unable to generate result";
         }
     }
 
@@ -83,12 +85,14 @@ public class SolutionService {
         int sum = solution.getTeamWorkQ1()+solution.getTeamWorkQ2()+solution.getTeamWorkQ3()+solution.getTeamWorkQ4()+solution.getTeamWorkQ5();
         if (sum < 5){
             return "Unable to generate result";
-        } else if (sum >= 5 && sum <= 9){
+        } else if (sum <= 9){
             return "Partial";
-        } else if (sum >= 10 && sum <= 12){
+        } else if (sum <= 12){
             return "Plain";
-        } else {
+        } else if (sum <= 15){
             return "Excellent";
+        } else {
+            return "Unable to generate result";
         }
     }
 
@@ -96,12 +100,14 @@ public class SolutionService {
         int sum = solution.getFlexibilityQ1()+solution.getFlexibilityQ2()+solution.getFlexibilityQ3();
         if (sum < 3){
             return "Unable to generate result";
-        } else if (sum >= 3 && sum <= 5){
+        } else if (sum <= 5){
             return "Partial";
-        } else if (sum >= 6 && sum <= 7){
+        } else if (sum <= 7){
             return "Plain";
-        } else {
+        } else if (sum <= 9){
             return "Excellent";
+        } else {
+            return "Unable to generate result";
         }
     }
 

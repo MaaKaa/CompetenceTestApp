@@ -161,7 +161,7 @@
                         </tr>
                         <tr>
                             <td>9</td>
-                            <td>When I was making decisions Iconcerning the team I always listened to other peoples’ opinion. </td>
+                            <td>When I was making decisions concerning the team I always listened to other peoples’ opinion. </td>
                             <td><form:radiobutton path="teamWorkQ3" value="0"/></td>
                             <td><form:radiobutton path="teamWorkQ3" value="1"/></td>
                             <td><form:radiobutton path="teamWorkQ3" value="2"/></td>
