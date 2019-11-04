@@ -1,6 +1,5 @@
 package pl.marzenakaa.app.solution;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -18,7 +17,7 @@ public class SolutionService {
 
     public void create(Solution solution) {
         solution.setResultRoleAndAutonomy(calculateResultRoleAndAutonomy(solution));
-        solution.setCommunicationResult(calculateComminicationResult(solution));
+        solution.setCommunicationResult(calculateCommunicationResult(solution));
         solution.setTeamWorkResult(calculateTeamWorkResult(solution));
         solution.setFlexibilityResult(calculateFlexibilityResult(solution));
         solutionRepository.save(solution);
@@ -54,16 +53,20 @@ public class SolutionService {
 
     public String calculateResultRoleAndAutonomy(Solution solution){
         int sum = solution.getRole() + solution.getAutonomy();
-        if (sum <= 3){
+        if (sum <= 1){
+            return "Unable to generate result";
+        }else if (sum <= 3){
             return "General";
-        }else if(sum >= 4 && sum <= 7){
+        }else if(sum <= 7){
             return "Accomplished";
-        }else{
+        }else if (sum == 8){
             return "Expert";
+        } else {
+            return "Unable to generate result";
         }
     }
 
-    public String calculateComminicationResult(Solution solution){
+    public String calculateCommunicationResult(Solution solution){
         int sum = solution.getCommunicationQ1()+solution.getCommunicationQ2()+solution.getCommunicationQ3()+solution.getCommunicationQ4()+solution.getCommunicationQ5()+solution.getCommunicationQ6();
         if (sum < 6){
             return "Unable to generate result";
