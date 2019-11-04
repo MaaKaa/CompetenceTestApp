@@ -1,6 +1,5 @@
 package pl.marzenakaa.app.admin;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,7 +28,7 @@ public class AdminController {
 
     @GetMapping("/")
     public String showAdminDashboard(Model model){
-        model.addAttribute("organisations", organisationService.readAllWithFieldsOfActivity());
+        model.addAttribute("organisations", organisationService.readAll());
         model.addAttribute("volunteers", volunteerService.readAllWithCompetenceTestsAndSolutions());
         model.addAttribute("competenceTests", competenceTestService.readAll());
         model.addAttribute("solutions", solutionService.readAll());

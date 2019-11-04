@@ -1,6 +1,5 @@
 package pl.marzenakaa.app;
 
-import org.springframework.cglib.core.Local;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -29,13 +28,11 @@ import org.springframework.web.servlet.view.JstlView;
 import pl.marzenakaa.app.admin.DBCredentials;
 import pl.marzenakaa.app.admin.EmailCredentials;
 import pl.marzenakaa.app.competenceTest.CompetenceTestConverter;
-import pl.marzenakaa.app.fieldsOfActivity.FieldOfActivityConverter;
 import pl.marzenakaa.app.organisation.OrganisationConverter;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import javax.validation.Validator;
-import java.rmi.Remote;
 import java.util.Locale;
 import java.util.Properties;
 
@@ -126,18 +123,12 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addFormatters(FormatterRegistry registry) {
         registry.addConverter(getCompetenceTestConverter());
-        registry.addConverter(getFieldOfActivityConverter());
         registry.addConverter(getOrganisationConverter());
     }
 
     @Bean
     public CompetenceTestConverter getCompetenceTestConverter() {
         return new CompetenceTestConverter();
-    }
-
-    @Bean
-    public FieldOfActivityConverter getFieldOfActivityConverter(){
-        return new FieldOfActivityConverter();
     }
 
     @Bean

@@ -79,13 +79,7 @@
                                 <form:errors path="description" cssClass="text-danger" />
                             </div>
 
-                            <div class="form-group">
-                                <label>Fields of activity:</label><br>
-                                <div class="form-check">
-                                    <form:checkboxes path="fieldsOfActivity" items="${fieldsOfActivity}" itemLabel="name" itemValue="id" required="true" />
-                                    <form:errors path="fieldsOfActivity" cssClass="text-danger" />
-                                </div>
-                            </div>
+
 
                             <h5>Contact info</h5>
 

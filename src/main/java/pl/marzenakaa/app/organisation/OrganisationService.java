@@ -28,13 +28,13 @@ public class OrganisationService {
         return organisationRepository.findByEmail(email);
     }
 
-    public List<Organisation> readAllWithFieldsOfActivity(){
+    /*public List<Organisation> readAllWithFieldsOfActivity(){
         List<Organisation> organisations = readAll();
         for (Organisation organisation : organisations){
             Hibernate.initialize(organisation.getFieldsOfActivity());
         }
         return organisations;
-    }
+    }*/
 
     public Organisation readWithCompetenceTests(Long id){
         Organisation organisation = read(id);

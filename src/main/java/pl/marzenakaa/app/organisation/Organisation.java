@@ -4,7 +4,6 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
 import pl.marzenakaa.app.competenceTest.CompetenceTest;
-import pl.marzenakaa.app.fieldsOfActivity.FieldOfActivity;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -31,9 +30,6 @@ public class Organisation {
     @NotBlank
     @Size(min = 3, max = 500)
     private String description;
-
-    @ManyToMany(cascade = {CascadeType.MERGE})
-    private List<FieldOfActivity> fieldsOfActivity;
 
     @NotBlank
     @Size(min = 3, max = 100)
@@ -89,14 +85,6 @@ public class Organisation {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public List<FieldOfActivity> getFieldsOfActivity() {
-        return fieldsOfActivity;
-    }
-
-    public void setFieldsOfActivity(List<FieldOfActivity> fieldsOfActivity) {
-        this.fieldsOfActivity = fieldsOfActivity;
     }
 
     public String getCity() {

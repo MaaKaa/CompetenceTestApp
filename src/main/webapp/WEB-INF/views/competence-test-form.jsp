@@ -125,7 +125,7 @@
                         </tr>
                         <tr>
                             <td>5</td>
-                            <td>Poeple said that my communication style encourages them to share their thoughts  which mutually stimulate ideas and interactions.</td>
+                            <td>People said that my communication style encourages them to share their thoughts  which mutually stimulate ideas and interactions.</td>
                             <td><form:radiobutton path="communicationQ5" value="0"/></td>
                             <td><form:radiobutton path="communicationQ5" value="1"/></td>
                             <td><form:radiobutton path="communicationQ5" value="2"/></td>

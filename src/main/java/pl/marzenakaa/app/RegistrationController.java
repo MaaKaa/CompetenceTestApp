@@ -7,23 +7,18 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import pl.marzenakaa.app.fieldsOfActivity.FIeldOfActivityService;
-import pl.marzenakaa.app.fieldsOfActivity.FieldOfActivity;
 import pl.marzenakaa.app.organisation.Organisation;
 import pl.marzenakaa.app.organisation.OrganisationService;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @Controller
 public class RegistrationController {
 
     private final OrganisationService organisationService;
-    private final FIeldOfActivityService fieldOfActivityService;
 
-    public RegistrationController(OrganisationService organisationService, FIeldOfActivityService fieldOfActivityService) {
+    public RegistrationController(OrganisationService organisationService) {
         this.organisationService = organisationService;
-        this.fieldOfActivityService = fieldOfActivityService;
     }
 
     @GetMapping("/register")
@@ -53,9 +48,8 @@ public class RegistrationController {
         return "redirect: /login";
     }
 
-    @ModelAttribute("fieldsOfActivity")
-    public List<FieldOfActivity> showFieldsOfActivity(){
-        return fieldOfActivityService.findAll();
-    }
+    /*@ModelAttribute("fieldsOfActivity")
+        //to be created.
+    } */
 
 }

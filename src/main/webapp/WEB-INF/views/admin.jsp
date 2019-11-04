@@ -51,7 +51,7 @@
                         <td>${organisation.name}</td>
                         <td>${organisation.email}</td>
                         <td>${organisation.description}</td>
-                        <td>${organisation.fieldsOfActivity}</td>
+                        <td>To be updated</td>
                         <td>${organisation.city}</td>
                         <td>${organisation.country}</td>
                         <td>${organisation.website}</td>
